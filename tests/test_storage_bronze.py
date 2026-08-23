@@ -40,6 +40,19 @@ def test_from_env_refuses_to_default_a_secret(monkeypatch):
         BronzeStore.from_env()
 
 
+def test_bronze_key_rejects_naive_datetime():
+    with pytest.raises(BronzeError, match="naive"):
+        bronze_key("fixture-formal", datetime(2026, 8, 23, 12, 0), "abc123")
+
+
+def test_from_env_rejects_endpoint_without_recognized_scheme(monkeypatch):
+    monkeypatch.setenv("MINIO_ROOT_USER", "u")
+    monkeypatch.setenv("MINIO_ROOT_PASSWORD", "p")
+    monkeypatch.setenv("MINIO_ENDPOINT", "ftp://minio:9000")
+    with pytest.raises(BronzeError, match="http"):
+        BronzeStore.from_env()
+
+
 def _live_store() -> BronzeStore | None:
     try:
         store = BronzeStore.from_env()

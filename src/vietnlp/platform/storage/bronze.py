@@ -33,6 +33,8 @@ def content_hash(payload: bytes) -> str:
 def bronze_key(source_id: str, fetched_at: datetime, hash_hex: str) -> str:
     """`bronze/{source_id}/{YYYY-MM-DD}/{hash_hex}.parquet` -- partitioned the
     way the data contract (spec S4.1) partitions Bronze: source, then date."""
+    if fetched_at.tzinfo is None:
+        raise BronzeError("fetched_at must be timezone-aware, got a naive datetime")
     date = fetched_at.astimezone(timezone.utc).date().isoformat()
     return f"bronze/{source_id}/{date}/{hash_hex}.parquet"
 
@@ -59,7 +61,14 @@ class BronzeStore:
             raise BronzeError(
                 "MINIO_ROOT_USER / MINIO_ROOT_PASSWORD not set. (Values are never logged.)"
             )
-        secure = endpoint.startswith("https://")
+        if endpoint.startswith("https://"):
+            secure = True
+        elif endpoint.startswith("http://"):
+            secure = False
+        else:
+            raise BronzeError(
+                f"MINIO_ENDPOINT must start with http:// or https://, got: {endpoint!r}"
+            )
         host = endpoint.split("://", 1)[-1]  # Minio() wants a bare host:port
         return cls(endpoint=host, access_key=access_key, secret_key=secret_key, secure=secure)
 
