@@ -73,7 +73,7 @@ def live_db():
     with psycopg.connect(url, autocommit=True) as conn:
         conn.execute(f"DROP SCHEMA IF EXISTS {schema} CASCADE")
         conn.execute(f"CREATE SCHEMA {schema}")
-    scoped_url = f"{url}?options={quote(f'-c search_path={schema}')}"
+    scoped_url = f"{url}?options={quote(f'-c search_path={schema},public')}"
     yield scoped_url
     with psycopg.connect(url, autocommit=True) as conn:
         conn.execute(f"DROP SCHEMA IF EXISTS {schema} CASCADE")
