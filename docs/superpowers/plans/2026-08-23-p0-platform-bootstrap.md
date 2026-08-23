@@ -1552,7 +1552,7 @@ ssh _59 'cd vietnlp/deploy && docker compose build agents'
 ssh _59 'cd vietnlp/deploy && docker compose run --rm --no-deps --entrypoint pytest agents /app/tests -q'
 ```
 
-Expected: PASS. Count should be the pre-existing 46 plus this plan's new tests: 5 (Task 2) + 3 (Task 3, offline subset) + 5 (Task 4, offline subset) + 5 (Task 5) + 3 (Task 6) + 5 (Task 7) = 26 new, with the 3 DB-live and 2 MinIO-live tests among them showing as SKIPPED, not FAILED.
+Expected: PASS. Count should be the pre-existing 46 plus this plan's new tests: 5 (Task 2) + 3 (Task 3, all live-DB) + 7 (Task 4: 5 pure + 2 live-MinIO) + 6 (Task 5) + 3 (Task 6) + 5 (Task 7) = 29 new, with the 3 DB-live and 2 MinIO-live tests among them showing as SKIPPED, not FAILED.
 
 - [ ] **Step 6: Start the stack and apply the migration**
 
