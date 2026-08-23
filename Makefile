@@ -10,6 +10,18 @@ help:
 deploy: ## sync, build, test and start the stack on $(HOST)
 	./deploy/deploy.sh --host $(HOST) --path $(REMOTE)
 
+.PHONY: up
+up: ## start the stack from the already-built image (no rebuild, no test run)
+	ssh $(HOST) "cd $(REMOTE)/deploy && docker compose up -d --remove-orphans"
+
+.PHONY: migrate
+migrate: ## apply pending Postgres migrations on $(HOST)
+	ssh $(HOST) "cd $(REMOTE)/deploy && docker compose run --rm --entrypoint python agents -m vietnlp.platform.db.migrate up"
+
+.PHONY: test-live
+test-live: ## full test suite against the live stack (exercises the integration tests that self-skip under `make test`)
+	ssh $(HOST) "cd $(REMOTE)/deploy && docker compose run --rm --entrypoint pytest agents /app/tests -q"
+
 .PHONY: test
 test: ## run the test suite in the container on $(HOST)
 	ssh $(HOST) "cd $(REMOTE)/deploy && docker compose run --rm --no-deps --entrypoint pytest agents /app/tests -q"

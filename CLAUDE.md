@@ -137,7 +137,7 @@ colloquial register comes from forums and Q&A sites.
 
 | Phase | Goal | Status |
 |---|---|---|
-| P0 | Platform bootstrap: Docker, compose stack, schemas, config, DeepSeek client | not started |
+| P0 | Platform bootstrap: Docker, compose stack, schemas, config, DeepSeek client | done — schema migrated, Bronze store and bootstrap flow tested live on `_59` |
 | P1 | Acquisition + curation → ~100K-sentence Silver corpus | not started |
 | P2 | Linguistic core + treebank | not started |
 | P3 | Ontology + entity linking | not started |
@@ -158,10 +158,12 @@ make routes        # the task -> model cost table
 make spend         # DeepSeek spend against the flow/daily/total caps
 make cache         # cache hit rates per task and prompt version
 make tunnel        # forward postgres/minio to localhost
+make migrate       # apply pending Postgres migrations (server _59)
+make test-live     # full test suite against the live stack (Postgres + MinIO)
 make ps | logs | down
 ```
 
-Populated during P1-P5: `make migrate`, `make bench`, `make export`.
+Populated during P1-P5: `make bench`, `make export`.
 
 ## Sub-agents
 

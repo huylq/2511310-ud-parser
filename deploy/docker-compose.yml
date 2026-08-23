@@ -100,7 +100,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 512M
+          memory: 1G   # was 512M -- Prefect's ephemeral local API/SQLite needs headroom beyond DeepSeek dispatch
 
   # Opt-in: `docker compose --profile graph up -d`.
   # Fuseki's JVM wants ~1 GB and nothing needs it until P3 (ontology).
