@@ -32,6 +32,11 @@ def test_list_migrations_rejects_duplicate_version(tmp_path):
         list_migrations(tmp_path)
 
 
+def test_list_migrations_rejects_missing_directory(tmp_path):
+    with pytest.raises(FileNotFoundError):
+        list_migrations(migrations_dir=tmp_path / "does-not-exist")
+
+
 def test_pending_excludes_applied_versions():
     migrations = [
         Migration("0001", "core", Path("x"), "SQL"),

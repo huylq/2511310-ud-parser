@@ -93,6 +93,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+      minio:
+        condition: service_healthy
     # Work is dispatched explicitly:
     #   docker compose run --rm agents <command>
     # Never automatic -- an auto-restarting flow would silently re-spend the budget.

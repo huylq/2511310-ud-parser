@@ -37,6 +37,8 @@ def list_migrations(migrations_dir: Path = DEFAULT_MIGRATIONS_DIR) -> list[Migra
     silently skipped -- a typo'd filename that never runs is worse than one
     that fails loudly at discovery time.
     """
+    if not migrations_dir.is_dir():
+        raise FileNotFoundError(f"migrations directory not found: {migrations_dir}")
     migrations = []
     for path in sorted(migrations_dir.glob("*.sql")):
         m = _FILENAME.match(path.name)

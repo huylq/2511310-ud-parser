@@ -11,8 +11,15 @@ Roughly a dozen unrelated containers already run here, and only ~3-4 GB of the
 |---|---|---|---|
 | postgres (pgvector/pg16) | 768 MB | ~30 MB | yes |
 | minio | 512 MB | ~80 MB | yes |
-| agents | 512 MB | per-command | no — dispatch only |
+| agents | 1 GB | per-command | no — dispatch only |
 | fuseki | 1 GB | — | no — `--profile graph`, needed from P3 |
+
+`agents` was raised from 512 MB to 1 GB in P0 Task 8 to give Prefect's ephemeral
+local API/SQLite headroom beyond a plain DeepSeek dispatch call; measured via
+`docker stats` while `make test-live` ran (Prefect flow tests included), RSS
+peaked around **215 MiB of the 1 GiB cap** — comfortable headroom, not a tight fit.
+Full sampling logged in
+`.superpowers/sdd/2026-08-23-p0-platform-bootstrap/task-8-report.md`.
 
 Do not raise a limit to make something fit. Make the something smaller. OOM kills on
 this box present as containers that restart for no visible reason.

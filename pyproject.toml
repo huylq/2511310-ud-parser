@@ -27,6 +27,9 @@ vietnlp-migrate = "vietnlp.platform.db.migrate:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+"vietnlp.platform.db" = ["migrations/*.sql"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
