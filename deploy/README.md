@@ -86,3 +86,19 @@ docker compose run --rm --no-deps agents estimate <task> --count <n>
 ```
 
 Caps hard-stop (charter rule 5). A flow that trips one aborts; it does not warn.
+
+## Fuseki (P3, not started by default)
+
+Fuseki is behind the `graph` compose profile and is not needed until ontology
+work (P3) begins. To turn it on:
+
+```
+docker compose --profile graph up -d fuseki
+docker compose run --rm --no-deps --entrypoint python agents -c "
+from vietnlp.platform.graph.fuseki_admin import create_dataset
+import os
+create_dataset('http://fuseki:3030', 'vietnlp', auth=('admin', os.environ['FUSEKI_ADMIN_PASSWORD']))
+"
+```
+
+`create_dataset` is idempotent -- safe to re-run.
