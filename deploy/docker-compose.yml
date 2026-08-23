@@ -1,0 +1,127 @@
+# VietNLP stack for server _59 (118.69.218.59).
+#
+# Sized for a SHARED box: 8 vCPU / 15 GB with ~4 GB actually free and 12 other
+# containers running. Every service has a hard memory limit so a runaway flow
+# cannot take down the neighbours. Do not remove the limits "temporarily".
+#
+# Ports use the free 6040-6049 block. The host already occupies 5432 (system
+# Postgres), 8000, 8081, 9100 and most of 6010-6035.
+
+name: vietnlp
+
+x-restart: &restart
+  restart: unless-stopped
+
+services:
+  postgres:
+    <<: *restart
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-vietnlp}
+      POSTGRES_USER: ${POSTGRES_USER:-vietnlp}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      # Tuned down deliberately: this box has ~4 GB free, not 15.
+      POSTGRES_INITDB_ARGS: "--data-checksums"
+    command:
+      - postgres
+      - -c
+      - shared_buffers=192MB
+      - -c
+      - work_mem=8MB
+      - -c
+      - max_connections=50
+    ports:
+      - "127.0.0.1:${PG_PORT:-6042}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-vietnlp} -d ${POSTGRES_DB:-vietnlp}"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+
+  minio:
+    <<: *restart
+    image: minio/minio:RELEASE.2024-09-13T20-26-02Z
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:?set MINIO_ROOT_USER in .env}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?set MINIO_ROOT_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:${MINIO_PORT:-6043}:9000"
+      - "127.0.0.1:${MINIO_CONSOLE_PORT:-6044}:9001"
+    volumes:
+      - miniodata:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # Dispatch-only, not a daemon. Every entry point is a command that finishes, so
+  # `up` must not start it -- with a restart policy that produced a restart loop on
+  # a clean exit. The "tools" profile keeps it out of `up`; `compose run` enables
+  # the profile automatically, so dispatch is unaffected.
+  agents:
+    profiles: ["tools"]
+    restart: "no"
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: vietnlp-agents:0.1.0
+    environment:
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:?set DEEPSEEK_API_KEY in .env}
+      HF_TOKEN: ${HF_TOKEN:-}
+      HF_HOME: /data/hf
+      VIETNLP_FLOW_CAP_USD: ${VIETNLP_FLOW_CAP_USD:-5}
+      VIETNLP_DAILY_CAP_USD: ${VIETNLP_DAILY_CAP_USD:-20}
+      VIETNLP_TOTAL_CAP_USD: ${VIETNLP_TOTAL_CAP_USD:-200}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-vietnlp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-vietnlp}
+      MINIO_ENDPOINT: http://minio:9000
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    volumes:
+      - agentdata:/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+    # Work is dispatched explicitly:
+    #   docker compose run --rm agents <command>
+    # Never automatic -- an auto-restarting flow would silently re-spend the budget.
+    command: ["routes"]
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # Opt-in: `docker compose --profile graph up -d`.
+  # Fuseki's JVM wants ~1 GB and nothing needs it until P3 (ontology).
+  fuseki:
+    <<: *restart
+    profiles: ["graph"]
+    image: stain/jena-fuseki:4.8.0
+    environment:
+      ADMIN_PASSWORD: ${FUSEKI_ADMIN_PASSWORD:?set FUSEKI_ADMIN_PASSWORD in .env}
+      JVM_ARGS: -Xmx768m
+    ports:
+      - "127.0.0.1:${FUSEKI_PORT:-6045}:3030"
+    volumes:
+      - fusekidata:/fuseki
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+
+volumes:
+  pgdata:
+  miniodata:
+  agentdata:
+  fusekidata:
