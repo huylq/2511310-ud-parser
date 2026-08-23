@@ -86,6 +86,7 @@ def apply(database_url: str, migrations_dir: Path = DEFAULT_MIGRATIONS_DIR) -> l
         _ensure_bookkeeping(conn)
         conn.commit()
         already = _applied_versions(conn)
+        conn.commit()
         for m in pending(already, migrations):
             with conn.transaction():
                 conn.execute(m.sql)

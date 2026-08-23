@@ -109,3 +109,28 @@ def test_status_reports_applied_migrations(live_db):
     apply(live_db)
     rows = status(live_db)
     assert ("0001", "core_schema", True) in rows
+
+
+def test_apply_keeps_earlier_migrations_when_a_later_one_fails(tmp_path, live_db):
+    # Each migration must commit independently: a failure in migration 0002
+    # must not roll back the 0001 work that already succeeded in this same
+    # apply() call.
+    _write(tmp_path, "0001_ok.sql", "CREATE TABLE ok_table (id INT);")
+    _write(tmp_path, "0002_bad.sql", "THIS IS NOT VALID SQL;")
+
+    with pytest.raises(psycopg.Error):
+        apply(live_db, migrations_dir=tmp_path)
+
+    rows = status(live_db, migrations_dir=tmp_path)
+    applied = {version: is_applied for version, _, is_applied in rows}
+    assert applied["0001"] is True, "migration 0001 should have committed before 0002 failed"
+    assert applied["0002"] is False, "migration 0002 must not be recorded as applied"
+
+    with psycopg.connect(live_db) as conn:
+        tables = {
+            r[0]
+            for r in conn.execute(
+                "SELECT table_name FROM information_schema.tables WHERE table_schema = current_schema()"
+            ).fetchall()
+        }
+    assert "ok_table" in tables, "0001's DDL must have actually committed, not just its bookkeeping row"
