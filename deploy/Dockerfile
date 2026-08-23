@@ -10,7 +10,9 @@ WORKDIR /app
 
 # Dependencies first so source edits do not bust the layer cache.
 COPY pyproject.toml /app/
-RUN pip install --no-cache-dir httpx>=0.27 pytest>=8.0
+RUN pip install --no-cache-dir \
+    httpx>=0.27 pytest>=8.0 respx>=0.21 \
+    "psycopg[binary]>=3.1" pyarrow>=15 minio>=7.2 prefect>=3.0 pandera>=0.20 pandas>=2.0
 
 COPY src/ /app/src/
 COPY tests/ /app/tests/
