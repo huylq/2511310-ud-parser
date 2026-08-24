@@ -50,38 +50,9 @@ def test_pending_with_nothing_applied_returns_everything():
     assert pending(set(), migrations) == migrations
 
 
-import os
-
 import psycopg
-from urllib.parse import quote
 
-from vietnlp.platform.db.migrate import DEFAULT_DATABASE_URL, apply, status
-
-
-def _live_database_url() -> str | None:
-    url = os.getenv("DATABASE_URL", DEFAULT_DATABASE_URL)
-    try:
-        with psycopg.connect(url, connect_timeout=2):
-            return url
-    except psycopg.OperationalError:
-        return None
-
-
-@pytest.fixture
-def live_db():
-    url = _live_database_url()
-    if url is None:
-        pytest.skip("no reachable Postgres (DATABASE_URL); run with the stack up to exercise this")
-    # Isolate into a fresh schema so this test is safe to run repeatedly
-    # against the real deployed database, not just a throwaway one.
-    schema = f"migrate_test_{os.getpid()}"
-    with psycopg.connect(url, autocommit=True) as conn:
-        conn.execute(f"DROP SCHEMA IF EXISTS {schema} CASCADE")
-        conn.execute(f"CREATE SCHEMA {schema}")
-    scoped_url = f"{url}?options={quote(f'-c search_path={schema},public')}"
-    yield scoped_url
-    with psycopg.connect(url, autocommit=True) as conn:
-        conn.execute(f"DROP SCHEMA IF EXISTS {schema} CASCADE")
+from vietnlp.platform.db.migrate import apply, status
 
 
 def test_apply_creates_every_table_from_0001(live_db):

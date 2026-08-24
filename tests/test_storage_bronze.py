@@ -3,7 +3,6 @@ put/get round trip against a live MinIO is a self-skipping integration test
 (see `live_store` below), mirroring the pattern in test_db_migrate.py."""
 
 import hashlib
-import os
 from datetime import datetime, timedelta, timezone
 
 import pytest
@@ -51,34 +50,6 @@ def test_from_env_rejects_endpoint_without_recognized_scheme(monkeypatch):
     monkeypatch.setenv("MINIO_ENDPOINT", "ftp://minio:9000")
     with pytest.raises(BronzeError, match="http"):
         BronzeStore.from_env()
-
-
-def _live_store() -> BronzeStore | None:
-    try:
-        store = BronzeStore.from_env()
-    except BronzeError:
-        return None
-    try:
-        store.client().list_buckets()
-    except Exception:
-        return None
-    return store
-
-
-@pytest.fixture
-def live_store():
-    store = _live_store()
-    if store is None:
-        pytest.skip("no reachable MinIO (MINIO_ENDPOINT/credentials); run with the stack up")
-    store.bucket = f"vietnlp-bronze-test-{os.getpid()}"
-    yield store
-    try:
-        client = store.client()
-        for obj in client.list_objects(store.bucket, recursive=True):
-            client.remove_object(store.bucket, obj.object_name)
-        client.remove_bucket(store.bucket)
-    except Exception:
-        pass  # best-effort cleanup of a throwaway test bucket, not the real store
 
 
 def test_put_then_get_round_trips_a_record(live_store):
