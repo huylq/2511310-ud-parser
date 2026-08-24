@@ -1,5 +1,7 @@
 """CLAUDE.md: hash author identifiers at ingest, never persist raw handles."""
-from vietnlp.acquisition.anonymize import hash_author_id
+import pytest
+
+from vietnlp.acquisition.anonymize import AnonymizeError, hash_author_id
 
 
 def test_hash_is_stable_for_identical_input(monkeypatch):
@@ -23,3 +25,9 @@ def test_hash_changes_with_different_salt(monkeypatch):
     monkeypatch.setenv("VIETNLP_AUTHOR_HASH_SALT", "salt-b")
     h2 = hash_author_id("same_user")
     assert h1 != h2
+
+
+def test_hash_raises_when_salt_not_set(monkeypatch):
+    monkeypatch.delenv("VIETNLP_AUTHOR_HASH_SALT", raising=False)
+    with pytest.raises(AnonymizeError):
+        hash_author_id("some_user")
