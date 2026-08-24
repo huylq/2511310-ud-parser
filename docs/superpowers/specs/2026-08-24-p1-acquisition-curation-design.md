@@ -79,33 +79,42 @@ the rest of `platform/agents`.
 
 Before any source is crawled, `corpus-scout` (read-only, never fetches at
 scale) checks `robots.txt`, license/ToS, and register fit, and produces a
-source record:
+source record written to Postgres's existing `sources` table (P0's
+migration 0001 already defines `id, name, tier, base_url, license,
+robots_policy, enabled` — this spec reuses that table rather than inventing
+a parallel one; a small P1 migration adds the one column it's missing,
+`rate_limit_seconds INT`).
 
-```
-{source_id, base_url, tier: dataset|web|crawl, robots_policy,
- rate_limit_seconds, license, kill_switch: enabled}
-```
+**Reconciled with the deployed schema**: `sources.tier` is already
+constrained to `news_gov_wiki | forum_qa_blog | social | public_corpus`, not
+the `dataset|web|crawl` axis an earlier draft of this spec used. Those four
+values map directly onto the three acquisition paths below, and the mapping
+was clearly intentional in P0's schema design: `public_corpus` → the
+dataset-loader path, `news_gov_wiki` → the web discovery+extraction path,
+`forum_qa_blog` → the polite-crawl path, and `social` stays permanently
+disabled — it's P6's domain, and the schema already reserves the value
+without P1 ever needing to touch it.
 
 This record is the authorization. The crawler refuses to run against any
-`source_id` not present and `enabled` in this table — the per-source kill
-switch and rate-limit guardrails are structural, not conventions the code
-merely follows. `acquisition_flow` re-reads the `enabled` flag at the start
-of every task-level retry, not just once at flow start, so disabling a
-source mid-run stops it within one retry interval.
+`source.id` that is not `enabled` — the per-source kill switch and
+rate-limit guardrails are structural, not conventions the code merely
+follows. `acquisition_flow` re-reads the `enabled` flag at the start of
+every task-level retry, not just once at flow start, so disabling a source
+mid-run stops it within one retry interval.
 
 ### Three acquisition paths, one per source `tier`
 
-- **`dataset`** — bulk downloaders for established public Vietnamese corpora
-  (OSCAR/CC-100 Vietnamese subset, Wikipedia dumps, existing VLSP/UIT
-  datasets). One-shot imports, license metadata attached per-record, no live
-  crawling.
-- **`web`** — `web-search-prime` discovers candidate URLs under an approved
-  source's domain; `web-reader` extracts clean text. Used for news/formal
-  sources where search-based discovery fits.
-- **`crawl`** — a rate-limited `httpx` crawler for forums/Q&A sites named by
-  corpus-scout, one token bucket per `source_id` refilled at the vetted
-  `rate_limit_seconds`, for paginated sites where search-based discovery
-  doesn't apply well.
+- **`public_corpus`** — bulk downloaders for established public Vietnamese
+  corpora (OSCAR/CC-100 Vietnamese subset, Wikipedia dumps, existing
+  VLSP/UIT datasets). One-shot imports, license metadata attached
+  per-record, no live crawling.
+- **`news_gov_wiki`** — `web-search-prime` discovers candidate URLs under an
+  approved source's domain; `web-reader` extracts clean text. Used for
+  news/government/formal sources where search-based discovery fits.
+- **`forum_qa_blog`** — a rate-limited `httpx` crawler for forums/Q&A sites
+  named by corpus-scout, one token bucket per `source.id` refilled at the
+  vetted `rate_limit_seconds`, for paginated sites where search-based
+  discovery doesn't apply well.
 
 All three paths converge on `BronzeStore.put_record(...)` — no new Bronze
 interface needed.
@@ -160,8 +169,12 @@ considered promotable to the projector.
 content-addressing, same date-partitioned key layout
 (`silver/{source_id}/{date}/{hash}.parquet`), but carries curation's output
 fields (`register`, `quality_score`, `dedup_cluster_id`, `pii_scrubbed: bool`)
-instead of Bronze's raw-fetch fields. `content_hash` computation and the
-date-partitioning key logic are factored out of `bronze.py` into a shared
+instead of Bronze's raw-fetch fields — plus `bronze_uri: str`, the original
+Bronze object key each Silver record was derived from. This is required, not
+optional: `documents.bronze_uri` already exists in P0's schema (`NOT NULL`),
+so the projector needs Silver to carry that provenance pointer forward, not
+just Silver's own key. `content_hash` computation and the date-partitioning
+key logic are factored out of `bronze.py` into a shared
 `platform/storage/_content_addressed.py` so both stores use one
 implementation, not two copies.
 
@@ -172,10 +185,13 @@ becomes structurally true for Silver, not just Gold. It reads Silver Parquet
 objects not yet projected (tracked via a `projected_at` marker, analogous to
 `schema_migrations`), sentence-segments each document's `text` with a light
 rule-based splitter (Vietnamese sentence-final punctuation + abbreviation
-guards — not the real UD-parse pipeline, which is P2's job), and inserts.
-Rebuilding Postgres from scratch: drop `documents`/`sentences`, reset the
-projection marker, rerun the projector over all of Silver — no re-curation
-needed.
+guards — not the real UD-parse pipeline, which is P2's job), and inserts —
+populating `documents.bronze_uri` from the Silver record's carried-forward
+field, `documents.source_id` by looking up the `sources` row by name, and
+`documents.lang`/`register`/`quality_score` directly from Silver's own
+fields. Rebuilding Postgres from scratch: drop `documents`/`sentences`,
+reset the projection marker, rerun the projector over all of Silver — no
+re-curation needed.
 
 ## Fixture Corpus Rename
 
