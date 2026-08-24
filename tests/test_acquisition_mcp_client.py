@@ -8,11 +8,9 @@ offline suite must never depend on.
 Regression tests for empirically-verified shapes added after Step 6 live
 verification (2026-08-25) confirm parsing handles double JSON encoding and
 key normalization."""
-import asyncio
 import json
 import pytest
-import respx
-from unittest.mock import AsyncMock, patch, MagicMock
+from unittest.mock import AsyncMock, patch
 
 from vietnlp.acquisition.mcp_client import MCPError, web_read, web_search
 
@@ -70,17 +68,21 @@ def test_web_search_uses_search_query_parameter(monkeypatch):
     """Verified 2026-08-25: z.ai uses 'search_query' parameter, not 'query'."""
     monkeypatch.setenv("ZAI_API_KEY", "test-key")
 
-    sample_result = json.dumps([])
-    mock_texts = [f'"{sample_result}"']
+    raw_data = []
+    json_string = json.dumps(raw_data)
+    mock_texts = [json.dumps(json_string)]
 
-    with patch('vietnlp.acquisition.mcp_client._call_tool', new_callable=AsyncMock, return_value=mock_texts):
+    with patch('vietnlp.acquisition.mcp_client._call_tool', new_callable=AsyncMock, return_value=mock_texts) as mock_call:
         web_search("test query", count=5)
 
         # Verify that _call_tool was called with 'search_query' parameter
-        # Note: _call_tool is async, so checking its call_args after await
-        # Since web_search calls asyncio.run(_call_tool(...)), we can't directly
-        # verify the call. Instead, we test this through successful execution
-        # with the expected parameters being passed (which we did above).
+        mock_call.assert_called_once()
+        call_args = mock_call.call_args
+        # call_args is a tuple of (args, kwargs)
+        # args[0] = URL, args[1] = tool_name, args[2] = arguments dict
+        assert call_args[0][2]["search_query"] == "test query"
+        assert call_args[0][2]["count"] == 5
+        assert "query" not in call_args[0][2], "Parameter should be 'search_query', not 'query'"
 
 
 def test_web_search_normalizes_link_to_url(monkeypatch):

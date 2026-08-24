@@ -35,20 +35,20 @@ def _api_key() -> str:
 
 async def _call_tool(url: str, tool_name: str, arguments: dict) -> list[str]:
     headers = {"Authorization": f"Bearer {_api_key()}"}
-    http_client = httpx.AsyncClient(headers=headers)
-    async with streamable_http_client(url, http_client=http_client) as (read, write):
-        async with ClientSession(read, write) as session:
-            await session.initialize()
-            result = await session.call_tool(tool_name, arguments)
-            if result.is_error:
-                raise MCPError(f"{tool_name} returned an error: {result.content}")
-            # MCP tool results are a list of content blocks; text-typed
-            # blocks carry `.text` (per the MCP spec). Non-text block types
-            # are not expected from either of these two tools.
-            texts = [block.text for block in result.content if hasattr(block, "text")]
-            if not texts:
-                raise MCPError(f"{tool_name} returned no text content: {result.content!r}")
-            return texts
+    async with httpx.AsyncClient(headers=headers) as http_client:
+        async with streamable_http_client(url, http_client=http_client) as (read, write):
+            async with ClientSession(read, write) as session:
+                await session.initialize()
+                result = await session.call_tool(tool_name, arguments)
+                if result.is_error:
+                    raise MCPError(f"{tool_name} returned an error: {result.content}")
+                # MCP tool results are a list of content blocks; text-typed
+                # blocks carry `.text` (per the MCP spec). Non-text block types
+                # are not expected from either of these two tools.
+                texts = [block.text for block in result.content if hasattr(block, "text")]
+                if not texts:
+                    raise MCPError(f"{tool_name} returned no text content: {result.content!r}")
+                return texts
 
 
 def web_search(query: str, count: int = 10) -> list[dict]:
@@ -80,9 +80,21 @@ def web_search(query: str, count: int = 10) -> list[dict]:
                 f"Raw text (first 500 chars): {combined[:500]!r}"
             ) from exc
 
-    results = parsed if isinstance(parsed, list) else parsed.get("results", [])
+    # Ensure we have a list; allow dict with "results" key fallback
+    if isinstance(parsed, list):
+        results = parsed
+    elif isinstance(parsed, dict):
+        results = parsed.get("results", [])
+    else:
+        raise MCPError(
+            f"web_search_prime result was neither list nor dict: {type(parsed).__name__}. "
+            f"Parsed value (first 200 chars): {str(parsed)[:200]!r}"
+        )
 
-    # Normalize keys: 'link' -> 'url' for API contract
+    # Normalize keys: 'link' -> 'url' for API contract.
+    # Non-dict entries are silently dropped (per CLAUDE.md rule 4, every failure should
+    # go to dead-letter, but here we're permissive: if the server occasionally mixes
+    # non-dicts with dicts, we keep the dicts and discard malformed results).
     normalized = []
     for result in results:
         if isinstance(result, dict):
@@ -95,6 +107,12 @@ def web_search(query: str, count: int = 10) -> list[dict]:
 
 
 def web_read(url: str) -> str:
-    """Extract clean text from one URL."""
+    """Extract clean text from one URL.
+
+    Empirically verified 2026-08-25 against live z.ai server:
+    - Tool is 'webReader' (exact name, camelCase)
+    - Parameter is 'url' (as expected)
+    - Returns text blocks that can be joined directly (no JSON encoding/normalization needed)
+    """
     texts = asyncio.run(_call_tool(_READER_URL, "webReader", {"url": url}))
     return "\n".join(texts)
