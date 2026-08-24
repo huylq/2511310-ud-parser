@@ -106,7 +106,7 @@ def test_apply_creates_every_table_from_0001(live_db):
 def test_apply_is_idempotent(live_db):
     first = apply(live_db)
     second = apply(live_db)
-    assert first == ["0001"]
+    assert first == ["0001", "0002"]
     assert second == [], "re-applying must be a no-op"
 
 
@@ -114,6 +114,7 @@ def test_status_reports_applied_migrations(live_db):
     apply(live_db)
     rows = status(live_db)
     assert ("0001", "core_schema", True) in rows
+    assert ("0002", "source_rate_limit", True) in rows
 
 
 def test_apply_keeps_earlier_migrations_when_a_later_one_fails(tmp_path, live_db):
@@ -139,3 +140,16 @@ def test_apply_keeps_earlier_migrations_when_a_later_one_fails(tmp_path, live_db
             ).fetchall()
         }
     assert "ok_table" in tables, "0001's DDL must have actually committed, not just its bookkeeping row"
+
+
+def test_apply_adds_rate_limit_seconds_column(live_db):
+    apply(live_db)
+    with psycopg.connect(live_db) as conn:
+        cols = {
+            r[0]
+            for r in conn.execute(
+                "SELECT column_name FROM information_schema.columns "
+                "WHERE table_schema = current_schema() AND table_name = 'sources'"
+            ).fetchall()
+        }
+    assert "rate_limit_seconds" in cols
