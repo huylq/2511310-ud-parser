@@ -57,7 +57,7 @@ TEENCODE = [
     "Mua to v troi oi, ket xe cmnr.",
 ]
 
-KHONG_DAU = [
+NON_DIACRITIC = [
     "Bo Giao duc va Dao tao cong bo lich thi tot nghiep trung hoc pho thong nam nay.",
     "Ngan hang Nha nuoc giu nguyen lai suat dieu hanh trong quy nay.",
     "Hom nay troi dep qua, di ca phe khong?",
@@ -71,11 +71,11 @@ KHONG_DAU = [
 ]
 
 _REGISTER_POOLS = {
-    "formal": FORMAL, "informal": INFORMAL, "teencode": TEENCODE, "khong_dau": KHONG_DAU,
+    "formal": FORMAL, "informal": INFORMAL, "teencode": TEENCODE, "non_diacritic": NON_DIACRITIC,
 }
 _SOURCE_ID = {
     "formal": "fixture-formal", "informal": "fixture-informal",
-    "teencode": "fixture-teencode", "khong_dau": "fixture-khongdau",
+    "teencode": "fixture-teencode", "non_diacritic": "fixture-nondiacritic",
 }
 
 

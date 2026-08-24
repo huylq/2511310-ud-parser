@@ -64,7 +64,7 @@ class Agent:
 _UPOS = frozenset(
     "ADJ ADP ADV AUX CCONJ DET INTJ NOUN NUM PART PRON PROPN PUNCT SCONJ SYM VERB X".split()
 )
-_REGISTERS = frozenset({"formal", "informal", "teencode", "khong_dau", "mixed"})
+_REGISTERS = frozenset({"formal", "informal", "teencode", "non_diacritic", "mixed"})
 _NER_LABELS = frozenset({"PER", "LOC", "ORG", "MISC"})
 
 
@@ -218,7 +218,7 @@ AGENTS: dict[str, Agent] = {
             description="Labels register. Feeds the formal/informal balance metric.",
             system_prompt=(
                 f"{_VI}\n\nClassify the register as exactly one of: formal, informal, "
-                "teencode, khong_dau (Vietnamese written without diacritics), mixed. "
+                "teencode, non_diacritic (Vietnamese written without diacritics), mixed. "
                 'Reply {"register": "<label>"}.'
             ),
             validate=_validate_register,

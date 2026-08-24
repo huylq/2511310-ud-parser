@@ -35,14 +35,14 @@ def test_content_hashes_are_unique():
 
 
 def test_registers_are_balanced_across_four_categories():
-    """CLAUDE.md flags informal/teencode/khong_dau as the registers the corpus
-    is otherwise short of; the fixture exercises all four, evenly, so later
-    register-balance tests (curation, P1) have a known-good baseline."""
+    """CLAUDE.md flags informal/teencode/non_diacritic as the registers the
+    corpus is otherwise short of; the fixture exercises all four, evenly, so
+    later register-balance tests (curation, P1) have a known-good baseline."""
     records = _load()
     counts: dict[str, int] = {}
     for r in records:
         counts[r["register"]] = counts.get(r["register"], 0) + 1
-    assert set(counts) == {"formal", "informal", "teencode", "khong_dau"}
+    assert set(counts) == {"formal", "informal", "teencode", "non_diacritic"}
     assert all(count == 25 for count in counts.values()), counts
 
 

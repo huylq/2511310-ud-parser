@@ -15,7 +15,7 @@ import hashlib
 import pandas as pd
 import pandera as pa
 
-_REGISTER_VALUES = {"formal", "informal", "teencode", "khong_dau", "mixed"}
+_REGISTER_VALUES = {"formal", "informal", "teencode", "non_diacritic", "mixed"}
 _ROBOTS_VALUES = {"allowed", "disallowed", "no_robots"}
 
 FIXTURE_SCHEMA = pa.DataFrameSchema(

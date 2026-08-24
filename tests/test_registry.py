@@ -41,9 +41,9 @@ def test_register_rejects_invented_label():
         get("register-classifier").validate({"register": "academic"}, "x")
 
 
-def test_register_accepts_khong_dau():
+def test_register_accepts_non_diacritic():
     """Non-diacritic Vietnamese is a register we track, not noise to discard."""
-    assert get("register-classifier").validate({"register": "khong_dau"}, "x")["register"] == "khong_dau"
+    assert get("register-classifier").validate({"register": "non_diacritic"}, "x")["register"] == "non_diacritic"
 
 
 # ---- POS tagger --------------------------------------------------------------
