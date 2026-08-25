@@ -104,3 +104,17 @@ def test_refuses_a_source_with_mismatched_tier_arguments(monkeypatch):
     )
     with pytest.raises(ValueError, match="query"):
         acquisition_flow("test-source", "postgresql://fake", _FakeBronzeStore())
+
+
+def test_refuses_the_social_tier(monkeypatch):
+    """P6 guardrail (CLAUDE.md rule 6): the `social` tier value exists in
+    the schema's CHECK constraint but no loader in this plan handles it --
+    acquisition_flow must never dispatch it, only raise. This is the one
+    automated regression test protecting that permanently-off catch-all
+    from ever silently gaining a dispatch path."""
+    monkeypatch.setattr(
+        "vietnlp.platform.flows.acquisition_flow.get_source",
+        lambda database_url, name: _source(tier="social"),
+    )
+    with pytest.raises(SourceError, match="social is P6"):
+        acquisition_flow("test-source", "postgresql://fake", _FakeBronzeStore())
