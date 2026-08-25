@@ -129,13 +129,14 @@ register_source(
 "
 ```
 
-Then run it:
+Then run it (`news_gov_wiki` needs `--query`; `public_corpus` needs
+`--jsonl-path`):
 
 ```
-make run-acquisition HOST=_59 REMOTE=vietnlp SOURCE=example-news-source
+make run-acquisition HOST=_59 REMOTE=vietnlp SOURCE=example-news-source ARGS="--query 'tin tuc'"
+make run-acquisition HOST=_59 REMOTE=vietnlp SOURCE=example-corpus-source ARGS="--jsonl-path /data/corpus.jsonl"
 ```
 
-`public_corpus` and `forum_qa_blog` sources need `--jsonl-path`/seed-URL
-arguments the one-liner CLI above doesn't yet expose -- call
-`acquisition_flow` directly from a Python one-liner for those tiers until a
-richer CLI exists.
+`forum_qa_blog` sources need seed URLs, which the CLI above doesn't yet
+expose -- call `acquisition_flow` directly from a Python one-liner for
+that tier until a richer CLI exists.

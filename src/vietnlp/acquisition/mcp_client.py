@@ -12,10 +12,9 @@ import asyncio
 import json
 import os
 
-import httpx
-
 from mcp import ClientSession
 from mcp.client.streamable_http import streamable_http_client
+from mcp.shared._httpx_utils import create_mcp_http_client
 
 _SEARCH_URL = "https://api.z.ai/api/mcp/web_search_prime/mcp"
 _READER_URL = "https://api.z.ai/api/mcp/web_reader/mcp"
@@ -35,7 +34,7 @@ def _api_key() -> str:
 
 async def _call_tool(url: str, tool_name: str, arguments: dict) -> list[str]:
     headers = {"Authorization": f"Bearer {_api_key()}"}
-    async with httpx.AsyncClient(headers=headers) as http_client:
+    async with create_mcp_http_client(headers=headers) as http_client:
         async with streamable_http_client(url, http_client=http_client) as (read, write):
             async with ClientSession(read, write) as session:
                 await session.initialize()

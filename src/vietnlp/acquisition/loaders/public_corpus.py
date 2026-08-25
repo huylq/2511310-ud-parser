@@ -47,7 +47,7 @@ def load_jsonl_corpus(
                 "url": raw.get("url") or f"corpus://{source.name}",
                 "fetched_at": datetime.now(timezone.utc),
                 "http_status": 200,
-                "robots_decision": "not_applicable",
+                "robots_decision": "no_robots",
                 "content_type": "text/plain; charset=utf-8",
                 "raw_payload": text.encode("utf-8"),
                 "license": raw.get("license") or source.license or "unknown",

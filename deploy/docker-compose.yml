@@ -79,7 +79,8 @@ services:
     image: vietnlp-agents:0.1.0
     environment:
       DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:?set DEEPSEEK_API_KEY in .env}
-      ZAI_API_KEY: ${ZAI_API_KEY:?set ZAI_API_KEY in .env}
+      ZAI_API_KEY: ${ZAI_API_KEY:-}
+      VIETNLP_AUTHOR_HASH_SALT: ${VIETNLP_AUTHOR_HASH_SALT:-}
       HF_TOKEN: ${HF_TOKEN:-}
       HF_HOME: /data/hf
       VIETNLP_FLOW_CAP_USD: ${VIETNLP_FLOW_CAP_USD:-5}

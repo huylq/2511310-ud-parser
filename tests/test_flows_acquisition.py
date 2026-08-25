@@ -47,6 +47,36 @@ def test_dispatches_public_corpus_tier_to_the_jsonl_loader(monkeypatch, tmp_path
     assert called["path"] == jsonl
 
 
+def test_forwards_dead_letter_sink_to_the_dispatched_loader(monkeypatch, tmp_path):
+    monkeypatch.setattr(
+        "vietnlp.platform.flows.acquisition_flow.get_source",
+        lambda database_url, name: _source(tier="public_corpus"),
+    )
+    received = {}
+
+    def fake_loader(path, source, bronze, dead_letter_sink=None):
+        received["sink"] = dead_letter_sink
+        return {"loaded": 0, "dead_lettered": 0}
+
+    monkeypatch.setattr("vietnlp.platform.flows.acquisition_flow.load_jsonl_corpus", fake_loader)
+
+    jsonl = tmp_path / "corpus.jsonl"
+    jsonl.write_text("", encoding="utf-8")
+    sink_calls = []
+    acquisition_flow(
+        "test-source",
+        "postgresql://fake",
+        _FakeBronzeStore(),
+        jsonl_path=jsonl,
+        dead_letter_sink=sink_calls.append,
+    )
+    # NOTE: `==`, not `is` -- bound methods are not cached by CPython, so
+    # `sink_calls.append is sink_calls.append` is False even though the two
+    # bound-method objects compare equal (same __self__, same __func__).
+    # `==` is the correct check that the *same* sink reached the loader.
+    assert received["sink"] == sink_calls.append
+
+
 def test_dispatches_news_gov_wiki_tier_to_web_discovery(monkeypatch):
     monkeypatch.setattr(
         "vietnlp.platform.flows.acquisition_flow.get_source",
