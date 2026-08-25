@@ -109,3 +109,33 @@ create_dataset('http://fuseki:3030', 'vietnlp', auth=('admin', os.environ['FUSEK
 ```
 
 `create_dataset` is idempotent -- safe to re-run.
+
+## P1a: registering and running an acquisition source
+
+Before any source can be acquired, register it (corpus-scout should have
+already vetted it -- robots.txt, license, register fit):
+
+```
+docker compose run --rm --entrypoint python agents -c "
+from vietnlp.acquisition.sources import register_source
+register_source(
+    'postgresql://vietnlp:PASSWORD@postgres:5432/vietnlp',
+    name='example-news-source',
+    tier='news_gov_wiki',
+    base_url='https://news.example.vn',
+    license='cc-by',
+    robots_policy='allowed',
+)
+"
+```
+
+Then run it:
+
+```
+make run-acquisition HOST=_59 REMOTE=vietnlp SOURCE=example-news-source
+```
+
+`public_corpus` and `forum_qa_blog` sources need `--jsonl-path`/seed-URL
+arguments the one-liner CLI above doesn't yet expose -- call
+`acquisition_flow` directly from a Python one-liner for those tiers until a
+richer CLI exists.

@@ -47,3 +47,28 @@ def acquisition_flow(
         return crawl_source(source, seed_urls, bronze)
 
     raise SourceError(f"tier {source.tier!r} has no acquisition path (social is P6, permanently off)")
+
+
+def main(argv: list[str] | None = None) -> int:
+    import os
+    import sys
+
+    from vietnlp.platform.db.migrate import DEFAULT_DATABASE_URL
+    from vietnlp.platform.storage.bronze import BronzeStore
+
+    argv = sys.argv[1:] if argv is None else argv
+    if not argv:
+        print("usage: python -m vietnlp.platform.flows.acquisition_flow SOURCE_NAME [--query TEXT]", file=sys.stderr)
+        return 2
+    source_name = argv[0]
+    query = argv[argv.index("--query") + 1] if "--query" in argv else None
+
+    database_url = os.getenv("DATABASE_URL", DEFAULT_DATABASE_URL)
+    bronze = BronzeStore.from_env()
+    result = acquisition_flow(source_name, database_url, bronze, query=query)
+    print(result)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -18,6 +18,10 @@ up: ## start the stack from the already-built image (no rebuild, no test run)
 migrate: ## apply pending Postgres migrations on $(HOST)
 	ssh $(HOST) "cd $(REMOTE)/deploy && docker compose run --rm --entrypoint python agents -m vietnlp.platform.db.migrate up"
 
+.PHONY: run-acquisition
+run-acquisition: ## run acquisition_flow for one source ($(HOST)); SOURCE=name required
+	ssh $(HOST) "cd $(REMOTE)/deploy && docker compose run --rm --entrypoint python agents -m vietnlp.platform.flows.acquisition_flow $(SOURCE)"
+
 .PHONY: test-live
 test-live: ## full test suite against the live stack (exercises the integration tests that self-skip under `make test`)
 	ssh $(HOST) "cd $(REMOTE)/deploy && docker compose run --rm --entrypoint pytest agents /app/tests -q"
