@@ -1,0 +1,69 @@
+# known_compounds.txt -- Project 1 (Word Segmentation & POS Tagging) fixture.
+#
+# One multi-syllable Vietnamese compound WORD per line, syllables separated
+# by a single space exactly as they appear in running text. A correct
+# segmenter must emit each of these as ONE token (interfaces.linguistics
+# .Token.form spans all its syllables), never split at the space -- this is
+# the "syllable != word" trap CLAUDE.md and the plan's I/O contract table
+# both flag: Vietnamese orthography is syllable-segmented, so whitespace is
+# never a reliable word boundary on its own.
+#
+# Hand-picked and linguist-reviewed, not auto-mined; most (47/48) also occur
+# verbatim in tests/fixtures/corpus/fixture_corpus.jsonl, so a segmenter's
+# golden-file test can check these directly against the fixture corpus, not
+# just against this list in isolation. Blank lines and lines starting with
+# "#" are comments -- skip them when loading.
+#
+# Excluded on purpose: classifier + noun pairs (e.g. "con mèo", "bộ phim")
+# and other function-word + content-word pairs. Those ARE two separate UD
+# tokens (the classifier is its own `clf`-tagged word) -- listing them here
+# would contradict Project 2's own classifier-attachment convention.
+
+sinh viên
+quốc gia
+giáo dục
+đào tạo
+chính phủ
+khí hậu
+biến đổi
+công nghệ
+phần mềm
+bệnh viện
+sức khỏe
+cao tuổi
+giao thông
+vận tải
+tuyển sinh
+đại học
+trung học
+phổ thông
+tốt nghiệp
+ngân hàng
+nhà nước
+lãi suất
+điều hành
+bóng đá
+chiến thắng
+giao hữu
+thành phố
+xe buýt
+phục vụ
+người dân
+nhà khoa học
+nghiên cứu
+đồng bằng
+nghị định
+thi hành
+đất đai
+sửa đổi
+tập đoàn
+dịch thuật
+trung ương
+miễn phí
+kết quả
+kế hoạch
+sửa chữa
+cầu đường
+cà phê
+cuối tuần
+bài tập

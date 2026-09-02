@@ -19,7 +19,20 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0", "respx>=0.21"]
+dev = [
+    "pytest>=8.0",
+    "respx>=0.21",
+    # rdflib+owlrl: parse and OWL-RL-reason over the Project 5 seed fixture
+    # (tests/fixtures/corpus/seed_upper_ontology.ttl) so its own contract
+    # test can assert it is genuinely reasoner-consistent, not just
+    # well-formed Turtle. Project 5's own future implementation picks its
+    # own ontology tooling independently -- this pin is scoped to the
+    # platform's fixture contract test only.
+    "rdflib>=7.0",
+    "owlrl>=7.0",
+    # pyyaml: student-projects/_gate/gate.py reads each project's gate.yaml.
+    "pyyaml>=6.0",
+]
 
 [project.scripts]
 vietnlp-agents = "vietnlp.platform.agents.cli:main"

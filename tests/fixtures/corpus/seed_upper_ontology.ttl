@@ -1,0 +1,101 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vnlp: <https://vietnlp.example/ontology#> .
+
+# Project 5 (Ontology Engineering) seed fixture.
+#
+# NOT the final ontology. The 8 upper classes below are frozen -- every
+# student domain class must attach under one of them. The ~18 domain
+# classes are drawn from the four registers in
+# tests/fixtures/corpus/fixture_corpus.jsonl and exist to give Project 5
+# something non-trivial to extend, align to external KBs, and reason over
+# from week 1.
+#
+# Two modelling decisions are deliberately pre-made here, per
+# .claude/agents/ontology-engineer.md, so a student inherits the correct
+# pattern rather than reinventing it:
+#   1. Kinship terms (anh/chi/em) are a PROPERTY on Person
+#      (vnlp:kinshipRole), never sibling classes of Person.
+#   2. Administrative-unit alignment to Wikidata uses skos:closeMatch,
+#      never owl:sameAs (see vnlp:AdministrativeRegion below).
+
+<https://vietnlp.example/ontology>
+    a owl:Ontology ;
+    rdfs:label "VietNLP seed upper + domain ontology (Project 5 fixture)"@en .
+
+# ---- Upper classes (8), pairwise disjoint except for the shared Entity root
+# and TemporalEntity (deliberately not disjoint from the others -- an Event
+# already carries temporal extent, so TemporalEntity is a mixin, not a
+# sibling category). Disjointness gives a reasoner something to actually
+# contradict if a student mis-types an individual into two top classes at
+# once, which is the golden-file "reasoner reports CONSISTENT" invariant's
+# whole point: it must stay consistent when used correctly, and a
+# deliberately broken copy (a student exercise, not this file) should not.
+vnlp:Entity a owl:Class ; rdfs:label "Entity"@en .
+vnlp:Person a owl:Class ; rdfs:subClassOf vnlp:Entity ; rdfs:label "Person"@en .
+vnlp:Organization a owl:Class ; rdfs:subClassOf vnlp:Entity ; rdfs:label "Organization"@en .
+vnlp:Place a owl:Class ; rdfs:subClassOf vnlp:Entity ; rdfs:label "Place"@en .
+vnlp:Event a owl:Class ; rdfs:subClassOf vnlp:Entity ; rdfs:label "Event"@en .
+vnlp:Artifact a owl:Class ; rdfs:subClassOf vnlp:Entity ; rdfs:label "Artifact"@en .
+vnlp:Concept a owl:Class ; rdfs:subClassOf vnlp:Entity ; rdfs:label "Concept"@en .
+vnlp:TemporalEntity a owl:Class ; rdfs:subClassOf vnlp:Entity ; rdfs:label "Temporal entity"@en .
+
+vnlp:Person owl:disjointWith vnlp:Organization, vnlp:Place, vnlp:Event, vnlp:Artifact, vnlp:Concept .
+vnlp:Organization owl:disjointWith vnlp:Place, vnlp:Event, vnlp:Artifact, vnlp:Concept .
+vnlp:Place owl:disjointWith vnlp:Event, vnlp:Artifact, vnlp:Concept .
+vnlp:Event owl:disjointWith vnlp:Artifact, vnlp:Concept .
+vnlp:Artifact owl:disjointWith vnlp:Concept .
+
+# ---- Domain classes (18) ----
+vnlp:GovernmentBody a owl:Class ; rdfs:subClassOf vnlp:Organization ; rdfs:label "Government body"@en .
+vnlp:EducationalInstitution a owl:Class ; rdfs:subClassOf vnlp:Organization ; rdfs:label "Educational institution"@en .
+vnlp:Bank a owl:Class ; rdfs:subClassOf vnlp:Organization ; rdfs:label "Bank"@en .
+vnlp:Hospital a owl:Class ; rdfs:subClassOf vnlp:Organization ; rdfs:label "Hospital"@en .
+vnlp:SportsTeam a owl:Class ; rdfs:subClassOf vnlp:Organization ; rdfs:label "Sports team"@en .
+vnlp:TechCompany a owl:Class ; rdfs:subClassOf vnlp:Organization ; rdfs:label "Technology company"@en .
+
+vnlp:AdministrativeRegion a owl:Class ; rdfs:subClassOf vnlp:Place ; rdfs:label "Administrative region"@en .
+vnlp:City a owl:Class ; rdfs:subClassOf vnlp:AdministrativeRegion ; rdfs:label "City"@en .
+
+vnlp:SportsMatch a owl:Class ; rdfs:subClassOf vnlp:Event ; rdfs:label "Sports match"@en .
+vnlp:Graduation a owl:Class ; rdfs:subClassOf vnlp:Event ; rdfs:label "Graduation"@en .
+vnlp:PolicyAnnouncement a owl:Class ; rdfs:subClassOf vnlp:Event ; rdfs:label "Policy announcement"@en .
+
+vnlp:ResearchStudy a owl:Class ; rdfs:subClassOf vnlp:Artifact ; rdfs:label "Research study"@en .
+vnlp:Software a owl:Class ; rdfs:subClassOf vnlp:Artifact ; rdfs:label "Software"@en .
+vnlp:Regulation a owl:Class ; rdfs:subClassOf vnlp:Artifact ; rdfs:label "Regulation"@en .
+
+vnlp:InterestRate a owl:Class ; rdfs:subClassOf vnlp:Concept ; rdfs:label "Interest rate"@en .
+vnlp:Climate a owl:Class ; rdfs:subClassOf vnlp:Concept ; rdfs:label "Climate"@en .
+vnlp:HealthCondition a owl:Class ; rdfs:subClassOf vnlp:Concept ; rdfs:label "Health condition"@en .
+vnlp:TrafficCondition a owl:Class ; rdfs:subClassOf vnlp:Concept ; rdfs:label "Traffic condition"@en .
+
+# ---- Kinship terms as a property on Person, not sibling classes (decision 1) ----
+vnlp:kinshipRole a owl:DatatypeProperty ;
+    rdfs:domain vnlp:Person ;
+    rdfs:range xsd:string ;
+    rdfs:comment "e.g. \"anh\", \"chi\", \"em\" -- a role relative to another Person, never a subclass of Person."@en ;
+    rdfs:label "kinship role"@en .
+
+vnlp:kinshipRelationTo a owl:ObjectProperty ;
+    rdfs:domain vnlp:Person ;
+    rdfs:range vnlp:Person ;
+    rdfs:label "kinship relation to"@en .
+
+# ---- Two properties giving Project 6 (semantics) real predicate type
+# signatures to type-check logical-form arguments against ----
+vnlp:locatedIn a owl:ObjectProperty ;
+    rdfs:domain vnlp:Entity ;
+    rdfs:range vnlp:Place ;
+    rdfs:label "located in"@en .
+
+vnlp:affiliatedWith a owl:ObjectProperty ;
+    rdfs:domain vnlp:Person ;
+    rdfs:range vnlp:Organization ;
+    rdfs:label "affiliated with"@en .
+
+# ---- External alignment: skos:closeMatch, never owl:sameAs (decision 2) ----
+vnlp:AdministrativeRegion skos:closeMatch <http://www.wikidata.org/entity/Q1854> .

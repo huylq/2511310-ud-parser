@@ -67,6 +67,15 @@ _UPOS = frozenset(
 _REGISTERS = frozenset({"formal", "informal", "teencode", "non_diacritic", "mixed"})
 _NER_LABELS = frozenset({"PER", "LOC", "ORG", "MISC"})
 
+# Public aliases: src/vietnlp/interfaces/ (the frozen cross-project contracts
+# used by the student-projects curriculum, see student-projects/README.md)
+# imports these rather than defining its own copy, so the tagset/label set
+# cannot drift between what DeepSeek output is validated against here and
+# what a student's own annotation is validated against there.
+UPOS_TAGSET = _UPOS
+REGISTERS = _REGISTERS
+NER_LABELS = _NER_LABELS
+
 
 def _validate_quality(parsed: Any, _source: str) -> dict:
     if not isinstance(parsed, dict) or "score" not in parsed:

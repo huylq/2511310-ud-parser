@@ -1,0 +1,277 @@
+# sent_id = gold-f01
+# text = Bộ Giáo dục và Đào tạo công bố lịch thi tốt nghiệp trung học phổ thông năm nay.
+# note = Coordination scope: system B attaches 'Đào_tạo' as a second conjunct directly under 'Bộ' rather than under 'Giáo_dục' -- a real ambiguity in whether 'A và B' modifies the head noun as two parallel conjuncts of one flat chain, or as a nested coordination.
+1	Bộ	_	PROPN	_	_	5	nsubj	_	_
+2	Giáo_dục	_	PROPN	_	_	1	flat	_	_
+3	và	_	CCONJ	_	_	4	cc	_	_
+4	Đào_tạo	_	PROPN	_	_	1	conj	_	_
+5	công_bố	_	VERB	_	_	0	root	_	_
+6	lịch	_	NOUN	_	_	5	obj	_	_
+7	thi	_	NOUN	_	_	6	compound	_	_
+8	tốt_nghiệp	_	NOUN	_	_	7	compound	_	_
+9	trung_học	_	NOUN	_	_	8	nmod	_	_
+10	phổ_thông	_	ADJ	_	_	9	amod	_	_
+11	năm	_	NOUN	_	_	5	obl	_	_
+12	nay	_	DET	_	_	11	det	_	_
+13	.	_	PUNCT	_	_	5	punct	_	_
+
+# sent_id = gold-f02
+# text = Ngân hàng Nhà nước giữ nguyên lãi suất điều hành trong quý này.
+1	Ngân_hàng	_	PROPN	_	_	3	nsubj	_	_
+2	Nhà_nước	_	PROPN	_	_	1	flat	_	_
+3	giữ_nguyên	_	VERB	_	_	0	root	_	_
+4	lãi_suất	_	NOUN	_	_	3	obj	_	_
+5	điều_hành	_	NOUN	_	_	4	compound	_	_
+6	trong	_	ADP	_	_	7	case	_	_
+7	quý	_	NOUN	_	_	3	obl	_	_
+8	này	_	DET	_	_	7	det	_	_
+9	.	_	PUNCT	_	_	3	punct	_	_
+
+# sent_id = gold-f03
+# text = Đội tuyển bóng đá quốc gia giành chiến thắng trong trận đấu giao hữu tối qua.
+# note = Compound-attachment ambiguity: does 'quốc gia' (national) modify 'bóng đá' (-> 'national football' as a sport) or 'đội tuyển' (-> 'national team')? System B attaches it to the closer noun 'bóng_đá'.
+1	Đội_tuyển	_	NOUN	_	_	4	nsubj	_	_
+2	bóng_đá	_	NOUN	_	_	1	compound	_	_
+3	quốc_gia	_	NOUN	_	_	2	compound	_	_
+4	giành	_	VERB	_	_	0	root	_	_
+5	chiến_thắng	_	NOUN	_	_	4	obj	_	_
+6	trong	_	ADP	_	_	7	case	_	_
+7	trận_đấu	_	NOUN	_	_	4	obl	_	_
+8	giao_hữu	_	NOUN	_	_	7	compound	_	_
+9	tối	_	NOUN	_	_	7	nmod	_	_
+10	qua	_	ADJ	_	_	9	amod	_	_
+11	.	_	PUNCT	_	_	4	punct	_	_
+
+# sent_id = gold-f04
+# text = Thành phố Hà Nội triển khai thêm tuyến xe buýt điện phục vụ người dân.
+1	Thành_phố	_	NOUN	_	_	3	nsubj	_	_
+2	Hà_Nội	_	PROPN	_	_	1	flat	_	_
+3	triển_khai	_	VERB	_	_	0	root	_	_
+4	thêm	_	ADV	_	_	3	advmod	_	_
+5	tuyến	_	NOUN	_	_	3	obj	_	_
+6	xe_buýt	_	NOUN	_	_	5	compound	_	_
+7	điện	_	ADJ	_	_	6	amod	_	_
+8	phục_vụ	_	VERB	_	_	5	acl	_	_
+9	người_dân	_	NOUN	_	_	8	obj	_	_
+10	.	_	PUNCT	_	_	3	punct	_	_
+
+# sent_id = gold-f05
+# text = Các nhà khoa học công bố nghiên cứu mới về biến đổi khí hậu tại đồng bằng sông Cửu Long.
+# note = PP-attachment ambiguity: does 'tại đồng bằng sông Cửu Long' locate the climate change phenomenon itself, or the act of announcing it? System B attaches the location low, inside the object NP, instead of to the verb.
+1	Các	_	DET	_	_	2	det	_	_
+2	nhà_khoa_học	_	NOUN	_	_	3	nsubj	_	_
+3	công_bố	_	VERB	_	_	0	root	_	_
+4	nghiên_cứu	_	NOUN	_	_	3	obj	_	_
+5	mới	_	ADJ	_	_	4	amod	_	_
+6	về	_	ADP	_	_	7	case	_	_
+7	biến_đổi	_	NOUN	_	_	4	nmod	_	_
+8	khí_hậu	_	NOUN	_	_	7	compound	_	_
+9	tại	_	ADP	_	_	10	case	_	_
+10	đồng_bằng	_	NOUN	_	_	8	obl	_	_
+11	sông	_	NOUN	_	_	10	compound	_	_
+12	Cửu_Long	_	PROPN	_	_	11	flat	_	_
+13	.	_	PUNCT	_	_	3	punct	_	_
+
+# sent_id = gold-f06
+# text = Chính phủ ban hành nghị định hướng dẫn thi hành luật đất đai sửa đổi.
+1	Chính_phủ	_	NOUN	_	_	2	nsubj	_	_
+2	ban_hành	_	VERB	_	_	0	root	_	_
+3	nghị_định	_	NOUN	_	_	2	obj	_	_
+4	hướng_dẫn	_	VERB	_	_	3	acl	_	_
+5	thi_hành	_	NOUN	_	_	4	obj	_	_
+6	luật	_	NOUN	_	_	5	nmod	_	_
+7	đất_đai	_	NOUN	_	_	6	compound	_	_
+8	sửa_đổi	_	VERB	_	_	6	acl	_	_
+9	.	_	PUNCT	_	_	2	punct	_	_
+
+# sent_id = gold-f07
+# text = Tập đoàn công nghệ trong nước ra mắt sản phẩm phần mềm dịch thuật tiếng Việt.
+# note = Deprel disagreement on a bare proper-noun-as-modifier: 'tiếng Việt' (Vietnamese language) analyzed as a flat multiword name in gold, but as an ordinary adjectival modifier by system B.
+1	Tập_đoàn	_	NOUN	_	_	5	nsubj	_	_
+2	công_nghệ	_	NOUN	_	_	1	compound	_	_
+3	trong	_	ADP	_	_	4	case	_	_
+4	nước	_	NOUN	_	_	1	nmod	_	_
+5	ra_mắt	_	VERB	_	_	0	root	_	_
+6	sản_phẩm	_	NOUN	_	_	5	obj	_	_
+7	phần_mềm	_	NOUN	_	_	6	compound	_	_
+8	dịch_thuật	_	NOUN	_	_	7	compound	_	_
+9	tiếng	_	NOUN	_	_	8	nmod	_	_
+10	Việt	_	PROPN	_	_	9	amod	_	_
+11	.	_	PUNCT	_	_	5	punct	_	_
+
+# sent_id = gold-f08
+# text = Bệnh viện trung ương tổ chức chương trình khám sức khỏe miễn phí cho người cao tuổi.
+1	Bệnh_viện	_	NOUN	_	_	3	nsubj	_	_
+2	trung_ương	_	ADJ	_	_	1	amod	_	_
+3	tổ_chức	_	VERB	_	_	0	root	_	_
+4	chương_trình	_	NOUN	_	_	3	obj	_	_
+5	khám	_	VERB	_	_	4	acl	_	_
+6	sức_khỏe	_	NOUN	_	_	5	obj	_	_
+7	miễn_phí	_	ADJ	_	_	4	amod	_	_
+8	cho	_	ADP	_	_	9	case	_	_
+9	người	_	NOUN	_	_	3	obl	_	_
+10	cao_tuổi	_	ADJ	_	_	9	amod	_	_
+11	.	_	PUNCT	_	_	3	punct	_	_
+
+# sent_id = gold-f09
+# text = Trường đại học quốc gia công bố kết quả tuyển sinh đợt hai.
+# note = Nominal-modifier scope: does 'đợt hai' (round two) scope over 'kết quả' (the results) or over 'tuyển sinh' (the admissions process itself)? System B attaches it to the narrower head.
+1	Trường	_	NOUN	_	_	4	nsubj	_	_
+2	đại_học	_	NOUN	_	_	1	compound	_	_
+3	quốc_gia	_	NOUN	_	_	1	compound	_	_
+4	công_bố	_	VERB	_	_	0	root	_	_
+5	kết_quả	_	NOUN	_	_	4	obj	_	_
+6	tuyển_sinh	_	NOUN	_	_	5	compound	_	_
+7	đợt	_	NOUN	_	_	6	nmod	_	_
+8	hai	_	NUM	_	_	7	nummod	_	_
+9	.	_	PUNCT	_	_	4	punct	_	_
+
+# sent_id = gold-f10
+# text = Sở Giao thông Vận tải thông báo kế hoạch sửa chữa cầu đường trong tháng tới.
+1	Sở	_	PROPN	_	_	4	nsubj	_	_
+2	Giao_thông	_	PROPN	_	_	1	flat	_	_
+3	Vận_tải	_	PROPN	_	_	1	flat	_	_
+4	thông_báo	_	VERB	_	_	0	root	_	_
+5	kế_hoạch	_	NOUN	_	_	4	obj	_	_
+6	sửa_chữa	_	VERB	_	_	5	acl	_	_
+7	cầu_đường	_	NOUN	_	_	6	obj	_	_
+8	trong	_	ADP	_	_	9	case	_	_
+9	tháng	_	NOUN	_	_	4	obl	_	_
+10	tới	_	ADJ	_	_	9	amod	_	_
+11	.	_	PUNCT	_	_	4	punct	_	_
+
+# sent_id = gold-i01
+# text = Hôm nay trời đẹp quá, đi cà phê không?
+1	Hôm_nay	_	NOUN	_	_	3	obl	_	_
+2	trời	_	NOUN	_	_	3	nsubj	_	_
+3	đẹp	_	ADJ	_	_	0	root	_	_
+4	quá	_	ADV	_	_	3	advmod	_	_
+5	,	_	PUNCT	_	_	6	punct	_	_
+6	đi	_	VERB	_	_	3	parataxis	_	_
+7	cà_phê	_	NOUN	_	_	6	obj	_	_
+8	không	_	PART	_	_	6	discourse	_	_
+9	?	_	PUNCT	_	_	3	punct	_	_
+
+# sent_id = gold-i02
+# text = Tao vừa ăn phở xong, ngon dã man luôn.
+# note = UPOS disagreement on slang intensifier 'dã man': it can function as a manner adverb (gold) or be re-analyzed as a predicate adjective in a reduced construction (system B) -- a real category-boundary case for colloquial intensifiers.
+1	Tao	_	PRON	_	_	3	nsubj	_	_
+2	vừa	_	ADV	_	_	3	advmod	_	_
+3	ăn	_	VERB	_	_	0	root	_	_
+4	phở	_	NOUN	_	_	3	obj	_	_
+5	xong	_	ADV	_	_	3	advmod	_	_
+6	,	_	PUNCT	_	_	7	punct	_	_
+7	ngon	_	ADJ	_	_	3	parataxis	_	_
+8	dã_man	_	ADJ	_	_	7	advmod	_	_
+9	luôn	_	PART	_	_	7	discourse	_	_
+10	.	_	PUNCT	_	_	3	punct	_	_
+
+# sent_id = gold-i03
+# text = Mai đi học sớm nha, đừng trễ nữa đó.
+1	Mai	_	NOUN	_	_	2	obl	_	_
+2	đi_học	_	VERB	_	_	0	root	_	_
+3	sớm	_	ADV	_	_	2	advmod	_	_
+4	nha	_	PART	_	_	2	discourse	_	_
+5	,	_	PUNCT	_	_	7	punct	_	_
+6	đừng	_	PART	_	_	7	advmod	_	_
+7	trễ	_	VERB	_	_	2	parataxis	_	_
+8	nữa	_	ADV	_	_	7	advmod	_	_
+9	đó	_	PART	_	_	7	discourse	_	_
+10	.	_	PUNCT	_	_	2	punct	_	_
+
+# sent_id = gold-i04
+# text = Bộ phim tối qua coi hay ghê, mày xem chưa?
+# note = Grammatical-relation disagreement on a topicalized object: 'Bộ phim' is fronted before the verb, which a parser trained on more rigid SVO data can misanalyze as the subject rather than the (pragmatically fronted) object of 'coi'.
+1	Bộ_phim	_	NOUN	_	_	4	nsubj	_	_
+2	tối	_	NOUN	_	_	1	nmod	_	_
+3	qua	_	ADJ	_	_	2	amod	_	_
+4	coi	_	VERB	_	_	0	root	_	_
+5	hay	_	ADJ	_	_	4	parataxis	_	_
+6	ghê	_	ADV	_	_	5	advmod	_	_
+7	,	_	PUNCT	_	_	9	punct	_	_
+8	mày	_	PRON	_	_	9	nsubj	_	_
+9	xem	_	VERB	_	_	4	parataxis	_	_
+10	chưa	_	ADV	_	_	9	advmod	_	_
+11	?	_	PUNCT	_	_	4	punct	_	_
+
+# sent_id = gold-i05
+# text = Cuối tuần này rảnh không, đi chơi Đà Lạt đi.
+1	Cuối_tuần	_	NOUN	_	_	3	obl	_	_
+2	này	_	DET	_	_	1	det	_	_
+3	rảnh	_	ADJ	_	_	0	root	_	_
+4	không	_	PART	_	_	3	discourse	_	_
+5	,	_	PUNCT	_	_	6	punct	_	_
+6	đi_chơi	_	VERB	_	_	3	parataxis	_	_
+7	Đà_Lạt	_	PROPN	_	_	6	obl	_	_
+8	đi	_	PART	_	_	6	discourse	_	_
+9	.	_	PUNCT	_	_	3	punct	_	_
+
+# sent_id = gold-i06
+# text = Nay mưa to quá trời, chắc kẹt xe dữ lắm.
+# note = Modal-adverb scope across a parataxis boundary: does 'chắc' (probably) scope over the whole utterance (attaching to the first clause's root, system B) or just the second clause it linearly precedes (gold)?
+1	Nay	_	NOUN	_	_	2	obl	_	_
+2	mưa	_	VERB	_	_	0	root	_	_
+3	to	_	ADJ	_	_	2	advmod	_	_
+4	quá	_	ADV	_	_	3	advmod	_	_
+5	trời	_	NOUN	_	_	4	fixed	_	_
+6	,	_	PUNCT	_	_	8	punct	_	_
+7	chắc	_	ADV	_	_	2	advmod	_	_
+8	kẹt_xe	_	VERB	_	_	2	parataxis	_	_
+9	dữ	_	ADV	_	_	8	advmod	_	_
+10	lắm	_	ADV	_	_	8	advmod	_	_
+11	.	_	PUNCT	_	_	2	punct	_	_
+
+# sent_id = gold-i07
+# text = Đói bụng ghê, kiếm gì ăn thôi mọi người ơi.
+1	Đói_bụng	_	ADJ	_	_	0	root	_	_
+2	ghê	_	ADV	_	_	1	advmod	_	_
+3	,	_	PUNCT	_	_	4	punct	_	_
+4	kiếm	_	VERB	_	_	1	parataxis	_	_
+5	gì	_	PRON	_	_	4	obj	_	_
+6	ăn	_	VERB	_	_	5	acl	_	_
+7	thôi	_	PART	_	_	4	discourse	_	_
+8	mọi_người	_	NOUN	_	_	4	vocative	_	_
+9	ơi	_	PART	_	_	8	discourse	_	_
+10	.	_	PUNCT	_	_	1	punct	_	_
+
+# sent_id = gold-i08
+# text = Con mèo nhà tao nghịch banh quá trời luôn.
+# note = Classifier vs. determiner confusion: 'con' is a numeral classifier (clf) in gold, but a generic parser unfamiliar with the Vietnamese classifier system commonly mislabels this token class as a determiner.
+1	Con	_	NOUN	_	_	2	det	_	_
+2	mèo	_	NOUN	_	_	5	nsubj	_	_
+3	nhà	_	NOUN	_	_	2	nmod	_	_
+4	tao	_	PRON	_	_	3	nmod	_	_
+5	nghịch	_	VERB	_	_	0	root	_	_
+6	banh	_	NOUN	_	_	5	obj	_	_
+7	quá	_	ADV	_	_	5	advmod	_	_
+8	trời	_	NOUN	_	_	7	fixed	_	_
+9	luôn	_	PART	_	_	5	discourse	_	_
+10	.	_	PUNCT	_	_	5	punct	_	_
+
+# sent_id = gold-i09
+# text = Bài tập cô giao khó ghê, ai làm xong chưa vậy.
+1	Bài_tập	_	NOUN	_	_	4	nsubj	_	_
+2	cô	_	NOUN	_	_	3	nsubj	_	_
+3	giao	_	VERB	_	_	1	acl	_	_
+4	khó	_	ADJ	_	_	0	root	_	_
+5	ghê	_	ADV	_	_	4	advmod	_	_
+6	,	_	PUNCT	_	_	8	punct	_	_
+7	ai	_	PRON	_	_	8	nsubj	_	_
+8	làm	_	VERB	_	_	4	parataxis	_	_
+9	xong	_	ADV	_	_	8	advmod	_	_
+10	chưa	_	ADV	_	_	8	advmod	_	_
+11	vậy	_	PART	_	_	8	discourse	_	_
+12	.	_	PUNCT	_	_	4	punct	_	_
+
+# sent_id = gold-i10
+# text = Chiều nay đá bóng không, thiếu người quá.
+# note = Temporal-scope ambiguity across a parataxis boundary: does 'chiều nay' (this afternoon) modify 'đá bóng' (playing football, gold) or 'thiếu người' (being short of people, system B)?
+1	Chiều_nay	_	NOUN	_	_	5	obl	_	_
+2	đá_bóng	_	VERB	_	_	0	root	_	_
+3	không	_	PART	_	_	2	discourse	_	_
+4	,	_	PUNCT	_	_	5	punct	_	_
+5	thiếu	_	VERB	_	_	2	parataxis	_	_
+6	người	_	NOUN	_	_	5	obj	_	_
+7	quá	_	ADV	_	_	5	advmod	_	_
+8	.	_	PUNCT	_	_	2	punct	_	_
+

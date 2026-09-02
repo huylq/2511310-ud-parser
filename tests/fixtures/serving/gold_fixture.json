@@ -1,0 +1,5850 @@
+[
+  {
+    "content_hash": "b7c3fc07aa60eb7596cc4072a91b6c2a40d76781071b809cf96fa8e16e9c0ebd",
+    "entities": [
+      {
+        "canonical_name": "Bộ",
+        "id": 1,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giáo",
+        "id": 2,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đào",
+        "id": 3,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 1,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 1,
+        "sentence_id": 1,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 2,
+        "sentence_id": 1,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 3,
+        "sentence_id": 1,
+        "token_end": 5,
+        "token_start": 4
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 1,
+        "id": 1,
+        "idx": 0,
+        "text": "Bộ Giáo dục và Đào tạo công bố lịch thi tốt nghiệp trung học phổ thông năm nay."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/000"
+  },
+  {
+    "content_hash": "784bcd813dcdff89f2be960b5aa17995ed0c4eea7603430656ffc02fd8c86488",
+    "entities": [
+      {
+        "canonical_name": "Ngân",
+        "id": 4,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nhà",
+        "id": 5,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 2,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 4,
+        "sentence_id": 2,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 5,
+        "sentence_id": 2,
+        "token_end": 3,
+        "token_start": 2
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 2,
+        "id": 2,
+        "idx": 0,
+        "text": "Ngân hàng Nhà nước giữ nguyên lãi suất điều hành trong quý này."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/001"
+  },
+  {
+    "content_hash": "bea30459f64fec9930f9ceb669f36e4dfa22066a33da874a6d33a6a34f1b61a9",
+    "entities": [
+      {
+        "canonical_name": "Đội",
+        "id": 6,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 3,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 6,
+        "sentence_id": 3,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 3,
+        "id": 3,
+        "idx": 0,
+        "text": "Đội tuyển bóng đá quốc gia giành chiến thắng trong trận đấu giao hữu tối qua."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/002"
+  },
+  {
+    "content_hash": "10312567b5ca312487e079ed7198804fb53ecf442504eb246d7a29721d15b425",
+    "entities": [
+      {
+        "canonical_name": "Thành",
+        "id": 7,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Hà",
+        "id": 8,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nội",
+        "id": 9,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 4,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 7,
+        "sentence_id": 4,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 8,
+        "sentence_id": 4,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 9,
+        "sentence_id": 4,
+        "token_end": 4,
+        "token_start": 3
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 4,
+        "id": 4,
+        "idx": 0,
+        "text": "Thành phố Hà Nội triển khai thêm tuyến xe buýt điện phục vụ người dân."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/003"
+  },
+  {
+    "content_hash": "edd32394d9df1f968be299f3909a27b7fac6834a758c435bc221737728f28b49",
+    "entities": [
+      {
+        "canonical_name": "Các",
+        "id": 10,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Cửu",
+        "id": 11,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Long.",
+        "id": 12,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 5,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 10,
+        "sentence_id": 5,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 11,
+        "sentence_id": 5,
+        "token_end": 19,
+        "token_start": 18
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 12,
+        "sentence_id": 5,
+        "token_end": 20,
+        "token_start": 19
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 5,
+        "id": 5,
+        "idx": 0,
+        "text": "Các nhà khoa học công bố nghiên cứu mới về biến đổi khí hậu tại đồng bằng sông Cửu Long."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/004"
+  },
+  {
+    "content_hash": "4611bb0a0ca316adf7ba0b4d00ca25a815e06dcb4b2e57e1e8ec2bebd5f73bbe",
+    "entities": [
+      {
+        "canonical_name": "Chính",
+        "id": 13,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 6,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 13,
+        "sentence_id": 6,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 6,
+        "id": 6,
+        "idx": 0,
+        "text": "Chính phủ ban hành nghị định hướng dẫn thi hành luật đất đai sửa đổi."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/005"
+  },
+  {
+    "content_hash": "2cd1e40a6075bf63b5a969f65f72a99e43304890c24aed6fe78b9d46bb0912fa",
+    "entities": [
+      {
+        "canonical_name": "Tập",
+        "id": 14,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Việt.",
+        "id": 15,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 7,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 14,
+        "sentence_id": 7,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 15,
+        "sentence_id": 7,
+        "token_end": 16,
+        "token_start": 15
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 7,
+        "id": 7,
+        "idx": 0,
+        "text": "Tập đoàn công nghệ trong nước ra mắt sản phẩm phần mềm dịch thuật tiếng Việt."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/006"
+  },
+  {
+    "content_hash": "3d3841b2a844be72235656e394065df92f722f9299e9da58083ab7de29fd1790",
+    "entities": [
+      {
+        "canonical_name": "Bệnh",
+        "id": 16,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 8,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 16,
+        "sentence_id": 8,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 8,
+        "id": 8,
+        "idx": 0,
+        "text": "Bệnh viện trung ương tổ chức chương trình khám sức khỏe miễn phí cho người cao tuổi."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/007"
+  },
+  {
+    "content_hash": "151eb4c1bb82c969fe5607f910616027fc2d6a06d0640fb83a7c370f713436c5",
+    "entities": [
+      {
+        "canonical_name": "Trường",
+        "id": 17,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 9,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 17,
+        "sentence_id": 9,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 9,
+        "id": 9,
+        "idx": 0,
+        "text": "Trường đại học quốc gia công bố kết quả tuyển sinh đợt hai."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/008"
+  },
+  {
+    "content_hash": "9f034af3248faef73f7fb78453c6a536368e50075c455937661df6742cf4749f",
+    "entities": [
+      {
+        "canonical_name": "Sở",
+        "id": 18,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giao",
+        "id": 19,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Vận",
+        "id": 20,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 10,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 18,
+        "sentence_id": 10,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 19,
+        "sentence_id": 10,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 20,
+        "sentence_id": 10,
+        "token_end": 4,
+        "token_start": 3
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 10,
+        "id": 10,
+        "idx": 0,
+        "text": "Sở Giao thông Vận tải thông báo kế hoạch sửa chữa cầu đường trong tháng tới."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/009"
+  },
+  {
+    "content_hash": "d105894195a3f2c8664d6aca701913663b8ba34f4481a4ae8eb2d4aaf46ed7d9",
+    "entities": [
+      {
+        "canonical_name": "Bộ",
+        "id": 21,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giáo",
+        "id": 22,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đào",
+        "id": 23,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Ngân",
+        "id": 24,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nhà",
+        "id": 25,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 11,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 21,
+        "sentence_id": 11,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 22,
+        "sentence_id": 11,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 23,
+        "sentence_id": 11,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 24,
+        "sentence_id": 12,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 25,
+        "sentence_id": 12,
+        "token_end": 3,
+        "token_start": 2
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 11,
+        "id": 11,
+        "idx": 0,
+        "text": "Bộ Giáo dục và Đào tạo công bố lịch thi tốt nghiệp trung học phổ thông năm nay."
+      },
+      {
+        "document_id": 11,
+        "id": 12,
+        "idx": 1,
+        "text": "Ngân hàng Nhà nước giữ nguyên lãi suất điều hành trong quý này."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/010"
+  },
+  {
+    "content_hash": "ab4327d98be47c4b91d41a7fc21c60afb43b9377909c03f5dd51bafd8b4493be",
+    "entities": [
+      {
+        "canonical_name": "Bộ",
+        "id": 26,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giáo",
+        "id": 27,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đào",
+        "id": 28,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đội",
+        "id": 29,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 12,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 26,
+        "sentence_id": 13,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 27,
+        "sentence_id": 13,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 28,
+        "sentence_id": 13,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 29,
+        "sentence_id": 14,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 12,
+        "id": 13,
+        "idx": 0,
+        "text": "Bộ Giáo dục và Đào tạo công bố lịch thi tốt nghiệp trung học phổ thông năm nay."
+      },
+      {
+        "document_id": 12,
+        "id": 14,
+        "idx": 1,
+        "text": "Đội tuyển bóng đá quốc gia giành chiến thắng trong trận đấu giao hữu tối qua."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/011"
+  },
+  {
+    "content_hash": "fb8711551dd9679d04431f9d9dcaaa8b63bc0b33ba70699fe277dd9df19b4693",
+    "entities": [
+      {
+        "canonical_name": "Bộ",
+        "id": 30,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giáo",
+        "id": 31,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đào",
+        "id": 32,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Thành",
+        "id": 33,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Hà",
+        "id": 34,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nội",
+        "id": 35,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 13,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 30,
+        "sentence_id": 15,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 31,
+        "sentence_id": 15,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 32,
+        "sentence_id": 15,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 33,
+        "sentence_id": 16,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 34,
+        "sentence_id": 16,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 35,
+        "sentence_id": 16,
+        "token_end": 4,
+        "token_start": 3
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 13,
+        "id": 15,
+        "idx": 0,
+        "text": "Bộ Giáo dục và Đào tạo công bố lịch thi tốt nghiệp trung học phổ thông năm nay."
+      },
+      {
+        "document_id": 13,
+        "id": 16,
+        "idx": 1,
+        "text": "Thành phố Hà Nội triển khai thêm tuyến xe buýt điện phục vụ người dân."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/012"
+  },
+  {
+    "content_hash": "4f2bf6e0fdab51753077b8acfa9feced3e94ec8a052d7613248c017193582584",
+    "entities": [
+      {
+        "canonical_name": "Bộ",
+        "id": 36,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giáo",
+        "id": 37,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đào",
+        "id": 38,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Các",
+        "id": 39,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Cửu",
+        "id": 40,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Long.",
+        "id": 41,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 14,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 36,
+        "sentence_id": 17,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 37,
+        "sentence_id": 17,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 38,
+        "sentence_id": 17,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 39,
+        "sentence_id": 18,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 40,
+        "sentence_id": 18,
+        "token_end": 19,
+        "token_start": 18
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 41,
+        "sentence_id": 18,
+        "token_end": 20,
+        "token_start": 19
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 14,
+        "id": 17,
+        "idx": 0,
+        "text": "Bộ Giáo dục và Đào tạo công bố lịch thi tốt nghiệp trung học phổ thông năm nay."
+      },
+      {
+        "document_id": 14,
+        "id": 18,
+        "idx": 1,
+        "text": "Các nhà khoa học công bố nghiên cứu mới về biến đổi khí hậu tại đồng bằng sông Cửu Long."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/013"
+  },
+  {
+    "content_hash": "308c404f4f04718b5321b4c0979739ba32dfd4f5a63e173c22bc04b342db7583",
+    "entities": [
+      {
+        "canonical_name": "Bộ",
+        "id": 42,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giáo",
+        "id": 43,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đào",
+        "id": 44,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Chính",
+        "id": 45,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 15,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 42,
+        "sentence_id": 19,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 43,
+        "sentence_id": 19,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 44,
+        "sentence_id": 19,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 45,
+        "sentence_id": 20,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 15,
+        "id": 19,
+        "idx": 0,
+        "text": "Bộ Giáo dục và Đào tạo công bố lịch thi tốt nghiệp trung học phổ thông năm nay."
+      },
+      {
+        "document_id": 15,
+        "id": 20,
+        "idx": 1,
+        "text": "Chính phủ ban hành nghị định hướng dẫn thi hành luật đất đai sửa đổi."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/014"
+  },
+  {
+    "content_hash": "a51f72eb6c1fb66f853b968b9193cc810af488d8833fc3292ba29a54b29d583f",
+    "entities": [
+      {
+        "canonical_name": "Bộ",
+        "id": 46,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giáo",
+        "id": 47,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đào",
+        "id": 48,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Tập",
+        "id": 49,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Việt.",
+        "id": 50,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 16,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 46,
+        "sentence_id": 21,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 47,
+        "sentence_id": 21,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 48,
+        "sentence_id": 21,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 49,
+        "sentence_id": 22,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 50,
+        "sentence_id": 22,
+        "token_end": 16,
+        "token_start": 15
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 16,
+        "id": 21,
+        "idx": 0,
+        "text": "Bộ Giáo dục và Đào tạo công bố lịch thi tốt nghiệp trung học phổ thông năm nay."
+      },
+      {
+        "document_id": 16,
+        "id": 22,
+        "idx": 1,
+        "text": "Tập đoàn công nghệ trong nước ra mắt sản phẩm phần mềm dịch thuật tiếng Việt."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/015"
+  },
+  {
+    "content_hash": "f457a8e0f3a992d0c5b899959d79d9a44593bb6528414ad6ad01b6cbf9a89e17",
+    "entities": [
+      {
+        "canonical_name": "Bộ",
+        "id": 51,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giáo",
+        "id": 52,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đào",
+        "id": 53,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Bệnh",
+        "id": 54,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 17,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 51,
+        "sentence_id": 23,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 52,
+        "sentence_id": 23,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 53,
+        "sentence_id": 23,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 54,
+        "sentence_id": 24,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 17,
+        "id": 23,
+        "idx": 0,
+        "text": "Bộ Giáo dục và Đào tạo công bố lịch thi tốt nghiệp trung học phổ thông năm nay."
+      },
+      {
+        "document_id": 17,
+        "id": 24,
+        "idx": 1,
+        "text": "Bệnh viện trung ương tổ chức chương trình khám sức khỏe miễn phí cho người cao tuổi."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/016"
+  },
+  {
+    "content_hash": "db70a928634d1d8d6e7d5fe115f84760baace3f9854eab919eb1a9969735119d",
+    "entities": [
+      {
+        "canonical_name": "Bộ",
+        "id": 55,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giáo",
+        "id": 56,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đào",
+        "id": 57,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Trường",
+        "id": 58,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 18,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 55,
+        "sentence_id": 25,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 56,
+        "sentence_id": 25,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 57,
+        "sentence_id": 25,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 58,
+        "sentence_id": 26,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 18,
+        "id": 25,
+        "idx": 0,
+        "text": "Bộ Giáo dục và Đào tạo công bố lịch thi tốt nghiệp trung học phổ thông năm nay."
+      },
+      {
+        "document_id": 18,
+        "id": 26,
+        "idx": 1,
+        "text": "Trường đại học quốc gia công bố kết quả tuyển sinh đợt hai."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/017"
+  },
+  {
+    "content_hash": "50a7179c0bce3df70e04024fe9995fa8662af379c290520897a55cc88dddacc6",
+    "entities": [
+      {
+        "canonical_name": "Bộ",
+        "id": 59,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giáo",
+        "id": 60,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đào",
+        "id": 61,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Sở",
+        "id": 62,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giao",
+        "id": 63,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Vận",
+        "id": 64,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 19,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 59,
+        "sentence_id": 27,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 60,
+        "sentence_id": 27,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 61,
+        "sentence_id": 27,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 62,
+        "sentence_id": 28,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 63,
+        "sentence_id": 28,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 64,
+        "sentence_id": 28,
+        "token_end": 4,
+        "token_start": 3
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 19,
+        "id": 27,
+        "idx": 0,
+        "text": "Bộ Giáo dục và Đào tạo công bố lịch thi tốt nghiệp trung học phổ thông năm nay."
+      },
+      {
+        "document_id": 19,
+        "id": 28,
+        "idx": 1,
+        "text": "Sở Giao thông Vận tải thông báo kế hoạch sửa chữa cầu đường trong tháng tới."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/018"
+  },
+  {
+    "content_hash": "e361db66c0708b40679598e4492b55eed4b0e35b883f2e3872951d5fe938e48a",
+    "entities": [
+      {
+        "canonical_name": "Ngân",
+        "id": 65,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nhà",
+        "id": 66,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đội",
+        "id": 67,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 20,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 65,
+        "sentence_id": 29,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 66,
+        "sentence_id": 29,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 67,
+        "sentence_id": 30,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 20,
+        "id": 29,
+        "idx": 0,
+        "text": "Ngân hàng Nhà nước giữ nguyên lãi suất điều hành trong quý này."
+      },
+      {
+        "document_id": 20,
+        "id": 30,
+        "idx": 1,
+        "text": "Đội tuyển bóng đá quốc gia giành chiến thắng trong trận đấu giao hữu tối qua."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/019"
+  },
+  {
+    "content_hash": "daa4f95ad4fa235712e3ea94887c4a3f4baa69bdea3c1ab9501b53b5d8afeb4a",
+    "entities": [
+      {
+        "canonical_name": "Ngân",
+        "id": 68,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nhà",
+        "id": 69,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Thành",
+        "id": 70,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Hà",
+        "id": 71,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nội",
+        "id": 72,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 21,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 68,
+        "sentence_id": 31,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 69,
+        "sentence_id": 31,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 70,
+        "sentence_id": 32,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 71,
+        "sentence_id": 32,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 72,
+        "sentence_id": 32,
+        "token_end": 4,
+        "token_start": 3
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 21,
+        "id": 31,
+        "idx": 0,
+        "text": "Ngân hàng Nhà nước giữ nguyên lãi suất điều hành trong quý này."
+      },
+      {
+        "document_id": 21,
+        "id": 32,
+        "idx": 1,
+        "text": "Thành phố Hà Nội triển khai thêm tuyến xe buýt điện phục vụ người dân."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/020"
+  },
+  {
+    "content_hash": "97c74515e85a5287101794058890a86b958bf49cde5d613a92fcf51f0d0da4df",
+    "entities": [
+      {
+        "canonical_name": "Ngân",
+        "id": 73,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nhà",
+        "id": 74,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Các",
+        "id": 75,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Cửu",
+        "id": 76,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Long.",
+        "id": 77,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 22,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 73,
+        "sentence_id": 33,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 74,
+        "sentence_id": 33,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 75,
+        "sentence_id": 34,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 76,
+        "sentence_id": 34,
+        "token_end": 19,
+        "token_start": 18
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 77,
+        "sentence_id": 34,
+        "token_end": 20,
+        "token_start": 19
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 22,
+        "id": 33,
+        "idx": 0,
+        "text": "Ngân hàng Nhà nước giữ nguyên lãi suất điều hành trong quý này."
+      },
+      {
+        "document_id": 22,
+        "id": 34,
+        "idx": 1,
+        "text": "Các nhà khoa học công bố nghiên cứu mới về biến đổi khí hậu tại đồng bằng sông Cửu Long."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/021"
+  },
+  {
+    "content_hash": "49406a6daadac0ce0cd0734f11b2712bbe4e83a2fe4067c05ec1b834285cd7c0",
+    "entities": [
+      {
+        "canonical_name": "Ngân",
+        "id": 78,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nhà",
+        "id": 79,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Chính",
+        "id": 80,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 23,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 78,
+        "sentence_id": 35,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 79,
+        "sentence_id": 35,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 80,
+        "sentence_id": 36,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 23,
+        "id": 35,
+        "idx": 0,
+        "text": "Ngân hàng Nhà nước giữ nguyên lãi suất điều hành trong quý này."
+      },
+      {
+        "document_id": 23,
+        "id": 36,
+        "idx": 1,
+        "text": "Chính phủ ban hành nghị định hướng dẫn thi hành luật đất đai sửa đổi."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/022"
+  },
+  {
+    "content_hash": "437b62e10e0412353803036b10870300cab9514325a5c552945d2460ca36c9d3",
+    "entities": [
+      {
+        "canonical_name": "Ngân",
+        "id": 81,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nhà",
+        "id": 82,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Tập",
+        "id": 83,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Việt.",
+        "id": 84,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 24,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 81,
+        "sentence_id": 37,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 82,
+        "sentence_id": 37,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 83,
+        "sentence_id": 38,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 84,
+        "sentence_id": 38,
+        "token_end": 16,
+        "token_start": 15
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 24,
+        "id": 37,
+        "idx": 0,
+        "text": "Ngân hàng Nhà nước giữ nguyên lãi suất điều hành trong quý này."
+      },
+      {
+        "document_id": 24,
+        "id": 38,
+        "idx": 1,
+        "text": "Tập đoàn công nghệ trong nước ra mắt sản phẩm phần mềm dịch thuật tiếng Việt."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/023"
+  },
+  {
+    "content_hash": "d90460789f02aaa100d12723c5287b636679a9494740fbbb1da552163be106ec",
+    "entities": [
+      {
+        "canonical_name": "Ngân",
+        "id": 85,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nhà",
+        "id": 86,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Bệnh",
+        "id": 87,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 25,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 85,
+        "sentence_id": 39,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 86,
+        "sentence_id": 39,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 87,
+        "sentence_id": 40,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "formal",
+    "sentences": [
+      {
+        "document_id": 25,
+        "id": 39,
+        "idx": 0,
+        "text": "Ngân hàng Nhà nước giữ nguyên lãi suất điều hành trong quý này."
+      },
+      {
+        "document_id": 25,
+        "id": 40,
+        "idx": 1,
+        "text": "Bệnh viện trung ương tổ chức chương trình khám sức khỏe miễn phí cho người cao tuổi."
+      }
+    ],
+    "url": "https://fixture.local/fixture-formal/024"
+  },
+  {
+    "content_hash": "d4bd38e7bd1d56698eac5228db6f87fde90f977959047949db8d4dd47762dc82",
+    "entities": [
+      {
+        "canonical_name": "Hôm",
+        "id": 88,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 26,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 88,
+        "sentence_id": 41,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 26,
+        "id": 41,
+        "idx": 0,
+        "text": "Hôm nay trời đẹp quá, đi cà phê không?"
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/000"
+  },
+  {
+    "content_hash": "8b1160eafd8bee00eb5d94338f76f2593aa9480e979a2600d16638ccd6723c79",
+    "entities": [
+      {
+        "canonical_name": "Tao",
+        "id": 89,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 27,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 89,
+        "sentence_id": 42,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 27,
+        "id": 42,
+        "idx": 0,
+        "text": "Tao vừa ăn phở xong, ngon dã man luôn."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/001"
+  },
+  {
+    "content_hash": "c7680c1bf5a23ef01e3eb25e08341e0d35c767f31e9661b4140929e51ce6f078",
+    "entities": [
+      {
+        "canonical_name": "Mai",
+        "id": 90,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 28,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 90,
+        "sentence_id": 43,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 28,
+        "id": 43,
+        "idx": 0,
+        "text": "Mai đi học sớm nha, đừng trễ nữa đó."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/002"
+  },
+  {
+    "content_hash": "01943fa9c5fd93f5099bf0102ba6d25eb064f433ee44f8afcded7dfda20568ff",
+    "entities": [
+      {
+        "canonical_name": "Bộ",
+        "id": 91,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 29,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 91,
+        "sentence_id": 44,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 29,
+        "id": 44,
+        "idx": 0,
+        "text": "Bộ phim tối qua coi hay ghê, mày xem chưa?"
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/003"
+  },
+  {
+    "content_hash": "faeb5546b7943116a8a9dfcb1fa8310f03abc87740bd4b41f6c5b8dfcb0fbddd",
+    "entities": [
+      {
+        "canonical_name": "Cuối",
+        "id": 92,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đà",
+        "id": 93,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Lạt",
+        "id": 94,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 30,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 92,
+        "sentence_id": 45,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 93,
+        "sentence_id": 45,
+        "token_end": 8,
+        "token_start": 7
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 94,
+        "sentence_id": 45,
+        "token_end": 9,
+        "token_start": 8
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 30,
+        "id": 45,
+        "idx": 0,
+        "text": "Cuối tuần này rảnh không, đi chơi Đà Lạt đi."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/004"
+  },
+  {
+    "content_hash": "19d0dfb914afd53f52627dec599590b38aacabfb15800776a440677a76e06066",
+    "entities": [
+      {
+        "canonical_name": "Nay",
+        "id": 95,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 31,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 95,
+        "sentence_id": 46,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 31,
+        "id": 46,
+        "idx": 0,
+        "text": "Nay mưa to quá trời, chắc kẹt xe dữ lắm."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/005"
+  },
+  {
+    "content_hash": "fa3c6616f0131a2f2d79bf9bfb0b2c959c3de195e831958d6f11a07d8e957c81",
+    "entities": [
+      {
+        "canonical_name": "Đói",
+        "id": 96,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 32,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 96,
+        "sentence_id": 47,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 32,
+        "id": 47,
+        "idx": 0,
+        "text": "Đói bụng ghê, kiếm gì ăn thôi mọi người ơi."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/006"
+  },
+  {
+    "content_hash": "9a6e2e2df4a656eb4b1d4db795674166a380fe68f2531d26e5a82e0c85f65d29",
+    "entities": [
+      {
+        "canonical_name": "Con",
+        "id": 97,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 33,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 97,
+        "sentence_id": 48,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 33,
+        "id": 48,
+        "idx": 0,
+        "text": "Con mèo nhà tao nghịch banh quá trời luôn."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/007"
+  },
+  {
+    "content_hash": "f10d49230fad6d14c548276a608574b6d6553d64c7db8c9e1b2a36be88a3f855",
+    "entities": [
+      {
+        "canonical_name": "Bài",
+        "id": 98,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 34,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 98,
+        "sentence_id": 49,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 34,
+        "id": 49,
+        "idx": 0,
+        "text": "Bài tập cô giao khó ghê, ai làm xong chưa vậy."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/008"
+  },
+  {
+    "content_hash": "0989af66ff3fed95fdb0821d982a7d937e8c017ff0d4961c679e24223c3c8615",
+    "entities": [
+      {
+        "canonical_name": "Chiều",
+        "id": 99,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 35,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 99,
+        "sentence_id": 50,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 35,
+        "id": 50,
+        "idx": 0,
+        "text": "Chiều nay đá bóng không, thiếu người quá."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/009"
+  },
+  {
+    "content_hash": "6fffa8b5ad4c6422828cb0b89fb16ee4bbb2252a541ca988bf04e75e81cc82fc",
+    "entities": [
+      {
+        "canonical_name": "Hôm",
+        "id": 100,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Tao",
+        "id": 101,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 36,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 100,
+        "sentence_id": 51,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 101,
+        "sentence_id": 52,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 36,
+        "id": 51,
+        "idx": 0,
+        "text": "Hôm nay trời đẹp quá, đi cà phê không?"
+      },
+      {
+        "document_id": 36,
+        "id": 52,
+        "idx": 1,
+        "text": "Tao vừa ăn phở xong, ngon dã man luôn."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/010"
+  },
+  {
+    "content_hash": "45887a3c4fe5a1eb108c1ff0f6a8618f7088ddb0ce55d6b449fcad568c267919",
+    "entities": [
+      {
+        "canonical_name": "Hôm",
+        "id": 102,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Mai",
+        "id": 103,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 37,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 102,
+        "sentence_id": 53,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 103,
+        "sentence_id": 54,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 37,
+        "id": 53,
+        "idx": 0,
+        "text": "Hôm nay trời đẹp quá, đi cà phê không?"
+      },
+      {
+        "document_id": 37,
+        "id": 54,
+        "idx": 1,
+        "text": "Mai đi học sớm nha, đừng trễ nữa đó."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/011"
+  },
+  {
+    "content_hash": "45d91b2bf8b0940e57c327d581c6b946222c2e05e15adf36697bcb3a530a009d",
+    "entities": [
+      {
+        "canonical_name": "Hôm",
+        "id": 104,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Bộ",
+        "id": 105,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 38,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 104,
+        "sentence_id": 55,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 105,
+        "sentence_id": 56,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 38,
+        "id": 55,
+        "idx": 0,
+        "text": "Hôm nay trời đẹp quá, đi cà phê không?"
+      },
+      {
+        "document_id": 38,
+        "id": 56,
+        "idx": 1,
+        "text": "Bộ phim tối qua coi hay ghê, mày xem chưa?"
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/012"
+  },
+  {
+    "content_hash": "8a135b326badc9a034b5d95b279deb6c39740580e10ecab34719bb2bdad3bc9c",
+    "entities": [
+      {
+        "canonical_name": "Hôm",
+        "id": 106,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Cuối",
+        "id": 107,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đà",
+        "id": 108,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Lạt",
+        "id": 109,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 39,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 106,
+        "sentence_id": 57,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 107,
+        "sentence_id": 58,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 108,
+        "sentence_id": 58,
+        "token_end": 8,
+        "token_start": 7
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 109,
+        "sentence_id": 58,
+        "token_end": 9,
+        "token_start": 8
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 39,
+        "id": 57,
+        "idx": 0,
+        "text": "Hôm nay trời đẹp quá, đi cà phê không?"
+      },
+      {
+        "document_id": 39,
+        "id": 58,
+        "idx": 1,
+        "text": "Cuối tuần này rảnh không, đi chơi Đà Lạt đi."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/013"
+  },
+  {
+    "content_hash": "17c41ab8f978417f2aa497992b2681951346c8e5d9879386617827672522c248",
+    "entities": [
+      {
+        "canonical_name": "Hôm",
+        "id": 110,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nay",
+        "id": 111,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 40,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 110,
+        "sentence_id": 59,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 111,
+        "sentence_id": 60,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 40,
+        "id": 59,
+        "idx": 0,
+        "text": "Hôm nay trời đẹp quá, đi cà phê không?"
+      },
+      {
+        "document_id": 40,
+        "id": 60,
+        "idx": 1,
+        "text": "Nay mưa to quá trời, chắc kẹt xe dữ lắm."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/014"
+  },
+  {
+    "content_hash": "20bbd699a691f0c17eb7b260f6e71bc59370aaab590610f0a33bd80b4b04f9fb",
+    "entities": [
+      {
+        "canonical_name": "Hôm",
+        "id": 112,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đói",
+        "id": 113,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 41,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 112,
+        "sentence_id": 61,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 113,
+        "sentence_id": 62,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 41,
+        "id": 61,
+        "idx": 0,
+        "text": "Hôm nay trời đẹp quá, đi cà phê không?"
+      },
+      {
+        "document_id": 41,
+        "id": 62,
+        "idx": 1,
+        "text": "Đói bụng ghê, kiếm gì ăn thôi mọi người ơi."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/015"
+  },
+  {
+    "content_hash": "a1d38b6d80e84f9122fab270d50cf836f94c3a253a43ea6edc0962326498adb6",
+    "entities": [
+      {
+        "canonical_name": "Hôm",
+        "id": 114,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Con",
+        "id": 115,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 42,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 114,
+        "sentence_id": 63,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 115,
+        "sentence_id": 64,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 42,
+        "id": 63,
+        "idx": 0,
+        "text": "Hôm nay trời đẹp quá, đi cà phê không?"
+      },
+      {
+        "document_id": 42,
+        "id": 64,
+        "idx": 1,
+        "text": "Con mèo nhà tao nghịch banh quá trời luôn."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/016"
+  },
+  {
+    "content_hash": "85f2107b1bda9e46b47cb8279561afbaecbeda3b976ef2de88b0b20281535618",
+    "entities": [
+      {
+        "canonical_name": "Hôm",
+        "id": 116,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Bài",
+        "id": 117,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 43,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 116,
+        "sentence_id": 65,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 117,
+        "sentence_id": 66,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 43,
+        "id": 65,
+        "idx": 0,
+        "text": "Hôm nay trời đẹp quá, đi cà phê không?"
+      },
+      {
+        "document_id": 43,
+        "id": 66,
+        "idx": 1,
+        "text": "Bài tập cô giao khó ghê, ai làm xong chưa vậy."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/017"
+  },
+  {
+    "content_hash": "81c348e02e62e855e46f9ac9e65d27bf9321f95e9acc4d579bb9629294953d61",
+    "entities": [
+      {
+        "canonical_name": "Hôm",
+        "id": 118,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Chiều",
+        "id": 119,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 44,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 118,
+        "sentence_id": 67,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 119,
+        "sentence_id": 68,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 44,
+        "id": 67,
+        "idx": 0,
+        "text": "Hôm nay trời đẹp quá, đi cà phê không?"
+      },
+      {
+        "document_id": 44,
+        "id": 68,
+        "idx": 1,
+        "text": "Chiều nay đá bóng không, thiếu người quá."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/018"
+  },
+  {
+    "content_hash": "39ccbd2bc28a5dd016888d5163fff5d483b32c1e15821dd742bafcbc9372373d",
+    "entities": [
+      {
+        "canonical_name": "Tao",
+        "id": 120,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Mai",
+        "id": 121,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 45,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 120,
+        "sentence_id": 69,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 121,
+        "sentence_id": 70,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 45,
+        "id": 69,
+        "idx": 0,
+        "text": "Tao vừa ăn phở xong, ngon dã man luôn."
+      },
+      {
+        "document_id": 45,
+        "id": 70,
+        "idx": 1,
+        "text": "Mai đi học sớm nha, đừng trễ nữa đó."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/019"
+  },
+  {
+    "content_hash": "9e81b16d9e8244c586d33cb81b50593cd171284eb0d172488c659caae61299dc",
+    "entities": [
+      {
+        "canonical_name": "Tao",
+        "id": 122,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Bộ",
+        "id": 123,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 46,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 122,
+        "sentence_id": 71,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 123,
+        "sentence_id": 72,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 46,
+        "id": 71,
+        "idx": 0,
+        "text": "Tao vừa ăn phở xong, ngon dã man luôn."
+      },
+      {
+        "document_id": 46,
+        "id": 72,
+        "idx": 1,
+        "text": "Bộ phim tối qua coi hay ghê, mày xem chưa?"
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/020"
+  },
+  {
+    "content_hash": "a3cdc547486f835e05c0e85ba0fbb863075eee8dd6b45cc409c29cf1a808b053",
+    "entities": [
+      {
+        "canonical_name": "Tao",
+        "id": 124,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Cuối",
+        "id": 125,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đà",
+        "id": 126,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Lạt",
+        "id": 127,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 47,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 124,
+        "sentence_id": 73,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 125,
+        "sentence_id": 74,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 126,
+        "sentence_id": 74,
+        "token_end": 8,
+        "token_start": 7
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 127,
+        "sentence_id": 74,
+        "token_end": 9,
+        "token_start": 8
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 47,
+        "id": 73,
+        "idx": 0,
+        "text": "Tao vừa ăn phở xong, ngon dã man luôn."
+      },
+      {
+        "document_id": 47,
+        "id": 74,
+        "idx": 1,
+        "text": "Cuối tuần này rảnh không, đi chơi Đà Lạt đi."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/021"
+  },
+  {
+    "content_hash": "3d39e8b34fc9c471f7bef4774c6fa77cb456b14af0c201b31fb5ee87e8f99d5b",
+    "entities": [
+      {
+        "canonical_name": "Tao",
+        "id": 128,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nay",
+        "id": 129,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 48,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 128,
+        "sentence_id": 75,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 129,
+        "sentence_id": 76,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 48,
+        "id": 75,
+        "idx": 0,
+        "text": "Tao vừa ăn phở xong, ngon dã man luôn."
+      },
+      {
+        "document_id": 48,
+        "id": 76,
+        "idx": 1,
+        "text": "Nay mưa to quá trời, chắc kẹt xe dữ lắm."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/022"
+  },
+  {
+    "content_hash": "737e80879eaa7bb88dc18a0ad48aa67c6c79fd1d9d5496875b9948cc2d003b8a",
+    "entities": [
+      {
+        "canonical_name": "Tao",
+        "id": 130,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Đói",
+        "id": 131,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 49,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 130,
+        "sentence_id": 77,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 131,
+        "sentence_id": 78,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 49,
+        "id": 77,
+        "idx": 0,
+        "text": "Tao vừa ăn phở xong, ngon dã man luôn."
+      },
+      {
+        "document_id": 49,
+        "id": 78,
+        "idx": 1,
+        "text": "Đói bụng ghê, kiếm gì ăn thôi mọi người ơi."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/023"
+  },
+  {
+    "content_hash": "5875375c3bf8b326150daaacbe6f2ba9781c9a1fd40b4caf6e108c27c4562956",
+    "entities": [
+      {
+        "canonical_name": "Tao",
+        "id": 132,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Con",
+        "id": 133,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 50,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 132,
+        "sentence_id": 79,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 133,
+        "sentence_id": 80,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "informal",
+    "sentences": [
+      {
+        "document_id": 50,
+        "id": 79,
+        "idx": 0,
+        "text": "Tao vừa ăn phở xong, ngon dã man luôn."
+      },
+      {
+        "document_id": 50,
+        "id": 80,
+        "idx": 1,
+        "text": "Con mèo nhà tao nghịch banh quá trời luôn."
+      }
+    ],
+    "url": "https://fixture.local/fixture-informal/024"
+  },
+  {
+    "content_hash": "94d8fcede93ceceabc695fcb4b873478b0cdab2e50a700265b99962a3973ba09",
+    "entities": [
+      {
+        "canonical_name": "Hnay",
+        "id": 134,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 51,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 134,
+        "sentence_id": 81,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 51,
+        "id": 81,
+        "idx": 0,
+        "text": "Hnay ranh ko, di choi di :))"
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/000"
+  },
+  {
+    "content_hash": "d648d2b59bc355cd30655c825c21c9e6dc1c2729215dfe697bf83e1d6fa4bec2",
+    "entities": [
+      {
+        "canonical_name": "T",
+        "id": 135,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 52,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 135,
+        "sentence_id": 82,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 52,
+        "id": 82,
+        "idx": 0,
+        "text": "T thay bit r, hay v."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/001"
+  },
+  {
+    "content_hash": "e7ab498fccbe284327b86054505d50e9fefa4ffd72eadbbb0f1eb0bc51ea3e90",
+    "entities": [
+      {
+        "canonical_name": "Mai",
+        "id": 136,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 53,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 136,
+        "sentence_id": 83,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 53,
+        "id": 83,
+        "idx": 0,
+        "text": "Mai hoc som nha, dg quen do."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/002"
+  },
+  {
+    "content_hash": "9e21274d441ef2f53cc572008214e689d48e89d436bec07e196ab94245acb845",
+    "entities": [
+      {
+        "canonical_name": "Phim",
+        "id": 137,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 54,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 137,
+        "sentence_id": 84,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 54,
+        "id": 84,
+        "idx": 0,
+        "text": "Phim nay hay v, coi chua a."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/003"
+  },
+  {
+    "content_hash": "d0081a2269d083563826569e79e204204f5c15ab7fc310492c746fb6fd5adb00",
+    "entities": [
+      {
+        "canonical_name": "Doi",
+        "id": 138,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 55,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 138,
+        "sentence_id": 85,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 55,
+        "id": 85,
+        "idx": 0,
+        "text": "Doi bung wa, an gi bh."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/004"
+  },
+  {
+    "content_hash": "e8c6191bc0a7405f09205f68b369362e1269584d334a5e36a4f419ce51fb7ed7",
+    "entities": [
+      {
+        "canonical_name": "Ny",
+        "id": 139,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 56,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 139,
+        "sentence_id": 86,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 56,
+        "id": 86,
+        "idx": 0,
+        "text": "Ny t bao dang gian, hix."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/005"
+  },
+  {
+    "content_hash": "4ceb3e7303dd27ad655afa5825b084cb1b39146ba93fc51f7a215987bfaed65f",
+    "entities": [
+      {
+        "canonical_name": "Trg",
+        "id": 140,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 57,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 140,
+        "sentence_id": 87,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 57,
+        "id": 87,
+        "idx": 0,
+        "text": "Trg hom nay dong ng kinh khung."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/006"
+  },
+  {
+    "content_hash": "f7e1be24e3937790811873290151507729454591c4f8f14dfcfba5bb1f54ff89",
+    "entities": [
+      {
+        "canonical_name": "Bai",
+        "id": 141,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 58,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 141,
+        "sentence_id": 88,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 58,
+        "id": 88,
+        "idx": 0,
+        "text": "Bai kt kho v troi, lam sao lam het."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/007"
+  },
+  {
+    "content_hash": "8ebeacbb252614f5399d61de52a556ba2e6a3c47ba9bad665b6e3f11ef6b1556",
+    "entities": [
+      {
+        "canonical_name": "Cuoi",
+        "id": 142,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 59,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 142,
+        "sentence_id": 89,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 59,
+        "id": 89,
+        "idx": 0,
+        "text": "Cuoi tuan ranh k, di chill k."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/008"
+  },
+  {
+    "content_hash": "980033382c027f4d4e930dd32d7bcdc159ada132a7ac031faa2aca5848d6bb64",
+    "entities": [
+      {
+        "canonical_name": "Mua",
+        "id": 143,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 60,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 143,
+        "sentence_id": 90,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 60,
+        "id": 90,
+        "idx": 0,
+        "text": "Mua to v troi oi, ket xe cmnr."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/009"
+  },
+  {
+    "content_hash": "ed3cc90baaf48cc0c4250600f448b21a7f22ce7b8b49974b8dd56791243a9b68",
+    "entities": [
+      {
+        "canonical_name": "Hnay",
+        "id": 144,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "T",
+        "id": 145,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 61,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 144,
+        "sentence_id": 91,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 145,
+        "sentence_id": 91,
+        "token_end": 8,
+        "token_start": 7
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 61,
+        "id": 91,
+        "idx": 0,
+        "text": "Hnay ranh ko, di choi di :)) T thay bit r, hay v."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/010"
+  },
+  {
+    "content_hash": "c0898defa62b7f0f25cac22a0554bb667a80e07a7a8289e25dbb31c5b7e00ae6",
+    "entities": [
+      {
+        "canonical_name": "Hnay",
+        "id": 146,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Mai",
+        "id": 147,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 62,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 146,
+        "sentence_id": 92,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 147,
+        "sentence_id": 92,
+        "token_end": 8,
+        "token_start": 7
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 62,
+        "id": 92,
+        "idx": 0,
+        "text": "Hnay ranh ko, di choi di :)) Mai hoc som nha, dg quen do."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/011"
+  },
+  {
+    "content_hash": "d374b26d6c26519987acc891291afeb9a14f08af87e76f661316b7796e5f5e08",
+    "entities": [
+      {
+        "canonical_name": "Hnay",
+        "id": 148,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Phim",
+        "id": 149,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 63,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 148,
+        "sentence_id": 93,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 149,
+        "sentence_id": 93,
+        "token_end": 8,
+        "token_start": 7
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 63,
+        "id": 93,
+        "idx": 0,
+        "text": "Hnay ranh ko, di choi di :)) Phim nay hay v, coi chua a."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/012"
+  },
+  {
+    "content_hash": "b57948ce68505f2fdee32797266907e2e5df6c79a761e170f388fbd639323de9",
+    "entities": [
+      {
+        "canonical_name": "Hnay",
+        "id": 150,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Doi",
+        "id": 151,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 64,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 150,
+        "sentence_id": 94,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 151,
+        "sentence_id": 94,
+        "token_end": 8,
+        "token_start": 7
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 64,
+        "id": 94,
+        "idx": 0,
+        "text": "Hnay ranh ko, di choi di :)) Doi bung wa, an gi bh."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/013"
+  },
+  {
+    "content_hash": "ac8477c3b99144b9de399b5af57f01011ab1f7def67c6bf5d632ec3d5755aca4",
+    "entities": [
+      {
+        "canonical_name": "Hnay",
+        "id": 152,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Ny",
+        "id": 153,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 65,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 152,
+        "sentence_id": 95,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 153,
+        "sentence_id": 95,
+        "token_end": 8,
+        "token_start": 7
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 65,
+        "id": 95,
+        "idx": 0,
+        "text": "Hnay ranh ko, di choi di :)) Ny t bao dang gian, hix."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/014"
+  },
+  {
+    "content_hash": "5a54f992aeed3e650cfd9accbfb75015920675424542ee5bcb5b2ab36d89fee1",
+    "entities": [
+      {
+        "canonical_name": "Hnay",
+        "id": 154,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Trg",
+        "id": 155,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 66,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 154,
+        "sentence_id": 96,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 155,
+        "sentence_id": 96,
+        "token_end": 8,
+        "token_start": 7
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 66,
+        "id": 96,
+        "idx": 0,
+        "text": "Hnay ranh ko, di choi di :)) Trg hom nay dong ng kinh khung."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/015"
+  },
+  {
+    "content_hash": "978133c2f2064ad54601df0f8767bf306be170ed84970fac91f9dcf758e1613c",
+    "entities": [
+      {
+        "canonical_name": "Hnay",
+        "id": 156,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Bai",
+        "id": 157,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 67,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 156,
+        "sentence_id": 97,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 157,
+        "sentence_id": 97,
+        "token_end": 8,
+        "token_start": 7
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 67,
+        "id": 97,
+        "idx": 0,
+        "text": "Hnay ranh ko, di choi di :)) Bai kt kho v troi, lam sao lam het."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/016"
+  },
+  {
+    "content_hash": "23d120767221bbcc25879cde99d91f7913ee0d52b730a83f18feffd71dbd571b",
+    "entities": [
+      {
+        "canonical_name": "Hnay",
+        "id": 158,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Cuoi",
+        "id": 159,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 68,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 158,
+        "sentence_id": 98,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 159,
+        "sentence_id": 98,
+        "token_end": 8,
+        "token_start": 7
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 68,
+        "id": 98,
+        "idx": 0,
+        "text": "Hnay ranh ko, di choi di :)) Cuoi tuan ranh k, di chill k."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/017"
+  },
+  {
+    "content_hash": "23461b53997e2a589bf64691263c6fae4325f9d456369a0c3319636bad5d1377",
+    "entities": [
+      {
+        "canonical_name": "Hnay",
+        "id": 160,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Mua",
+        "id": 161,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 69,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 160,
+        "sentence_id": 99,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 161,
+        "sentence_id": 99,
+        "token_end": 8,
+        "token_start": 7
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 69,
+        "id": 99,
+        "idx": 0,
+        "text": "Hnay ranh ko, di choi di :)) Mua to v troi oi, ket xe cmnr."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/018"
+  },
+  {
+    "content_hash": "d8c169758ee660e0db6eb438ef00c5224f2af296637a006f1116a624093e9cc3",
+    "entities": [
+      {
+        "canonical_name": "T",
+        "id": 162,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Mai",
+        "id": 163,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 70,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 162,
+        "sentence_id": 100,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 163,
+        "sentence_id": 101,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 70,
+        "id": 100,
+        "idx": 0,
+        "text": "T thay bit r, hay v."
+      },
+      {
+        "document_id": 70,
+        "id": 101,
+        "idx": 1,
+        "text": "Mai hoc som nha, dg quen do."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/019"
+  },
+  {
+    "content_hash": "13856bc41ca0011e257411ebe746767e9047dd183e5deefc9fe019d6195b6f60",
+    "entities": [
+      {
+        "canonical_name": "T",
+        "id": 164,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Phim",
+        "id": 165,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 71,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 164,
+        "sentence_id": 102,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 165,
+        "sentence_id": 103,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 71,
+        "id": 102,
+        "idx": 0,
+        "text": "T thay bit r, hay v."
+      },
+      {
+        "document_id": 71,
+        "id": 103,
+        "idx": 1,
+        "text": "Phim nay hay v, coi chua a."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/020"
+  },
+  {
+    "content_hash": "bb998cdff09b7271a9fee13640af50619ca4c29457ed3509e73f7c7ec849732d",
+    "entities": [
+      {
+        "canonical_name": "T",
+        "id": 166,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Doi",
+        "id": 167,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 72,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 166,
+        "sentence_id": 104,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 167,
+        "sentence_id": 105,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 72,
+        "id": 104,
+        "idx": 0,
+        "text": "T thay bit r, hay v."
+      },
+      {
+        "document_id": 72,
+        "id": 105,
+        "idx": 1,
+        "text": "Doi bung wa, an gi bh."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/021"
+  },
+  {
+    "content_hash": "a96fea848dd35097fcd1aab30bb3089fbe9e61ca122c05bef1e48612de55e367",
+    "entities": [
+      {
+        "canonical_name": "T",
+        "id": 168,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Ny",
+        "id": 169,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 73,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 168,
+        "sentence_id": 106,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 169,
+        "sentence_id": 107,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 73,
+        "id": 106,
+        "idx": 0,
+        "text": "T thay bit r, hay v."
+      },
+      {
+        "document_id": 73,
+        "id": 107,
+        "idx": 1,
+        "text": "Ny t bao dang gian, hix."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/022"
+  },
+  {
+    "content_hash": "f6c706b7a0bc5c555153bd04d2e5252eb33586ded367f94f6cbda5b8f5b05e8a",
+    "entities": [
+      {
+        "canonical_name": "T",
+        "id": 170,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Trg",
+        "id": 171,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 74,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 170,
+        "sentence_id": 108,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 171,
+        "sentence_id": 109,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 74,
+        "id": 108,
+        "idx": 0,
+        "text": "T thay bit r, hay v."
+      },
+      {
+        "document_id": 74,
+        "id": 109,
+        "idx": 1,
+        "text": "Trg hom nay dong ng kinh khung."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/023"
+  },
+  {
+    "content_hash": "dd5e2f87216ca0a83a053eacbe0e44653c5e8db394864bdbe5e7d771f79b9302",
+    "entities": [
+      {
+        "canonical_name": "T",
+        "id": 172,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Bai",
+        "id": 173,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 75,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 172,
+        "sentence_id": 110,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 173,
+        "sentence_id": 111,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "teencode",
+    "sentences": [
+      {
+        "document_id": 75,
+        "id": 110,
+        "idx": 0,
+        "text": "T thay bit r, hay v."
+      },
+      {
+        "document_id": 75,
+        "id": 111,
+        "idx": 1,
+        "text": "Bai kt kho v troi, lam sao lam het."
+      }
+    ],
+    "url": "https://fixture.local/fixture-teencode/024"
+  },
+  {
+    "content_hash": "a84b62f888c227b1589876b96da8be25d1c03ffd8774d6b625ee120c75f519ad",
+    "entities": [
+      {
+        "canonical_name": "Bo",
+        "id": 174,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giao",
+        "id": 175,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Dao",
+        "id": 176,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 76,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 174,
+        "sentence_id": 112,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 175,
+        "sentence_id": 112,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 176,
+        "sentence_id": 112,
+        "token_end": 5,
+        "token_start": 4
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 76,
+        "id": 112,
+        "idx": 0,
+        "text": "Bo Giao duc va Dao tao cong bo lich thi tot nghiep trung hoc pho thong nam nay."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/000"
+  },
+  {
+    "content_hash": "df5a7cadbeba1ab8aad14b1b7dcc8ae2a940cea50e33eb60be4f4d973287556d",
+    "entities": [
+      {
+        "canonical_name": "Ngan",
+        "id": 177,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nha",
+        "id": 178,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 77,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 177,
+        "sentence_id": 113,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 178,
+        "sentence_id": 113,
+        "token_end": 3,
+        "token_start": 2
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 77,
+        "id": 113,
+        "idx": 0,
+        "text": "Ngan hang Nha nuoc giu nguyen lai suat dieu hanh trong quy nay."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/001"
+  },
+  {
+    "content_hash": "a1897f09a59aaa92ef039d9d9e60ef2bf1f88cec941f965d3bd17fb5d5d7f6c7",
+    "entities": [
+      {
+        "canonical_name": "Hom",
+        "id": 179,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 78,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 179,
+        "sentence_id": 114,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 78,
+        "id": 114,
+        "idx": 0,
+        "text": "Hom nay troi dep qua, di ca phe khong?"
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/002"
+  },
+  {
+    "content_hash": "64a55bc9c67adc824e3737e50c280ddcabdca9006321c91009e67effede566d5",
+    "entities": [
+      {
+        "canonical_name": "Tao",
+        "id": 180,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 79,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 180,
+        "sentence_id": 115,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 79,
+        "id": 115,
+        "idx": 0,
+        "text": "Tao vua an pho xong, ngon da man luon."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/003"
+  },
+  {
+    "content_hash": "b5fcbaa9d1274fed3890fd0ef35c92395c2b2e62ff5c2ed93eea8cbc4209aadc",
+    "entities": [
+      {
+        "canonical_name": "Mai",
+        "id": 181,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 80,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 181,
+        "sentence_id": 116,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 80,
+        "id": 116,
+        "idx": 0,
+        "text": "Mai di hoc som nha, dung tre nua do."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/004"
+  },
+  {
+    "content_hash": "c4be037f2f504286b7c6758149196f761d30746fe1f041daf0684b5637577447",
+    "entities": [
+      {
+        "canonical_name": "Doi",
+        "id": 182,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 81,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 182,
+        "sentence_id": 117,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 81,
+        "id": 117,
+        "idx": 0,
+        "text": "Doi tuyen bong da quoc gia gianh chien thang trong tran dau giao huu toi qua."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/005"
+  },
+  {
+    "content_hash": "abfcd861f83e56f482c429d7adf10ce50bfd5ab2b9958d8f07a4d520a4954ff2",
+    "entities": [
+      {
+        "canonical_name": "Cuoi",
+        "id": 183,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Da",
+        "id": 184,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Lat",
+        "id": 185,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 82,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 183,
+        "sentence_id": 118,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 184,
+        "sentence_id": 118,
+        "token_end": 8,
+        "token_start": 7
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 185,
+        "sentence_id": 118,
+        "token_end": 9,
+        "token_start": 8
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 82,
+        "id": 118,
+        "idx": 0,
+        "text": "Cuoi tuan nay ranh khong, di choi Da Lat di."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/006"
+  },
+  {
+    "content_hash": "0782489ad5652aaf68bb4119c0f722ae51a56053061333865557f67b51b9d789",
+    "entities": [
+      {
+        "canonical_name": "Thanh",
+        "id": 186,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Ha",
+        "id": 187,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Noi",
+        "id": 188,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 83,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 186,
+        "sentence_id": 119,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 187,
+        "sentence_id": 119,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 188,
+        "sentence_id": 119,
+        "token_end": 4,
+        "token_start": 3
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 83,
+        "id": 119,
+        "idx": 0,
+        "text": "Thanh pho Ha Noi trien khai them tuyen xe buyt dien phuc vu nguoi dan."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/007"
+  },
+  {
+    "content_hash": "3615ab52525f26fda4e85a549f5fe2a6575cd1ff9f659b431c6851f855fbf889",
+    "entities": [
+      {
+        "canonical_name": "Nay",
+        "id": 189,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 84,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 189,
+        "sentence_id": 120,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 84,
+        "id": 120,
+        "idx": 0,
+        "text": "Nay mua to qua troi, chac ket xe du lam."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/008"
+  },
+  {
+    "content_hash": "e60249f62612d55f04abaa41ab0b4d1377b5025ac2da1527c442234c1975c981",
+    "entities": [
+      {
+        "canonical_name": "Truong",
+        "id": 190,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 85,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 190,
+        "sentence_id": 121,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 85,
+        "id": 121,
+        "idx": 0,
+        "text": "Truong dai hoc quoc gia cong bo ket qua tuyen sinh dot hai."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/009"
+  },
+  {
+    "content_hash": "16bf460c0c02bb83c4afb9d5f0f259d064a30b70a19cbd0b7f19cbacc9feaaaf",
+    "entities": [
+      {
+        "canonical_name": "Bo",
+        "id": 191,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giao",
+        "id": 192,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Dao",
+        "id": 193,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Ngan",
+        "id": 194,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nha",
+        "id": 195,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 86,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 191,
+        "sentence_id": 122,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 192,
+        "sentence_id": 122,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 193,
+        "sentence_id": 122,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 194,
+        "sentence_id": 123,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 195,
+        "sentence_id": 123,
+        "token_end": 3,
+        "token_start": 2
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 86,
+        "id": 122,
+        "idx": 0,
+        "text": "Bo Giao duc va Dao tao cong bo lich thi tot nghiep trung hoc pho thong nam nay."
+      },
+      {
+        "document_id": 86,
+        "id": 123,
+        "idx": 1,
+        "text": "Ngan hang Nha nuoc giu nguyen lai suat dieu hanh trong quy nay."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/010"
+  },
+  {
+    "content_hash": "41d6432529af96228af3a1ad5137bddbc5d771e39f7a46d4610766ff6fdfc752",
+    "entities": [
+      {
+        "canonical_name": "Bo",
+        "id": 196,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giao",
+        "id": 197,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Dao",
+        "id": 198,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Hom",
+        "id": 199,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 87,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 196,
+        "sentence_id": 124,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 197,
+        "sentence_id": 124,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 198,
+        "sentence_id": 124,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 199,
+        "sentence_id": 125,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 87,
+        "id": 124,
+        "idx": 0,
+        "text": "Bo Giao duc va Dao tao cong bo lich thi tot nghiep trung hoc pho thong nam nay."
+      },
+      {
+        "document_id": 87,
+        "id": 125,
+        "idx": 1,
+        "text": "Hom nay troi dep qua, di ca phe khong?"
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/011"
+  },
+  {
+    "content_hash": "c4799b8a9619d316d955f600a1d73b346f9450e9b22f1b864ffff9e8c8918294",
+    "entities": [
+      {
+        "canonical_name": "Bo",
+        "id": 200,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giao",
+        "id": 201,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Dao",
+        "id": 202,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Tao",
+        "id": 203,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 88,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 200,
+        "sentence_id": 126,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 201,
+        "sentence_id": 126,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 202,
+        "sentence_id": 126,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 203,
+        "sentence_id": 127,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 88,
+        "id": 126,
+        "idx": 0,
+        "text": "Bo Giao duc va Dao tao cong bo lich thi tot nghiep trung hoc pho thong nam nay."
+      },
+      {
+        "document_id": 88,
+        "id": 127,
+        "idx": 1,
+        "text": "Tao vua an pho xong, ngon da man luon."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/012"
+  },
+  {
+    "content_hash": "b6a9515f44b36b968f0b9cffa8300b51294fc9cddf1bccd2baac4918313bcbda",
+    "entities": [
+      {
+        "canonical_name": "Bo",
+        "id": 204,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giao",
+        "id": 205,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Dao",
+        "id": 206,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Mai",
+        "id": 207,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 89,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 204,
+        "sentence_id": 128,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 205,
+        "sentence_id": 128,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 206,
+        "sentence_id": 128,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 207,
+        "sentence_id": 129,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 89,
+        "id": 128,
+        "idx": 0,
+        "text": "Bo Giao duc va Dao tao cong bo lich thi tot nghiep trung hoc pho thong nam nay."
+      },
+      {
+        "document_id": 89,
+        "id": 129,
+        "idx": 1,
+        "text": "Mai di hoc som nha, dung tre nua do."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/013"
+  },
+  {
+    "content_hash": "8fe8733522efbdf39032780db9d0c28c448d5565c6bb728448e5970d0023f2cf",
+    "entities": [
+      {
+        "canonical_name": "Bo",
+        "id": 208,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giao",
+        "id": 209,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Dao",
+        "id": 210,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Doi",
+        "id": 211,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 90,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 208,
+        "sentence_id": 130,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 209,
+        "sentence_id": 130,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 210,
+        "sentence_id": 130,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 211,
+        "sentence_id": 131,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 90,
+        "id": 130,
+        "idx": 0,
+        "text": "Bo Giao duc va Dao tao cong bo lich thi tot nghiep trung hoc pho thong nam nay."
+      },
+      {
+        "document_id": 90,
+        "id": 131,
+        "idx": 1,
+        "text": "Doi tuyen bong da quoc gia gianh chien thang trong tran dau giao huu toi qua."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/014"
+  },
+  {
+    "content_hash": "ff228ba9f629f1676c5ed5fa78dc945e16e1f4c042a27a622e6ec6f86ddf6311",
+    "entities": [
+      {
+        "canonical_name": "Bo",
+        "id": 212,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giao",
+        "id": 213,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Dao",
+        "id": 214,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Cuoi",
+        "id": 215,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Da",
+        "id": 216,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Lat",
+        "id": 217,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 91,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 212,
+        "sentence_id": 132,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 213,
+        "sentence_id": 132,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 214,
+        "sentence_id": 132,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 215,
+        "sentence_id": 133,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 216,
+        "sentence_id": 133,
+        "token_end": 8,
+        "token_start": 7
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 217,
+        "sentence_id": 133,
+        "token_end": 9,
+        "token_start": 8
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 91,
+        "id": 132,
+        "idx": 0,
+        "text": "Bo Giao duc va Dao tao cong bo lich thi tot nghiep trung hoc pho thong nam nay."
+      },
+      {
+        "document_id": 91,
+        "id": 133,
+        "idx": 1,
+        "text": "Cuoi tuan nay ranh khong, di choi Da Lat di."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/015"
+  },
+  {
+    "content_hash": "64a50d1b5e2e7af64a2b3737fe0759159a20c2353c099888cfaa053cc2b732e8",
+    "entities": [
+      {
+        "canonical_name": "Bo",
+        "id": 218,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giao",
+        "id": 219,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Dao",
+        "id": 220,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Thanh",
+        "id": 221,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Ha",
+        "id": 222,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Noi",
+        "id": 223,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 92,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 218,
+        "sentence_id": 134,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 219,
+        "sentence_id": 134,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 220,
+        "sentence_id": 134,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 221,
+        "sentence_id": 135,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 222,
+        "sentence_id": 135,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 223,
+        "sentence_id": 135,
+        "token_end": 4,
+        "token_start": 3
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 92,
+        "id": 134,
+        "idx": 0,
+        "text": "Bo Giao duc va Dao tao cong bo lich thi tot nghiep trung hoc pho thong nam nay."
+      },
+      {
+        "document_id": 92,
+        "id": 135,
+        "idx": 1,
+        "text": "Thanh pho Ha Noi trien khai them tuyen xe buyt dien phuc vu nguoi dan."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/016"
+  },
+  {
+    "content_hash": "ec1737355e48ebda7d3ce9b17d64f8c6b0d84b843a41803f367f47443e9907c5",
+    "entities": [
+      {
+        "canonical_name": "Bo",
+        "id": 224,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giao",
+        "id": 225,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Dao",
+        "id": 226,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nay",
+        "id": 227,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 93,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 224,
+        "sentence_id": 136,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 225,
+        "sentence_id": 136,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 226,
+        "sentence_id": 136,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 227,
+        "sentence_id": 137,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 93,
+        "id": 136,
+        "idx": 0,
+        "text": "Bo Giao duc va Dao tao cong bo lich thi tot nghiep trung hoc pho thong nam nay."
+      },
+      {
+        "document_id": 93,
+        "id": 137,
+        "idx": 1,
+        "text": "Nay mua to qua troi, chac ket xe du lam."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/017"
+  },
+  {
+    "content_hash": "14fadb822d9b411e6b98416c10bc028a959938c3d98ea300da7b83865ec9a74d",
+    "entities": [
+      {
+        "canonical_name": "Bo",
+        "id": 228,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Giao",
+        "id": 229,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Dao",
+        "id": 230,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Truong",
+        "id": 231,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 94,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 228,
+        "sentence_id": 138,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 229,
+        "sentence_id": 138,
+        "token_end": 2,
+        "token_start": 1
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 230,
+        "sentence_id": 138,
+        "token_end": 5,
+        "token_start": 4
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 231,
+        "sentence_id": 139,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 94,
+        "id": 138,
+        "idx": 0,
+        "text": "Bo Giao duc va Dao tao cong bo lich thi tot nghiep trung hoc pho thong nam nay."
+      },
+      {
+        "document_id": 94,
+        "id": 139,
+        "idx": 1,
+        "text": "Truong dai hoc quoc gia cong bo ket qua tuyen sinh dot hai."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/018"
+  },
+  {
+    "content_hash": "527379db82e4b09304426d64487969bd5159466f0b72f81feee1c334be58efbb",
+    "entities": [
+      {
+        "canonical_name": "Ngan",
+        "id": 232,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nha",
+        "id": 233,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Hom",
+        "id": 234,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 95,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 232,
+        "sentence_id": 140,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 233,
+        "sentence_id": 140,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 234,
+        "sentence_id": 141,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 95,
+        "id": 140,
+        "idx": 0,
+        "text": "Ngan hang Nha nuoc giu nguyen lai suat dieu hanh trong quy nay."
+      },
+      {
+        "document_id": 95,
+        "id": 141,
+        "idx": 1,
+        "text": "Hom nay troi dep qua, di ca phe khong?"
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/019"
+  },
+  {
+    "content_hash": "4c647ddcbae16c3d1742245bda9ee7f3616da412a63c3b91bf8269d88cfa4d28",
+    "entities": [
+      {
+        "canonical_name": "Ngan",
+        "id": 235,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nha",
+        "id": 236,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Tao",
+        "id": 237,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 96,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 235,
+        "sentence_id": 142,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 236,
+        "sentence_id": 142,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 237,
+        "sentence_id": 143,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 96,
+        "id": 142,
+        "idx": 0,
+        "text": "Ngan hang Nha nuoc giu nguyen lai suat dieu hanh trong quy nay."
+      },
+      {
+        "document_id": 96,
+        "id": 143,
+        "idx": 1,
+        "text": "Tao vua an pho xong, ngon da man luon."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/020"
+  },
+  {
+    "content_hash": "31310a32e09f1a9ef00e21e5bb4500a3a4671cf5c5def168e093200bd126bd86",
+    "entities": [
+      {
+        "canonical_name": "Ngan",
+        "id": 238,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nha",
+        "id": 239,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Mai",
+        "id": 240,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 97,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 238,
+        "sentence_id": 144,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 239,
+        "sentence_id": 144,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 240,
+        "sentence_id": 145,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 97,
+        "id": 144,
+        "idx": 0,
+        "text": "Ngan hang Nha nuoc giu nguyen lai suat dieu hanh trong quy nay."
+      },
+      {
+        "document_id": 97,
+        "id": 145,
+        "idx": 1,
+        "text": "Mai di hoc som nha, dung tre nua do."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/021"
+  },
+  {
+    "content_hash": "6835b8873421bad7663251e90d37801f53c29bfc758d19b0c4fb56fdadcc9dc1",
+    "entities": [
+      {
+        "canonical_name": "Ngan",
+        "id": 241,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nha",
+        "id": 242,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Doi",
+        "id": 243,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 98,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 241,
+        "sentence_id": 146,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 242,
+        "sentence_id": 146,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 243,
+        "sentence_id": 147,
+        "token_end": 1,
+        "token_start": 0
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 98,
+        "id": 146,
+        "idx": 0,
+        "text": "Ngan hang Nha nuoc giu nguyen lai suat dieu hanh trong quy nay."
+      },
+      {
+        "document_id": 98,
+        "id": 147,
+        "idx": 1,
+        "text": "Doi tuyen bong da quoc gia gianh chien thang trong tran dau giao huu toi qua."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/022"
+  },
+  {
+    "content_hash": "c61df1e48dedcc02568834945fd22d7887c46bb04f70416e2b12be3d54c3b51e",
+    "entities": [
+      {
+        "canonical_name": "Ngan",
+        "id": 244,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nha",
+        "id": 245,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Cuoi",
+        "id": 246,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Da",
+        "id": 247,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Lat",
+        "id": 248,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 99,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 244,
+        "sentence_id": 148,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 245,
+        "sentence_id": 148,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 246,
+        "sentence_id": 149,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 247,
+        "sentence_id": 149,
+        "token_end": 8,
+        "token_start": 7
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 248,
+        "sentence_id": 149,
+        "token_end": 9,
+        "token_start": 8
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 99,
+        "id": 148,
+        "idx": 0,
+        "text": "Ngan hang Nha nuoc giu nguyen lai suat dieu hanh trong quy nay."
+      },
+      {
+        "document_id": 99,
+        "id": 149,
+        "idx": 1,
+        "text": "Cuoi tuan nay ranh khong, di choi Da Lat di."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/023"
+  },
+  {
+    "content_hash": "d70f0740387245ad6bf44e0c090901d0ec9e4126c235727f8adaedf7cc8c9ad8",
+    "entities": [
+      {
+        "canonical_name": "Ngan",
+        "id": 249,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Nha",
+        "id": 250,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Thanh",
+        "id": 251,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Ha",
+        "id": 252,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      },
+      {
+        "canonical_name": "Noi",
+        "id": 253,
+        "ontology_class": "Thing",
+        "posterior": 1.0,
+        "wikidata_qid": null
+      }
+    ],
+    "id": 100,
+    "lang": "vi",
+    "mentions": [
+      {
+        "confidence": 1.0,
+        "entity_id": 249,
+        "sentence_id": 150,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 250,
+        "sentence_id": 150,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 251,
+        "sentence_id": 151,
+        "token_end": 1,
+        "token_start": 0
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 252,
+        "sentence_id": 151,
+        "token_end": 3,
+        "token_start": 2
+      },
+      {
+        "confidence": 1.0,
+        "entity_id": 253,
+        "sentence_id": 151,
+        "token_end": 4,
+        "token_start": 3
+      }
+    ],
+    "quality_score": null,
+    "register": "non_diacritic",
+    "sentences": [
+      {
+        "document_id": 100,
+        "id": 150,
+        "idx": 0,
+        "text": "Ngan hang Nha nuoc giu nguyen lai suat dieu hanh trong quy nay."
+      },
+      {
+        "document_id": 100,
+        "id": 151,
+        "idx": 1,
+        "text": "Thanh pho Ha Noi trien khai them tuyen xe buyt dien phuc vu nguoi dan."
+      }
+    ],
+    "url": "https://fixture.local/fixture-nondiacritic/024"
+  }
+]

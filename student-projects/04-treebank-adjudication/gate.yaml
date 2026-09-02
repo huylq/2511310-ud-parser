@@ -1,0 +1,43 @@
+# Gate configuration for Project 4: Treebank Curation & Adjudication.
+# See student-projects/_gate/README.md for what each step checks.
+
+branch: student/04-treebank-adjudication
+
+owned_paths:
+  - "src/vietnlp/treebank/**"
+  - "tests/test_treebank_*.py"
+  - "student-projects/04-treebank-adjudication/**"
+
+forbidden_paths:
+  - "src/vietnlp/interfaces/**"
+  - "src/vietnlp/platform/**"
+  - "src/vietnlp/acquisition/**"
+  - "src/vietnlp/curation/**"
+  - "src/vietnlp/linguistics/**"
+  - "tests/fixtures/**"
+  - "student-projects/_gate/**"
+
+provenance_field: source
+
+producers:
+  - name: adjudicated_sentences
+    module: vietnlp.treebank.adjudicator
+    function: adjudicate
+    # Real signature to implement:
+    #   adjudicate(sent_id: str, system_a: tuple[UDToken, ...], system_b: tuple[UDToken, ...]) -> AdjudicatedSentence
+    call_mode: per_item
+    returns: single
+    inputs:
+      loader: "student-projects/_gate/inputs/04-treebank-adjudication.py:build_inputs"
+    schema:
+      module: vietnlp.interfaces.treebank
+      validator: validate_adjudicated_sentence
+
+own_test_glob: "tests/test_treebank_*.py"
+golden_test: "tests/golden/test_treebank_adjudication_golden.py"
+min_own_tests: 6
+required_input_classes:
+  - rationale
+  - kappa
+  - degenerate
+  - adversarial

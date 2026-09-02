@@ -1,0 +1,43 @@
+# Gate configuration for Project 6: Semantics / FOL.
+# See student-projects/_gate/README.md for what each step checks.
+
+branch: student/06-semantics
+
+owned_paths:
+  - "src/vietnlp/semantics/**"
+  - "tests/test_semantics_*.py"
+  - "student-projects/06-semantics/**"
+
+forbidden_paths:
+  - "src/vietnlp/interfaces/**"
+  - "src/vietnlp/platform/**"
+  - "src/vietnlp/acquisition/**"
+  - "src/vietnlp/curation/**"
+  - "src/vietnlp/linguistics/**"
+  - "src/vietnlp/ontology/**"
+  - "tests/fixtures/**"
+  - "student-projects/_gate/**"
+
+provenance_field: source
+
+producers:
+  - name: logical_forms
+    module: vietnlp.semantics.translator
+    function: to_logical_form
+    # Real signature to implement: to_logical_form(parse: interfaces.ud.DependencyParse) -> LogicalForm
+    call_mode: per_item
+    returns: single
+    inputs:
+      loader: "student-projects/_gate/inputs/06-semantics.py:build_inputs"
+    schema:
+      module: vietnlp.interfaces.semantics
+      validator: validate_logical_form
+
+own_test_glob: "tests/test_semantics_*.py"
+golden_test: "tests/golden/test_semantics_type_check_golden.py"
+min_own_tests: 6
+required_input_classes:
+  - quantifier
+  - tense
+  - degenerate
+  - adversarial

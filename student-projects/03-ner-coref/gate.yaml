@@ -1,0 +1,55 @@
+# Gate configuration for Project 3: NER & Coreference Resolution.
+# See student-projects/_gate/README.md for what each step checks.
+#
+# Only the NER producer is checked by the mechanical schema-conformance
+# step -- coreference chaining has no single-object structural contract a
+# generic loader can drive meaningfully (it depends on the NER output the
+# gate itself just produced). Coref quality is exercised by the golden-file
+# test instead.
+
+branch: student/03-ner-coref
+
+owned_paths:
+  - "src/vietnlp/linguistics/ner.py"
+  - "src/vietnlp/linguistics/coref.py"
+  - "tests/test_linguistics_ner*.py"
+  - "tests/test_linguistics_coref*.py"
+  - "student-projects/03-ner-coref/**"
+
+forbidden_paths:
+  - "src/vietnlp/interfaces/**"
+  - "src/vietnlp/platform/**"
+  - "src/vietnlp/acquisition/**"
+  - "src/vietnlp/curation/**"
+  - "src/vietnlp/linguistics/segmentation.py"
+  - "src/vietnlp/linguistics/pos.py"
+  - "src/vietnlp/linguistics/ud_parser.py"
+  - "tests/fixtures/**"
+  - "student-projects/_gate/**"
+
+provenance_field: source
+
+producers:
+  - name: named_entities
+    module: vietnlp.linguistics.ner
+    function: extract_entities
+    # Real signature to implement: extract_entities(sentence: interfaces.linguistics.SegmentedSentence) -> list[NamedEntity]
+    call_mode: per_item
+    returns: list
+    inputs:
+      loader: "student-projects/_gate/inputs/03-ner-coref.py:build_inputs"
+    schema:
+      module: vietnlp.interfaces.ner
+      validator: validate_named_entities
+      validator_call_mode: batch
+
+own_test_glob:
+  - "tests/test_linguistics_ner*.py"
+  - "tests/test_linguistics_coref*.py"
+golden_test: "tests/golden/test_ner_coref_golden.py"
+min_own_tests: 6
+required_input_classes:
+  - honorific
+  - span
+  - degenerate
+  - adversarial

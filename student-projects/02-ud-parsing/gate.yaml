@@ -1,0 +1,52 @@
+# Gate configuration for Project 2: UD Dependency Parsing.
+# See student-projects/_gate/README.md for what each step checks.
+
+branch: student/02-ud-parsing
+
+owned_paths:
+  - "src/vietnlp/linguistics/ud_parser.py"
+  - "tests/test_linguistics_ud_parser*.py"
+  - "student-projects/02-ud-parsing/**"
+
+forbidden_paths:
+  - "src/vietnlp/interfaces/**"
+  - "src/vietnlp/platform/**"
+  - "src/vietnlp/acquisition/**"
+  - "src/vietnlp/curation/**"
+  - "src/vietnlp/linguistics/segmentation.py"
+  - "src/vietnlp/linguistics/pos.py"
+  - "src/vietnlp/linguistics/ner.py"
+  - "src/vietnlp/linguistics/coref.py"
+  - "tests/fixtures/**"
+  - "student-projects/_gate/**"
+
+provenance_field: source
+
+producers:
+  - name: dependency_parses
+    module: vietnlp.linguistics.ud_parser
+    function: parse
+    # Real signature to implement: parse(sentence: interfaces.linguistics.SegmentedSentence) -> DependencyParse
+    call_mode: per_item
+    returns: single
+    inputs:
+      loader: "student-projects/_gate/inputs/02-ud-parsing.py:build_inputs"
+    schema:
+      module: vietnlp.interfaces.ud
+      validator: validate_dependency_parse
+    extra_checks:
+      # Tree-shape invariant (single root, no cycles, fully spanning) --
+      # see interfaces/ud.py's own note that this is deliberately separate
+      # from validate_dependency_parse's per-row schema check.
+      - module: vietnlp.interfaces.ud
+        function: is_single_rooted_tree
+
+own_test_glob: "tests/test_linguistics_ud_parser*.py"
+golden_test: "tests/golden/test_ud_parsing_golden.py"
+min_own_tests: 6
+required_input_classes:
+  - clf
+  - classifier
+  - cycle
+  - degenerate
+  - adversarial
