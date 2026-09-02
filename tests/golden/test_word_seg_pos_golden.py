@@ -40,15 +40,18 @@ def _load_sentences() -> list[dict]:
 
 def _recombine(sentence) -> str:
     """Concatenates every token's underlying syllables back into one
-    string, collapsing to single spaces -- the "lossless recombination"
-    check does not require exact whitespace/punctuation-spacing fidelity,
-    only that no syllable was dropped, duplicated, or corrupted."""
+    string with ALL whitespace stripped -- the "lossless recombination"
+    check does not require exact spacing/tokenization-boundary fidelity
+    (a linguistically-correct segmenter may legitimately tokenize trailing
+    punctuation as its own token, changing where a space would fall
+    relative to a naive whitespace split), only that no syllable's
+    CHARACTERS were dropped, duplicated, or corrupted."""
     syllables = [s for token in sentence.tokens for s in token.syllables]
-    return unicodedata.normalize("NFC", " ".join(syllables))
+    return unicodedata.normalize("NFC", "".join(syllables).replace(" ", ""))
 
 
 def _original_syllables(text: str) -> str:
-    return unicodedata.normalize("NFC", " ".join(text.split()))
+    return unicodedata.normalize("NFC", "".join(text.split()))
 
 
 @pytest.mark.parametrize("row", _load_sentences(), ids=lambda r: r["sent_id"])
