@@ -156,6 +156,30 @@ Projects 4 and 7 may build against their PROVISIONAL fixture immediately
 — sign-off only affects whether it can later be treated as frozen ground
 truth without revision.
 
+## Submitting on GitHub
+
+The repo is hosted at `git@github.com:phunghx/VietnamesModel.git`
+(HTTPS: `https://github.com/phunghx/VietnamesModel.git`). `main`,
+`curriculum-base`, and all 9 `student/NN-slug` branches are already pushed.
+Each project's own `project.md` has the exact clone/branch/PR commands for
+that project; the shared shape is:
+
+1. Clone the repo (or fork it, if you don't have push access) and check out
+   your assigned `student/NN-slug` branch.
+2. Commit your work there directly (or to the same branch name on your
+   fork).
+3. Once your gate passes and `TESTING.md` is filled in, open a **Pull
+   Request from `student/NN-slug` into `main`**. That PR is the unit the
+   professor folds into the final concatenation of all 9 projects — do not
+   merge it yourself.
+4. Cross-project consumption is optional and one-directional only: a
+   downstream project may pull an upstream project's already-pushed real
+   branch for an *extra* sanity check (never a requirement, never merged
+   into the downstream branch — see that project's "Optional: checking
+   against a merged upstream project" section). Every project's gate always
+   grades against the frozen stub/fixture, so nobody is blocked waiting on,
+   or broken by, another student's pace.
+
 ## Submission checklist (every project)
 
 - [ ] `student-projects/_gate/run_gate.sh <slug>` reports `Overall: PASS`.
@@ -165,3 +189,5 @@ truth without revision.
       files in your `owned_paths`.
 - [ ] You can explain, unaided, any line of your own submission and why
       it's there.
+- [ ] A Pull Request is open from `student/<slug>` into `main` on
+      `github.com/phunghx/VietnamesModel`.
