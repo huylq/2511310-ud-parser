@@ -3,6 +3,12 @@
 **Professor's evaluation of your Week 1 submission (`DESIGN.md`, commit
 `17bb1b1`) is below, followed by this week's tasks.**
 
+> **Updated 9 October — professor's decision: the parser is now trained on
+> UD_Vietnamese-VTB (required).** Everything from "Gaps to close this week"
+> onward replaces the 7 October version; the evaluation above is unchanged.
+> If you already started on the old tasks, keep that work. Your VTB counts,
+> hand-annotated sentences and reworked test plan all carry over.
+
 ## Week 1 evaluation: PASS — real research; translate to English
 
 ### What I checked
@@ -59,109 +65,142 @@ Vietnamese. Do this first (§1).
 
 ### Gaps to close this week
 
-1. **The approach decision rests on one sentence.** Week 1 allowed a
-   leaning, but Week 2 must lock it with a real comparison (§2).
-2. **Syllables vs words is unresolved.** The stub gives you one token per
-   *syllable*, while VTB's conventions are defined over *words*:
-   `quyết tâm` is one VTB token. You must not segment words, which is
-   Project 1's job. So your design must say how the parser attaches tokens
-   it cannot group, and how it copes with real Project 1 output, where
-   syllables may be joined by a space or by `_` (§3).
-3. **Your planned `punct` rule will almost never fire on the graded
-   input.** The stub leaves punctuation glued to the previous token: 88
-   tokens in the fixture look like `nay.` or `ghê,`. The only standalone
-   non-word tokens are ten `:))` emoticons, and UD attaches emoticons as
-   `discourse`, not `punct` (§4).
-4. **Serial verbs: your head rule is right, but there is no label rule.**
-   `compound:dir` is missing from your analysis, yet it is VTB's most
-   frequent label for the directional verbs `ra`/`về`/`vào`/`lên`/`xuống`
-   (155 cases, against 86 `xcomp` and 64 `compound:svc`). When `đi` is
-   followed by a verb, VTB always makes `đi` the head, as your rule says.
-   But VTB splits the label: 55 `xcomp`, 47 `compound:svc`, 10
-   `compound:dir`. With base labels only, you need a written rule for
-   `compound` vs `xcomp` (§4).
-5. **Final particles can be settled from the data.** VTB attaches `à`
-   (10 of 10), `nhé` (5 of 5) and `đấy` (10 of 17) as `discourse`.
-   - `đó` is mostly a *demonstrative* in VTB (171 `det:pmod`), so the
-     fixture's sentence-final `đó` ("đừng trễ nữa đó") needs a rule that
-     tells the two uses apart.
-   - `nha` never occurs in VTB, so it needs an argued analogy with `nhé`.
-6. **`hay` is a trap.** VTB attaches `hay` ("or") as `cc` 43 times. But
-   every occurrence of `hay` in the fixture means "good"
-   (`hay ghê`, `hay v`). A coordination rule copied from VTB would be
-   wrong on every graded occurrence, which makes it a natural adversarial
-   test.
+1. **Approach: decided by the professor.** See the decision below. It
+   replaces your rule-based leaning.
+2. **Syllables vs words now matters even more.** You will train on VTB,
+   which is annotated over *words*: 18-22% of VTB tokens span several
+   syllables (`quyết tâm` is one token). The graded input is the stub's
+   *syllables*. A model trained on one tokenization and run on the other is
+   mismatched before it starts (§3).
+3. **Punctuation differs between VTB and the fixture.**
+   - VTB's text keeps punctuation as separate tokens (`đẹp .`).
+   - The fixture glues it to the previous token: 88 tokens look like
+     `nay.` or `ghê,`.
+   - The only standalone non-word tokens in the fixture are ten `:))`
+     emoticons. These never occur in VTB, and UD attaches them as
+     `discourse` (§3).
+4. **Serial verbs: a VTB-trained model inherits VTB's own split.**
+   - `compound:dir` is VTB's most frequent label for the directional verbs
+     `ra`/`về`/`vào`/`lên`/`xuống` (155 cases, against 86 `xcomp` and 64
+     `compound:svc`). It is missing from your analysis.
+   - When `đi` is followed by a verb, VTB always makes `đi` the head. But
+     it splits the label: 55 `xcomp`, 47 `compound:svc`, 10
+     `compound:dir`.
+
+   Decide how the subtypes map to base labels, and whether the
+   `compound`/`xcomp` split needs post-processing (§4).
+5. **Final particles:**
+   - VTB attaches `à` (10 of 10), `nhé` (5 of 5) and `đấy` (10 of 17) as
+     `discourse`, so a trained model will learn these.
+   - `nha` never occurs in VTB.
+   - `đó` is mostly a *demonstrative* in VTB (171 `det:pmod`), but the
+     fixture's sentence-final `đó` ("đừng trễ nữa đó") is a particle.
+
+   Plan how you will check the model on all three (§4).
+6. **`hay` is a trap.** VTB attaches `hay` ("or") as `cc` 43 times, but
+   every occurrence of `hay` in the fixture means "good" (`hay ghê`,
+   `hay v`). A model trained on VTB is likely to get this wrong, which
+   makes it your first adversarial test (§4, §6).
 7. **Your test plan tests the wrong thing.** It lists checks that a
    missing root, multiple roots, invalid heads, self-loops and cycles are
    detected. That is `is_single_rooted_tree`'s job: it is frozen and
    already tested in `tests/test_interfaces_contracts.py`. What *you* must
-   test is that **your parser's own guard** refuses to create a cycle or a
-   second root. The gate's required `cycle` test case is that test (§6).
+   test is that **your decoder and guard** never output a cycle or a
+   second root (§6).
 
-### Correction to the Week 1 task text
+### Professor's decision: train on VTB (required)
 
 `week1_tasks.md` said there is "no treebank to train against except what
-you hand-annotate yourself". That is wrong. UD_Vietnamese-VTB is public
-(CC BY-SA 4.0, 3,323 sentences, on GitHub at
-`UniversalDependencies/UD_Vietnamese-VTB`). This doesn't force a change to
-your rule-based leaning. VTB is annotated over words, whereas your graded
-input is syllables from the stub, with `upos="X"` on every token. Weigh
-that in §2. **If you want to train on VTB, make the case in your report.
-Training on it needs the professor's approval before you build anything.**
+you hand-annotate yourself". That was wrong. UD_Vietnamese-VTB is public:
+CC BY-SA 4.0, on GitHub at `UniversalDependencies/UD_Vietnamese-VTB`, with
+**1,400 train / 1,123 dev / 800 test** sentences.
+
+**Decision: Project 2's parser is a statistical dependency parser trained
+on UD_Vietnamese-VTB.**
+- This replaces the rule-based leaning in your Week 1 `DESIGN.md`.
+- Hand-written rules are allowed only as **documented overrides**, for
+  things VTB cannot teach the model (emoticons, glued punctuation) or
+  errors you can show on dev data or on your hand-annotated sentences.
+- The six constructions still have to be handled deliberately, and your
+  convention cited for each, as `project.md` requires. Now the evidence is
+  what the trained model does, checked against VTB and your own sentences.
+
+**Constraints:**
+- **Where the weights go:** the trained weights go in
+  `src/vietnlp/linguistics/ud_model/`. This commit adds that directory to
+  your `owned_paths` in `gate.yaml`. The gate installs a fresh, editable
+  copy of the repo and calls `parse()` on all 151 fixture sentences, so
+  `parse()` must load committed weights. It cannot train at import time.
+- **No new dependencies.** `pyproject.toml` is not in your owned paths.
+  Write the parser and the trainer in pure Python, plus `numpy` (already
+  installed because pandas needs it). No PyTorch and no scikit-learn.
+- **Weights format:** JSON, or `.npz` loaded with `allow_pickle=False`.
+  **Never use pickle**: loading a pickle runs arbitrary code, and it can't
+  be reviewed. Keep the weights under about 10 MB, pruning rare or
+  near-zero features if necessary, and say what you pruned.
+- **Licence and attribution:** VTB is CC BY-SA 4.0, and your weights are
+  derived from it. Add `ud_model/ATTRIBUTION.md` naming VTB, the version or
+  commit you trained on, its licence, and that the weights are derived
+  from it. **Don't commit the VTB files themselves.**
+- **Reproducibility:** the training script lives under
+  `student-projects/02-ud-parsing/` with a fixed random seed. Anyone with
+  the same VTB commit can regenerate your weights and get the same dev
+  scores.
+- **Data splits:** train on `train`, tune on `dev`, and evaluate on `test`
+  **once**, at the end, for the final report. Tuning on test is not
+  allowed.
 
 ### Process notes
 
 - **Schedule:** Week 1 was set on 7 September and you submitted it on
   5 October, so you are about four weeks behind the plan. This week is
   scoped to close the design phase so that Weeks 3-4 can start straight
-  after. The sentences you annotate this week (§5) become your Weeks 3-4
-  test cases, so they are not extra work.
+  after.
 - **Environment:** there is no evidence yet that you set it up (Week 1,
   Day 1). This week's report must include the literal `pytest tests -q`
   summary line.
 
 ## This week's scope
 
-Finish the research and design phase (`plan.md` Weeks 1-2):
+Finish the design phase (`plan.md` Weeks 1-2):
 - translate `DESIGN.md` into English;
-- lock the approach;
-- settle every one of the six constructions, or scope it out with a
-  written reason;
-- annotate real sentences by hand to prove your conventions can be
-  applied.
+- **design the VTB-trained parser** precisely enough that Weeks 3-4 are
+  implementation, not more design;
+- measure VTB with your own scripts;
+- start your hand-annotated evaluation set.
 
-**Still no `ud_parser.py`**: that starts in Weeks 3-4.
+**Still no `ud_parser.py` and no training code**: those start in Weeks
+3-4. Analysis scripts that read and count VTB are allowed now, under
+`student-projects/02-ud-parsing/scripts/`.
 
 ### Data rule (binding from Week 2 on)
 
 **Collect and annotate all data by hand. Do not use AI, an LLM, or any
-generative or trained model to produce data.** This covers:
+generative or trained model to produce data.**
 
-- **Finding or writing example sentences.** No chatbot, and no prompts
-  such as "give me sentences with classifiers".
-- **Dependency annotation.** No parser (underthesea, VnCoreNLP, Stanza,
-  UDPipe, trankit, PhoNLP, DeepSeek or any other) may pre-annotate a tree,
-  even if you correct it afterwards.
-- **Building the closed-class word lists** (§7).
-- **Translating, cleaning or re-spelling data text.** (Translating your
-  own `DESIGN.md` prose is writing, not data. Do it yourself.)
+- **Training on VTB is the required method, not a breach of this rule.**
+  VTB is published, human-annotated data. You may read it, count it,
+  convert it with deterministic code you wrote, and train on it.
+- **No model may produce or pre-annotate your data, including your own
+  parser.** Never parse a sentence and then "correct" the result into your
+  hand-annotated set. That is exactly how an evaluation set inherits a
+  model's errors and then rewards them. No other parser (underthesea,
+  VnCoreNLP, Stanza, UDPipe, trankit, PhoNLP, DeepSeek…) and no LLM may be
+  used either.
+- **Word lists** (§7) are data, so build them by hand and cite sources.
 
 **You may use:**
 - your own reading and judgment as a Vietnamese speaker;
 - public pages you read yourself;
 - grammars and dictionaries;
-- the **published, human-annotated** VTB treebank, as a reference you read
-  and count with code you wrote yourself (§4);
-- plain deterministic code you wrote yourself (e.g. a CoNLL-U reader).
+- VTB;
+- plain deterministic code you wrote yourself.
 
 If you're unsure whether a tool counts, ask before you use it.
 
-**Why:** the fixture lacks most of your six constructions, and the
-treebank fixture is AI-drafted. The only real evidence for your
-conventions is real text that you annotate yourself. **The VTB counts in
-this file came from an AI-assisted evaluation, so reproduce them with your
-own script before you cite them (§4).** Any example strings here
-illustrate a pattern; don't copy them into your data.
+**The VTB counts in this file came from an AI-assisted evaluation.
+Reproduce them with your own script before you cite them** (§4). Any
+example strings here illustrate a pattern; don't copy them into your data.
 
 ### 0. Environment (do first)
 
@@ -178,116 +217,140 @@ The suite must be green. Paste the summary line into your report.
 
 Keep the substance; this is a language change, not a rewrite. You may
 keep a Vietnamese draft alongside it if that helps you write, but the
-version that ships on your branch must be in English. Do the rest of this
-week's work in the English version.
+version that ships on your branch must be in English. Then mark the
+Week 1 "rule-based" decision as superseded by the professor's decision,
+and say why in one line.
 
-### 2. Lock the approach
+### 2. Design the VTB-trained parser (new `DESIGN.md` section)
 
-Replace the one-sentence justification with a real comparison of:
-- **(a)** rules over lexical cues. UPOS is `X` on stub input, so the rules
-  can only use word forms, position and your closed-class word lists;
-- **(b)** a statistical parser trained on VTB, which needs approval (see
-  above);
-- **(c)** training only on what you annotate yourself.
+Specify each item precisely enough to implement in Weeks 3-4:
 
-Judge each option on four points:
-- whether it can *guarantee* a valid tree;
-- how it behaves on syllable-level stub input vs word-level real Project 1
-  input;
-- whether you can explain each decision it makes;
-- whether it fits the time left.
+- **Parser family.**
+  - **Transition-based** (arc-standard, arc-eager or arc-hybrid, scored by
+    an averaged perceptron) is the usual choice in pure Python, and its
+    transition system builds a tree by construction.
+  - **Graph-based** scoring needs a maximum-spanning-tree decoder
+    (Chu-Liu/Edmonds) to guarantee a tree.
 
-**State your decision.** It may not stay open past this week.
+  Pick one and justify it.
+- **Projectivity.** VTB is almost entirely projective: 5 of 1,400 train
+  trees are non-projective, 9 of 1,123 dev, 1 of 800 test. Reproduce
+  these counts, and decide what to do with the non-projective training
+  trees, e.g. skip them.
+- **Single root.** UD requires exactly one token with `head = 0`. Some
+  transition systems can finish with several tokens attached to ROOT, so
+  say how yours prevents that.
+- **Labels.** Either map VTB subtypes to base labels before training,
+  which gives a smaller label set, or predict full labels and map them at
+  output. Either way, every emitted `deprel` must be in `UD_DEPREL`. List
+  the complete mapping as a table.
+- **Features: only what `parse()` sees at test time.**
+  - The input is token forms (with `upos="X"` from the stub) plus the
+    structure built so far.
+  - VTB has gold UPOS, but your input never will. Training on gold UPOS
+    and testing on `X` gives a model that silently depends on a signal
+    that is absent. Don't use UPOS features unless you train with what the
+    input really carries.
+  - List your feature templates.
+- **Training regime:** number of epochs, shuffling with a fixed seed, and
+  weight averaging. Which dev scores (UAS/LAS) decide when to stop, and
+  whether you retrain on train + dev after tuning.
+- **Weights:** the format, the size budget, and the pruning rule. How
+  `parse()` loads them, and how long loading may take, given the gate
+  parses 151 sentences.
+- **Overrides:** list each hand-written rule you expect to need (e.g.
+  emoticon → `discourse`). Each must be justified by evidence: VTB can't
+  teach it, or dev or hand-annotated errors show it.
+- **Safety net:** keep your Week 1 validation and fallback tree as a last
+  resort after decoding (§6).
 
-### 3. Token granularity rule
+### 3. Make training input look like test input
 
-- **Write every rule in terms of tokens, never syllables.** A token may be
-  one syllable (stub input) or a multi-syllable word (real Project 1
-  output), possibly joined with `_`. Word-list lookups must normalize
-  `_` ↔ space, NFC and case.
-- **Choose one default for tokens your rules cannot analyse**, such as the
-  syllables of a word the stub split apart: what they attach to, and with
-  which label. Use it the same way everywhere, because consistency is what
-  makes trees comparable.
+Train and test inputs must match:
+- **The graded input** is stub tokens: one whitespace syllable each,
+  punctuation glued on, and `upos="X"`.
+- **VTB** is word tokens, with punctuation as separate tokens.
 
-  UD's `goeswith` is *not* the answer. UD reserves it for "text that is
-  not well edited", and the space between Vietnamese syllables is correct
-  orthography.
-- **Do not build a word segmenter.** Grouping syllables into words is
-  Project 1's job, so your word lists hold closed-class function words
-  only (§7), never a content-word dictionary.
-- **Say what you expect to be right on stub input**: function-word
-  attachments such as `của`/`case`, `và`/`cc`, particles/`discourse` and
-  classifiers/`clf`. Also say what only improves once real word
-  segmentation arrives. Stub-input trees will be valid but coarse; that is
-  acceptable if it is documented.
+Specify a **deterministic projection of every VTB tree onto stub-style
+tokens:**
+- **Syllables:** split each multi-syllable VTB word into its syllables.
+  The word's arcs to and from the outside go through one syllable, and the
+  other syllables attach to it with a fixed label. Choose that syllable
+  and that label, and justify them. UD's `goeswith` is *not* the answer:
+  UD reserves it for "text that is not well edited", and the space between
+  Vietnamese syllables is correct orthography.
+- **Punctuation:** decide whether to glue it onto the previous token, as
+  the fixture does, and what happens to that punctuation token's arc.
+  Justify the choice, ideally by comparing dev scores with and without
+  gluing in Weeks 3-4.
+- **Checks:** every projected tree must pass `is_single_rooted_tree`.
+  Report how many fail before and after any fixes.
+- **Real Project 1 input** (word tokens, possibly joined with `_`): decide
+  how `parse()` will handle it. One option is to split into syllables
+  internally and project the result back. **The output tokens must always
+  be exactly the input tokens.** Design it now; implement it later.
+- **Emoticons** (`:))`) never occur in VTB: override them to
+  `discourse`. UD's `discourse` page lists "emojis/emoticons with an
+  extra-syntactic expressive function".
 
-### 4. Settle the six constructions, with your own VTB counts
+### 4. The six constructions under a trained model
 
-**Get the data and count it yourself.**
-- Download VTB's `vi_vtb-ud-{train,dev,test}.conllu` from GitHub. Keep the
-  files on your machine; **don't commit them** (they're large, and the
-  share-alike licence needs attribution).
-- Count deprels with a script you write yourself.
-- Cite the counts in `DESIGN.md`, giving the VTB version or commit you
-  used.
+**Count VTB yourself first.** Download `vi_vtb-ud-{train,dev,test}.conllu`
+from GitHub, keep them on your machine (don't commit them), and count
+deprels with your own script. Cite the counts in `DESIGN.md` with the VTB
+version or commit you used.
 
 **For each construction, `DESIGN.md` must give:**
-- the head choice;
-- the base label, with VTB's subtype noted next to it;
-- your VTB counts;
-- the fixture example, or "gap";
-- your hand-annotated examples from §5.
+- VTB's convention, with your counts;
+- your base-label mapping;
+- what you expect the model to do on stub input;
+- the hand-annotated sentences (§5) you will check it on;
+- any override, and why.
 
 **Specifically:**
-
 - **Classifiers:**
-  - when `clf` attaches to the numeral and when to the noun (VTB `clf`
-    vs `clf:det`);
-  - how a classifier word used as an ordinary noun is recognized.
-    `con` in VTB is a noun (`nsubj`/`obj`) almost as often as a
-    classifier.
-- **Coordination:**
-  - rules for `và` and `hoặc`;
-  - a rule that tells `hay` meaning "or" apart from `hay` meaning
-    "good" (gap 6).
+  - `clf` attached to the numeral vs `clf:det` attached to the noun (both
+    become `clf`);
+  - a classifier word used as an ordinary noun: `con` in VTB is a noun
+    (`nsubj`/`obj`) almost as often as a classifier.
+- **Coordination:** `và` and `hoặc` as `cc`, and the `hay` trap (gap 6).
+  How will you detect that the model gets `hay` = "good" wrong, and what
+  do you do if it does?
 - **Serial verbs and directional verbs:**
-  - the head is the first verb, which matches VTB;
-  - write the `compound` vs `xcomp` label rule, covering both
-    `compound:svc` and `compound:dir`;
-  - document that VTB itself splits `đi`+verb between `xcomp` and
-    `compound:svc`, so your rule is a decision, not a copy.
-- **`của` possessives:** settled. Also cover the bare (no-`của`)
-  possessive in the fixture's `Con mèo nhà tao…`.
+  - the head is the first verb, which VTB is consistent on;
+  - the label inherits VTB's own split.
+  - Decide: accept what the model predicts (after mapping to base labels),
+    or post-process into a single written rule. Justify either choice.
+- **`của` possessives:** `case` + `nmod`, which is settled. Also cover the
+  fixture's bare possessive in `Con mèo nhà tao…`.
 - **Topic-comment fronting:**
-  - decide between `obj`, `nsubj` and `dislocated` for a fronted element
-    (VTB uses `dislocated` only 37 times; check how VTB analyses fronted
-    objects);
-  - cite your decision;
-  - apply it to the fixture's `Bộ phim tối qua coi hay ghê…`.
+  - check how VTB analyses fronted objects (VTB uses `dislocated` only 37
+    times);
+  - say what you expect on the fixture's `Bộ phim tối qua coi hay ghê…`.
 - **Final particles:**
-  - `discourse` for `à`, `nhé` and `đấy`, citing your counts;
-  - `nha` by an argued analogy with `nhé`;
-  - a rule for `đó` as a particle vs as a demonstrative;
-  - emoticons such as `:))` → `discourse` (UD's `discourse` page lists
-    "emojis/emoticons with an extra-syntactic expressive function").
-- **Punctuation:** `punct` applies only to standalone punctuation tokens.
-  Glued punctuation stays inside its token, because input tokens are
-  never altered.
+  - `à`/`nhé`/`đấy` are learned from VTB;
+  - `nha` is unseen in VTB: does it need an override?
+  - `đó` as a particle vs as a demonstrative;
+  - emoticons are handled by the override in §3.
 
-### 5. Hand-annotated sentences
+### 5. Hand-annotated evaluation set
+
+**Role:** VTB is formal news. Your hand-annotated sentences are the
+**out-of-domain evaluation set**: informal text, teencode, and the
+fixture's registers. It is the only measure of how your VTB-trained model
+does on the kind of text this platform actually ingests.
 
 Create `student-projects/02-ud-parsing/data/hand_annotated.conllu`. It is
-in your owned paths; `tests/fixtures/**` is forbidden. **Target: at least
-30 sentences.**
+in your owned paths; `tests/fixtures/**` is forbidden. **This week: at
+least 20 sentences covering at least 10 of the tags below. By the end of
+Week 4: at least 30 sentences, meeting every minimum.**
 
 **Where to look.** Read the pages yourself:
-- public news, government portals and Vietnamese Wikipedia, for formal
-  text;
+- public news, government portals and Vietnamese Wikipedia;
 - public forums and Q&A sites, for informal and teencode text.
 
 **Not allowed:** social media, anything behind a login, scraping scripts,
-and copying sentences out of VTB. VTB is your reference, not your data.
+and copying sentences out of VTB.
 
 **Format: standard CoNLL-U, with these comment lines per sentence:**
 
@@ -305,18 +368,16 @@ and copying sentences out of VTB. VTB is your reference, not your data.
 ```
 
 **Columns:**
-- `FORM`s must equal `text.split()` in order. That is exactly what
-  `stub_segment` produces, so glued punctuation stays inside the `FORM`,
-  and your parser's output can later be compared with your annotation
-  token by token.
-- `UPOS` = `X` (as the stub gives it; POS tagging is Project 1's job).
-- `HEAD` and `DEPREL` are filled in, with `DEPREL` from `UD_DEPREL` only
-  (base labels).
+- `FORM`s must equal `text.split()`, exactly as `stub_segment` produces
+  them. Glued punctuation stays inside the `FORM`.
+- `UPOS` = `X`.
+- `HEAD` and `DEPREL` follow your §3 projection convention, with base
+  labels from `UD_DEPREL` only.
 - Optional: record VTB's finer label in `MISC`, e.g. `VTB=compound:dir`.
 
-**Coverage required.** The counts are real instances. If you can't find
-a pattern in real text, write sentences yourself and mark them
-`synthetic = true`. Keep synthetic sentences under 20% of the set and
+**Coverage targets (end of Week 4).** The counts are real instances. If
+you can't find a pattern in real text, write sentences yourself and mark
+them `synthetic = true`. Keep synthetic sentences under 20% of the set and
 list them in your report.
 
 | Tag | What | Minimum |
@@ -338,14 +399,15 @@ list them in your report.
 | `degenerate` | a one-token sentence; an emoticon- or punctuation-only sentence | 2, synthetic allowed |
 
 **Annotation protocol:**
-- Annotate using your `DESIGN.md` conventions only. If they don't decide
-  an attachment, fix the convention first, record it in a decisions log
-  in `DESIGN.md` naming the sentence that forced it, then annotate.
+- Annotate using your `DESIGN.md` conventions only, never your parser.
+  If the conventions don't decide an attachment, fix the convention first
+  and record it in a decisions log, then annotate.
 - If you can't decide, set `uncertain = true`. The sentence stays in the
-  set but is excluded from pass/fail tests.
+  set but is excluded from scoring.
 - Recommended: ask a classmate to annotate 5 sentences using only your
-  conventions, without seeing your trees. Report unlabelled and labelled
-  attachment agreement (UAS/LAS), computed by your own script.
+  conventions, without seeing your trees. Report UAS/LAS agreement,
+  computed by your own script. That agreement is the ceiling against
+  which your model's scores on this set should be read.
 
 **Privacy and licensing:** public content only, single sentences with the
 URL, never whole articles. Prefer public figures, and never record forum
@@ -353,91 +415,82 @@ usernames or handles.
 
 **Contract test:** write `tests/test_linguistics_ud_parser_hand_annotated.py`,
 which is covered by your `own_test_glob`. Use your own CoNLL-U reader, not
-a new library: `pyproject.toml` is not in your owned paths, so you cannot
-add dependencies. The test must check that:
-- every sentence carries the metadata above, with a `source_url` or
+a new library. The test must check that:
+- every sentence carries the metadata, with a `source_url` or
   `synthetic = true`;
 - the text is NFC;
 - the `FORM`s equal `text.split()`;
 - every `DEPREL` is in `UD_DEPREL`;
 - converted to `interfaces.ud.DependencyParse` (`idx = ID - 1`,
   `head = HEAD`), every sentence passes `is_single_rooted_tree`;
-- every construction tag is from the table.
+- every tag is from the table.
 
-It is test code, not parser code, so it is allowed this week. It is also
-how you'll find out whether your environment works.
+It is test code, not parser code, so it is allowed this week.
 
 ### 6. Make the tree guarantee testable
 
-**In `DESIGN.md`, specify the guard** as pseudocode for a single
-attachment function: for example `attach(heads, dependent, head) -> bool`.
-It refuses an out-of-range head, a self-loop, a second root, and any
-attachment that would close a cycle. Every rule must go through it. You
-will TDD it first, in Week 3.
+Specify in `DESIGN.md` how a valid tree is guaranteed:
+- **the decoder:** the transition system or MST decoder, including how a
+  single root is enforced;
+- **the final validation and fallback** from your Week 1 design.
 
-**Rewrite the test plan around your parser, not the interface:**
+Then rewrite the test plan around *your* code:
 
 | Gate class | What the test checks |
 |---|---|
-| `cycle` | two rules would attach two tokens to each other; the guard refuses the second, and the final tree is valid |
+| `cycle` | the guard or decoder refuses an attachment that would close a cycle, and the final tree is valid |
+| (single root) | a configuration where the model would attach two tokens to ROOT ends with exactly one root |
 | `degenerate` | an empty sentence (`ValueError`, as you planned), a one-token sentence, and an emoticon-only sentence |
-| `adversarial` | the `hay` trap, and a classifier word used as a noun |
-| `clf` / `classifier` | your classifier rules on your §5 sentences |
+| `adversarial` | the `hay` = "good" trap, and a classifier word used as a noun |
+| `clf` / `classifier` | classifier attachments on your §5 sentences |
 
 Delete the planned tests that only exercise `is_single_rooted_tree`
 itself.
 
-### 7. Closed-class word lists (built by hand, with sources)
+### 7. Word lists (only if your features or overrides need them)
 
-With `upos="X"`, closed-class words are your main cue. Draft these lists
-as tables in `DESIGN.md` or as files under `data/`:
-- classifiers;
-- coordinating conjunctions;
-- adpositions (`của`, …);
-- sentence-final particles;
-- directional verbs;
-- negators;
-- the copula `là`.
-
-For each list, give its source: a grammar, a dictionary, or your own VTB
-counts. Mark every entry that is ambiguous (`con`, `hay`, `đó`, `ra`,
-`về`) and say which rule resolves it.
+If a feature template or an override uses a closed list (classifiers,
+particles, emoticons, …), build it by hand. Give a source for each list (a
+grammar, a dictionary, or your own VTB counts), and mark ambiguous entries
+(`con`, `hay`, `đó`).
 
 ## Self-check before you call Week 2 done
 
 - [ ] The environment works, and the `pytest tests -q` summary line is in
       `WEEK2_REPORT.md` (English).
-- [ ] `DESIGN.md` is in English.
-- [ ] The approach is locked, with the three-way comparison from §2.
-- [ ] The token-granularity rule is written, including the default for
-      unanalysable tokens and a note on what stub input will get right.
-- [ ] Each of the six constructions has a head, a base label, your own
-      VTB counts, the fixture example or gap, and §5 examples, or is
-      scoped out with a written reason.
-- [ ] `data/hand_annotated.conllu` has at least 30 sentences and meets the
-      coverage table. Synthetic sentences are under 20% and listed in the
-      report. The contract test passes.
-- [ ] The guard is specified in `DESIGN.md`, and the test plan targets
-      your parser, not the frozen checker.
-- [ ] The closed-class word lists are drafted with sources, and ambiguous
-      entries are marked.
+- [ ] `DESIGN.md` is in English, and the rule-based decision is marked as
+      superseded.
+- [ ] The parser design (§2) specifies the family, projectivity handling,
+      single root, label mapping table, test-time-only features, training
+      regime, weights format and budget, overrides, and safety net.
+- [ ] The projection of VTB onto stub-style tokens (§3) is specified,
+      including the syllable label, the punctuation decision and real
+      Project 1 input.
+- [ ] Your own scripts reproduce the VTB counts cited in §2 and §4. The
+      scripts are committed under `scripts/`; the VTB files are not.
+- [ ] Each of the six constructions has VTB's convention, the mapping,
+      the expected model behaviour, evaluation sentences, and any override.
+- [ ] `data/hand_annotated.conllu` has at least 20 sentences covering at
+      least 10 tags, and the contract test passes.
+- [ ] The test plan targets your decoder and guard, not the frozen
+      checker.
 - [ ] The report contains this statement: *"No AI, LLM, or generative or
       trained model was used to find, write, translate, annotate or clean
-      any data in this submission."* It also gives counts per
-      construction tag (real and synthetic), and the classmate UAS/LAS if
-      you did the second annotation.
-- [ ] There is still no `ud_parser.py`.
+      any data in this submission."* It also gives counts per tag (real
+      and synthetic).
+- [ ] There is still no `ud_parser.py` and no training code.
 
 ## What NOT to do this week
 
-- **Don't use AI, an LLM, or any parser or model for data.** See the data
-  rule above.
-- Don't write `ud_parser.py` yet; it starts in Weeks 3-4.
-- Don't build a word segmenter or a content-word dictionary; that is
-  Project 1's job.
-- Don't commit the VTB files, and don't change `pyproject.toml` (it is
-  outside your owned paths).
-- Don't train anything on VTB without the professor's approval.
+- **Don't use AI, an LLM, or any model, including your own parser, to
+  produce or pre-annotate data.** See the data rule above.
+- Don't write `ud_parser.py` or training code yet; they start in Weeks
+  3-4.
+- Don't commit the VTB files, and don't add dependencies
+  (`pyproject.toml` is outside your owned paths).
+- Don't use pickle for weights, ever.
+- Don't use gold UPOS features that the graded input will never carry.
+- Don't evaluate on VTB `test` more than once, at the end.
 - Don't touch `src/vietnlp/interfaces/**`, `src/vietnlp/platform/**`,
   `src/vietnlp/acquisition/**`, `src/vietnlp/curation/**`, Project 1's
   and Project 3's files, `tests/fixtures/**`, or
@@ -445,26 +498,30 @@ counts. Mark every entry that is ambiguous (`con`, `hay`, `đó`, `ra`,
 
 ## Commit & push
 
-Commit as you go: translation, then each construction, then annotation
-batches, then the contract test. Don't make one commit at the end; your
-commit history is reviewed.
+Commit as you go: translation, parser design, projection design, VTB
+scripts, then annotation batches, then the contract test. Don't make one
+commit at the end; your commit history is reviewed.
 
 ```
 git add student-projects/02-ud-parsing/ tests/test_linguistics_ud_parser_hand_annotated.py
-git commit -m "Week 2: English DESIGN, approach locked, conventions, hand-annotated sentences"
+git commit -m "Week 2: English DESIGN, VTB-trained parser design, projection, hand-annotated set"
 git push origin student/02-ud-parsing
 ```
 
 This is still not a Pull Request; that comes in Week 15.
 
-## Looking ahead
+## Looking ahead (revised for a trained parser)
 
-**Weeks 3-4:** TDD the guard first, then a skeleton `parse()` over stub
-input that always returns a valid tree. Then add rules one construction at
-a time, each checked against your §5 sentences. Your own tests must
-eventually cover the gate's required classes: `clf`, `classifier`,
-`cycle`, `degenerate` and `adversarial`.
-
-**Weeks 5-6:** run over all 151 fixture sentences. The fixture checks
-tree validity at scale; only your hand-annotated set measures whether
-your attachments are right.
+- **Weeks 3-4:** TDD the VTB reader, the projection onto stub tokens
+  (every projected tree valid), and the oracle (gold transitions
+  reproduce the gold tree). Train end to end on a small subset. Have
+  `parse()` load committed weights and return a valid tree for every
+  fixture sentence. The gate's schema and tree checks should pass from
+  here on.
+- **Weeks 5-6:** full training on VTB `train`, tuned on `dev`; weights
+  committed with attribution. Run over all 151 fixture sentences.
+- **Weeks 7-8:** the six constructions, using your §5 set: per-construction
+  errors, and overrides only where the evidence demands them.
+- **Weeks 9-14:** as in `plan.md`. The golden test checks tree validity;
+  your final report gives UAS/LAS on VTB `test` (once) and on your
+  hand-annotated set.

@@ -5,6 +5,9 @@ branch: student/02-ud-parsing
 
 owned_paths:
   - "src/vietnlp/linguistics/ud_parser.py"
+  # Trained weights + ATTRIBUTION.md for the VTB-trained parser
+  # (professor decision, 2026-10-09: Project 2 trains on UD_Vietnamese-VTB).
+  - "src/vietnlp/linguistics/ud_model/**"
   - "tests/test_linguistics_ud_parser*.py"
   - "student-projects/02-ud-parsing/**"
 
