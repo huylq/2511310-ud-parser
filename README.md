@@ -11,7 +11,6 @@ và thiết kế; `ud_parser.py` chưa được triển khai.
 ## Báo cáo và yêu cầu
 
 - [DESIGN.md](student-projects/02-ud-parsing/DESIGN.md): báo cáo nghiên cứu sáu cấu trúc và thiết kế sơ bộ.
-- [DESIGN.docx](student-projects/02-ud-parsing/DESIGN.docx): bản Word của báo cáo.
 - [spec.md](student-projects/02-ud-parsing/spec.md): mục tiêu và căn cứ ngôn ngữ.
 - [plan.md](student-projects/02-ud-parsing/plan.md): kế hoạch thực hiện.
 - [project.md](student-projects/02-ud-parsing/project.md): hợp đồng đầu vào, đầu ra và yêu cầu hoàn thành.
