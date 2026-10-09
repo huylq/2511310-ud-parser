@@ -4,7 +4,7 @@ One script (`gate.py`, wrapped by `run_gate.sh`), one `gate.yaml` per
 project. Run it against a project's branch before merge:
 
 ```
-student-projects/_gate/run_gate.sh 01-word-seg-pos
+student-projects/_gate/run_gate.sh 02-ud-parsing --base project-02-base
 ```
 
 `run_gate.sh <slug>` reads `student-projects/<slug>/gate.yaml` and runs 8
