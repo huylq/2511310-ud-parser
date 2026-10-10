@@ -3,6 +3,10 @@
 **Professor's evaluation of your Week 1 submission (`DESIGN.md`, commit
 `17bb1b1`) is below, followed by this week's tasks.**
 
+> **Updated 10 October — AI-use policy (all projects):** the data rule
+> now names AI assistants explicitly, and every report must end with an
+> AI-use disclosure table. The tasks themselves are unchanged.
+
 > **Updated 9 October — professor's decision: the parser is now trained on
 > UD_Vietnamese-VTB (required).** Everything from "Gaps to close this week"
 > onward replaces the 7 October version; the evaluation above is unchanged.
@@ -195,6 +199,17 @@ generative or trained model to produce data.**
 - grammars and dictionaries;
 - VTB;
 - plain deterministic code you wrote yourself.
+
+**This applies to AI assistants too:** Microsoft 365 Copilot, ChatGPT,
+Gemini, Claude and the like. You may not ask an assistant to suggest
+example sentences or test cases, propose word-list or lexicon entries, or
+label or annotate anything, even as a draft you then correct. A list or a
+label that started as a model's suggestion is model-produced data.
+
+**AI help with prose or code must be disclosed.** Any use of an AI
+assistant on your documents, reports or code goes into the disclosure
+table at the end of your report (see the self-check). Undisclosed use is
+treated as a breach of this rule.
 
 If you're unsure whether a tool counts, ask before you use it.
 
@@ -478,6 +493,10 @@ grammar, a dictionary, or your own VTB counts), and mark ambiguous entries
       trained model was used to find, write, translate, annotate or clean
       any data in this submission."* It also gives counts per tag (real
       and synthetic).
+- [ ] The report ends with an **AI-use disclosure table**, with one row
+      per tool: tool, version, the prompt(s), what the AI produced, and
+      what you changed. It covers *all* AI use this week (documents,
+      report, code). If you used none, write "AI used: none".
 - [ ] There is still no `ud_parser.py` and no training code.
 
 ## What NOT to do this week
