@@ -1,0 +1,4 @@
+# Keep the evaluation set in Git; other data stays local.
+!/data/
+/data/*
+!/data/hand_annotated.conllu

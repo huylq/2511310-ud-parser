@@ -1,0 +1,2 @@
+# The annotation contract requires LF on every platform.
+data/hand_annotated.conllu text eol=lf

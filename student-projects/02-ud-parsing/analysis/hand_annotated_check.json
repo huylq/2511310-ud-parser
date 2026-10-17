@@ -1,0 +1,208 @@
+{
+  "source_document": "notes/20 Annotations.docx",
+  "source_sha256": "2d18a056aac7879864ec7768e1ffef7e2f6c3076d83ba37233e559919a63c1e5",
+  "output": "student-projects/02-ud-parsing/data/hand_annotated.conllu",
+  "output_sha256": "c599680a23ee3a0ee17d4fb4c0a65542235eae1583eaed2b15697fc00d1c189b",
+  "accessed_basis": "The student confirmed 2026-10-16 for the original set; the replacement source was verified on 2026-10-17.",
+  "sentences": 20,
+  "tokens": 254,
+  "real": 20,
+  "synthetic": 0,
+  "register_counts": {
+    "formal": 10,
+    "informal": 5,
+    "teencode": 5
+  },
+  "uncertain_sent_ids": [
+    "hc-010",
+    "hc-011",
+    "hc-016",
+    "hc-017",
+    "hc-019"
+  ],
+  "scored_sentences": 15,
+  "tree_errors": 0,
+  "nonprojective_sent_ids": [],
+  "coverage": {
+    "clf_num": {
+      "real": 1,
+      "synthetic": 0,
+      "scored": 1,
+      "sent_ids": [
+        "hc-015"
+      ],
+      "week4_minimum": 3
+    },
+    "clf_bare": {
+      "real": 2,
+      "synthetic": 0,
+      "scored": 2,
+      "sent_ids": [
+        "hc-002",
+        "hc-005"
+      ],
+      "week4_minimum": 3
+    },
+    "clf_noun": {
+      "real": 2,
+      "synthetic": 0,
+      "scored": 2,
+      "sent_ids": [
+        "hc-004",
+        "hc-015"
+      ],
+      "week4_minimum": 2
+    },
+    "coord": {
+      "real": 4,
+      "synthetic": 0,
+      "scored": 4,
+      "sent_ids": [
+        "hc-002",
+        "hc-004",
+        "hc-015",
+        "hc-020"
+      ],
+      "week4_minimum": 3
+    },
+    "hay_or": {
+      "real": 0,
+      "synthetic": 0,
+      "scored": 0,
+      "sent_ids": [],
+      "week4_minimum": 2
+    },
+    "hay_good": {
+      "real": 0,
+      "synthetic": 0,
+      "scored": 0,
+      "sent_ids": [],
+      "week4_minimum": 2
+    },
+    "svc_di": {
+      "real": 1,
+      "synthetic": 0,
+      "scored": 0,
+      "sent_ids": [
+        "hc-019"
+      ],
+      "week4_minimum": 3
+    },
+    "dir": {
+      "real": 0,
+      "synthetic": 0,
+      "scored": 0,
+      "sent_ids": [],
+      "week4_minimum": 3
+    },
+    "poss_cua": {
+      "real": 1,
+      "synthetic": 0,
+      "scored": 1,
+      "sent_ids": [
+        "hc-020"
+      ],
+      "week4_minimum": 3
+    },
+    "poss_bare": {
+      "real": 2,
+      "synthetic": 0,
+      "scored": 1,
+      "sent_ids": [
+        "hc-015",
+        "hc-016"
+      ],
+      "week4_minimum": 2
+    },
+    "topic": {
+      "real": 0,
+      "synthetic": 0,
+      "scored": 0,
+      "sent_ids": [],
+      "week4_minimum": 3
+    },
+    "particle": {
+      "real": 4,
+      "synthetic": 0,
+      "scored": 3,
+      "sent_ids": [
+        "hc-008",
+        "hc-009",
+        "hc-017",
+        "hc-018"
+      ],
+      "week4_minimum": 5
+    },
+    "do_dem": {
+      "real": 1,
+      "synthetic": 0,
+      "scored": 1,
+      "sent_ids": [
+        "hc-006"
+      ],
+      "week4_minimum": 2
+    },
+    "emoticon": {
+      "real": 2,
+      "synthetic": 0,
+      "scored": 0,
+      "sent_ids": [
+        "hc-016",
+        "hc-017"
+      ],
+      "week4_minimum": 1
+    },
+    "degenerate": {
+      "real": 0,
+      "synthetic": 0,
+      "scored": 0,
+      "sent_ids": [],
+      "week4_minimum": 2
+    }
+  },
+  "covered_tags": 10,
+  "missing_tags": [
+    "hay_or",
+    "hay_good",
+    "dir",
+    "topic",
+    "degenerate"
+  ],
+  "week2_minimum_sentences": 20,
+  "week2_minimum_distinct_tags": 10,
+  "week2_sentence_count_pass": true,
+  "week2_coverage_pass": true,
+  "validation": {
+    "pytest_summary": "213 passed, 14 skipped, 1 warning in 109.78s (0:01:49)",
+    "pytest_scope": "Full submission tree based on origin/student/02-ud-parsing plus Week 2 deliverables; 24 annotation-contract cases pass.",
+    "pytest_log": "student-projects/02-ud-parsing/analysis/PYTEST_HAND_ANNOTATED.txt",
+    "source_document_unchanged": true,
+    "retained_19_sentence_head_deprel_preservation_independently_verified": true
+  },
+  "checks_scope": "Format, metadata, token alignment, valid labels, tree structure and coverage; the other 19 sentences retain their original HEAD/DEPREL. Linguistic correctness is not established by structural validation.",
+  "coverage_notes": [
+    "In hc-004, chuyến is an ordinary noun (obj). VTB dev-772 uses chuyến as clf:det. Count clf_noun here, not clf_bare for this token.",
+    "Do not count tạo ra or diễn ra as dir: these contexts do not express a motion verb followed by a directional component.",
+    "Do not count còn or conjunctionless coordination as coord; the task specifies và/hoặc.",
+    "Uncertain sentences remain in the set and overall coverage counts; scored counts include only non-uncertain sentences.",
+    "Replaced hc-015 at the student's request. The new sentence adds clf_num and preserves all nine previously covered construction tags."
+  ],
+  "accessed_dates": {
+    "2026-10-16": 19,
+    "2026-10-17": 1
+  },
+  "retained_sentence_head_deprel_changes": 0,
+  "sentence_replacements": [
+    {
+      "sent_id": "hc-015",
+      "removed_text_prefix": "Giải VPBank đất sen hồng Music Marathon 2026",
+      "removed_source_url": "https://thanhnien.vn/dong-thap-lam-moi-san-pham-nang-tam-du-lich-dat-sen-hong-18526101316095127.htm",
+      "new_text": "Ba năm trước, gia đình chị mua một chiếc ô tô phổ thông để thuận tiện đưa đón con và về quê.",
+      "new_source_url": "https://cafef.vn/hai-gia-dinh-cung-thu-nhap-30-trieu-thang-chi-khac-chuyen-co-o-to-hay-khong-cuoi-thang-so-tien-con-lai-chenh-nhau-bat-ngo-188261016094629762.chn",
+      "previous_output_sha256": "00851509aec760a8404c44f4f9029cabcd96da2b61231645addef1221e7dd504",
+      "removed_tokens": 35,
+      "added_tokens": 22,
+      "basis": "Student selected the sentence and explicitly approved replacing hc-015 in the conversation on 2026-10-17."
+    }
+  ]
+}

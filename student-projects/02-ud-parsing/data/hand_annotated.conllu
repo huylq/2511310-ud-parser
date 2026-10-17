@@ -1,0 +1,474 @@
+# sent_id = hc-001
+# text = Tây Ninh chuẩn bị đề án lên thành phố trực thuộc Trung ương.
+# source_url = https://vnexpress.net/tay-ninh-chuan-bi-de-an-len-thanh-pho-truc-thuoc-trung-uong-5132387.html
+# source_name = VnExpress
+# accessed = 2026-10-16
+# register = formal
+# synthetic = false
+# constructions =
+# uncertain = false
+# notes = Projection: chuẩn bị, đề án, thành phố, trực thuộc, Tây Ninh và Trung ương dùng âm tiết đầu làm đại diện; các cạnh nội bộ dùng dep. Lên → thành là xcomp theo bảng đã chọn.
+1	Tây	_	X	_	_	3	nsubj	_	_
+2	Ninh	_	X	_	_	1	dep	_	_
+3	chuẩn	_	X	_	_	0	root	_	_
+4	bị	_	X	_	_	3	dep	_	_
+5	đề	_	X	_	_	3	obj	_	_
+6	án	_	X	_	_	5	dep	_	_
+7	lên	_	X	_	_	5	acl	_	_
+8	thành	_	X	_	_	7	xcomp	_	_
+9	phố	_	X	_	_	8	dep	_	_
+10	trực	_	X	_	_	8	acl	_	_
+11	thuộc	_	X	_	_	10	dep	_	_
+12	Trung	_	X	_	_	10	obj	_	_
+13	ương.	_	X	_	_	12	dep	_	_
+
+# sent_id = hc-002
+# text = Cầu thủ sút phạt đền kiểu 'ông già đi bộ' và cái kết gây sốc
+# source_url = https://tuoitre.vn/cau-thu-sut-phat-den-kieu-ong-gia-di-bo-va-cai-ket-gay-soc-100261016063134465.htm
+# source_name = Tuổi Trẻ Online
+# accessed = 2026-10-16
+# register = formal
+# synthetic = false
+# constructions = clf_bare, coord
+# uncertain = false
+# notes = Cái → kết là clf; và → gây là cc, sút → gây là conj. Giữ cách đọc hai vế trong bảng Word.
+1	Cầu	_	X	_	_	3	nsubj	_	_
+2	thủ	_	X	_	_	1	dep	_	_
+3	sút	_	X	_	_	0	root	_	_
+4	phạt	_	X	_	_	3	obj	_	_
+5	đền	_	X	_	_	4	dep	_	_
+6	kiểu	_	X	_	_	3	obl	_	_
+7	'ông	_	X	_	_	9	nsubj	_	_
+8	già	_	X	_	_	7	dep	_	_
+9	đi	_	X	_	_	6	acl	_	_
+10	bộ'	_	X	_	_	9	dep	_	_
+11	và	_	X	_	_	14	cc	_	_
+12	cái	_	X	_	_	13	clf	_	_
+13	kết	_	X	_	_	14	nsubj	_	_
+14	gây	_	X	_	_	3	conj	_	_
+15	sốc	_	X	_	_	14	obj	_	_
+
+# sent_id = hc-003
+# text = Cảm ơn tiền đạo Trayvone Reid vì đã tạo ra "siêu phẩm"
+# source_url = https://tuoitre.vn/cau-thu-sut-phat-den-kieu-ong-gia-di-bo-va-cai-ket-gay-soc-100261016063134465.htm
+# source_name = Tuổi Trẻ Online
+# accessed = 2026-10-16
+# register = formal
+# synthetic = false
+# constructions =
+# uncertain = false
+# notes = Cảm ơn là vị ngữ chính; tạo là advcl chỉ nguyên nhân, vì là mark. Tạo → ra dùng compound; đây là ý kết quả, không tính vào tag dir chỉ chuyển động.
+1	Cảm	_	X	_	_	0	root	_	_
+2	ơn	_	X	_	_	1	dep	_	_
+3	tiền	_	X	_	_	1	obj	_	_
+4	đạo	_	X	_	_	3	dep	_	_
+5	Trayvone	_	X	_	_	3	compound	_	_
+6	Reid	_	X	_	_	5	dep	_	_
+7	vì	_	X	_	_	9	mark	_	_
+8	đã	_	X	_	_	9	advmod	_	_
+9	tạo	_	X	_	_	1	advcl	_	_
+10	ra	_	X	_	_	9	compound	_	_
+11	"siêu	_	X	_	_	9	obj	_	_
+12	phẩm"	_	X	_	_	11	dep	_	_
+
+# sent_id = hc-004
+# text = Chúc cụ và gia đình có chuyến đi vui vẻ, an toàn!
+# source_url = https://www.otofun.net.vn/threads/hanh-trinh-vong-quanh-the-gioi-mexico-sac-mau-song-dong-huyen-bi-va-thien-lanh.1924570/
+# source_name = Diễn đàn OTOFUN
+# accessed = 2026-10-16
+# register = informal
+# synthetic = false
+# constructions = clf_noun, coord
+# uncertain = false
+# notes = Chúc → có là ccomp; cụ là nsubj của có. Chuyến là danh từ chỉ chuyến đi, giữ obj, không gán clf trong câu này; chuyến → đi là compound. Và nối cụ với gia đình.
+1	Chúc	_	X	_	_	0	root	_	_
+2	cụ	_	X	_	_	6	nsubj	_	_
+3	và	_	X	_	_	4	cc	_	_
+4	gia	_	X	_	_	2	conj	_	_
+5	đình	_	X	_	_	4	dep	_	_
+6	có	_	X	_	_	1	ccomp	_	_
+7	chuyến	_	X	_	_	6	obj	_	_
+8	đi	_	X	_	_	7	compound	_	_
+9	vui	_	X	_	_	7	amod	_	_
+10	vẻ,	_	X	_	_	9	dep	_	_
+11	an	_	X	_	_	9	conj	_	_
+12	toàn!	_	X	_	_	11	dep	_	_
+
+# sent_id = hc-005
+# text = Những bức câu đối chữ Hán - Nôm cổ, có từ những năm 1890.
+# source_url = https://vnexpress.net/biet-thu-co-cua-ong-chu-tiem-vang-noi-tieng-ha-noi-xua-5129964.html
+# source_name = VnExpress
+# accessed = 2026-10-16
+# register = formal
+# synthetic = false
+# constructions = clf_bare
+# uncertain = false
+# notes = Bức → câu là clf; có là root theo cách đọc mệnh đề đầy đủ. Giữ dấu - thành token riêng; cổ bổ nghĩa cho câu đối. 1890 là định danh năm, dùng nmod.
+1	Những	_	X	_	_	3	det	_	_
+2	bức	_	X	_	_	3	clf	_	_
+3	câu	_	X	_	_	10	nsubj	_	_
+4	đối	_	X	_	_	3	dep	_	_
+5	chữ	_	X	_	_	3	nmod	_	_
+6	Hán	_	X	_	_	5	nmod	_	_
+7	-	_	X	_	_	8	punct	_	_
+8	Nôm	_	X	_	_	6	conj	_	_
+9	cổ,	_	X	_	_	3	amod	_	_
+10	có	_	X	_	_	0	root	_	_
+11	từ	_	X	_	_	13	case	_	_
+12	những	_	X	_	_	13	det	_	_
+13	năm	_	X	_	_	10	obl	_	_
+14	1890.	_	X	_	_	13	nmod	_	_
+
+# sent_id = hc-006
+# text = Tốc độ tăng tiền gửi theo đó vẫn thấp hơn tín dụng.
+# source_url = https://vnexpress.net/moi-ngay-nguoi-dan-gui-them-7-000-ty-dong-vao-ngan-hang-5133230.html
+# source_name = VnExpress
+# accessed = 2026-10-16
+# register = formal
+# synthetic = false
+# constructions = do_dem
+# uncertain = false
+# notes = Thấp là root; tốc độ tăng tiền gửi là chủ ngữ. Đó trong theo đó hồi chỉ thông tin trước, không là tiểu từ cuối câu. Tín dụng là chuẩn so sánh, dùng obl.
+1	Tốc	_	X	_	_	9	nsubj	_	_
+2	độ	_	X	_	_	1	dep	_	_
+3	tăng	_	X	_	_	1	compound	_	_
+4	tiền	_	X	_	_	3	obj	_	_
+5	gửi	_	X	_	_	4	dep	_	_
+6	theo	_	X	_	_	7	case	_	_
+7	đó	_	X	_	_	9	obl	_	_
+8	vẫn	_	X	_	_	9	advmod	_	_
+9	thấp	_	X	_	_	0	root	_	_
+10	hơn	_	X	_	_	9	advmod	_	_
+11	tín	_	X	_	_	9	obl	_	_
+12	dụng.	_	X	_	_	11	dep	_	_
+
+# sent_id = hc-007
+# text = Vâng chả bjo e nghĩ dùng nên giờ mới tìm hiểu
+# source_url = https://www.otofun.net.vn/threads/khoa-thong-minh-nen-chon-loai-nao.1954320/
+# source_name = Diễn đàn OTOFUN
+# accessed = 2026-10-16
+# register = teencode
+# synthetic = false
+# constructions =
+# uncertain = false
+# notes = Giữ bjo và e; hiểu bjo là bao giờ trong chả bjo. Tìm hiểu là vị ngữ kết quả; nghĩ là advcl chỉ nguyên nhân, nên là mark. Không chuẩn hóa cách viết teencode.
+1	Vâng	_	X	_	_	10	discourse	_	_
+2	chả	_	X	_	_	3	advmod	_	_
+3	bjo	_	X	_	_	5	obl	_	_
+4	e	_	X	_	_	5	nsubj	_	_
+5	nghĩ	_	X	_	_	10	advcl	_	_
+6	dùng	_	X	_	_	5	xcomp	_	_
+7	nên	_	X	_	_	10	mark	_	_
+8	giờ	_	X	_	_	10	obl	_	_
+9	mới	_	X	_	_	10	advmod	_	_
+10	tìm	_	X	_	_	0	root	_	_
+11	hiểu	_	X	_	_	10	dep	_	_
+
+# sent_id = hc-008
+# text = Em chỉ muốn ăn thử cơm tấm thôi.
+# source_url = https://voz.vn/t/2025-chia-se-goc-tam-su-than-tho-hang-ngay.1081459/page-5
+# source_name = Diễn đàn VOZ
+# accessed = 2026-10-16
+# register = informal
+# synthetic = false
+# constructions = particle
+# uncertain = false
+# notes = Ăn là root; muốn là aux, ăn → thử là compound; cơm tấm dùng cạnh nội bộ dep theo bảng đã chọn. Thôi là tiểu từ discourse.
+1	Em	_	X	_	_	4	nsubj	_	_
+2	chỉ	_	X	_	_	4	advmod	_	_
+3	muốn	_	X	_	_	4	aux	_	_
+4	ăn	_	X	_	_	0	root	_	_
+5	thử	_	X	_	_	4	compound	_	_
+6	cơm	_	X	_	_	4	obj	_	_
+7	tấm	_	X	_	_	6	dep	_	_
+8	thôi.	_	X	_	_	4	discourse	_	_
+
+# sent_id = hc-009
+# text = Lên mấy trang tuyển dụng xem giờ lương trung bình chủ yếu từ 7-12 thôi
+# source_url = https://voz.vn/t/that-su-song-o-thanh-pho-thu-nhap-duoi-20tr-lag-toang.1289323/page-2
+# source_name = Diễn đàn VOZ
+# accessed = 2026-10-16
+# register = informal
+# synthetic = false
+# constructions = particle
+# uncertain = false
+# notes = Lên là root; xem là xcomp. 7-12 là vị ngữ số lượng của mệnh đề nội dung, nhận ccomp; không thêm đơn vị tiền bị lược. Thôi là discourse.
+1	Lên	_	X	_	_	0	root	_	_
+2	mấy	_	X	_	_	3	det	_	_
+3	trang	_	X	_	_	1	obj	_	_
+4	tuyển	_	X	_	_	3	compound	_	_
+5	dụng	_	X	_	_	4	dep	_	_
+6	xem	_	X	_	_	1	xcomp	_	_
+7	giờ	_	X	_	_	14	obl	_	_
+8	lương	_	X	_	_	14	nsubj	_	_
+9	trung	_	X	_	_	8	amod	_	_
+10	bình	_	X	_	_	9	dep	_	_
+11	chủ	_	X	_	_	14	advmod	_	_
+12	yếu	_	X	_	_	11	dep	_	_
+13	từ	_	X	_	_	14	case	_	_
+14	7-12	_	X	_	_	6	ccomp	_	_
+15	thôi	_	X	_	_	14	discourse	_	_
+
+# sent_id = hc-010
+# text = 20 triệu sống một mình làm gì mà không sống được?
+# source_url = https://voz.vn/t/that-su-song-o-thanh-pho-thu-nhap-duoi-20tr-lag-toang.1289323/page-2
+# source_name = Diễn đàn VOZ
+# accessed = 2026-10-16
+# register = informal
+# synthetic = false
+# constructions =
+# uncertain = true
+# notes = Chưa chốt cách biểu diễn cụm hỏi tu từ làm gì mà; giữ nguyên các cạnh fixed trong bảng Word để rà soát. 20 triệu là nguồn lực, không là chủ ngữ. Giữ câu nhưng loại khỏi tính UAS/LAS khi uncertain=true.
+1	20	_	X	_	_	10	obl	_	_
+2	triệu	_	X	_	_	1	flat	_	_
+3	sống	_	X	_	_	10	advcl	_	_
+4	một	_	X	_	_	3	advmod	_	_
+5	mình	_	X	_	_	4	dep	_	_
+6	làm	_	X	_	_	10	advmod	_	_
+7	gì	_	X	_	_	6	fixed	_	_
+8	mà	_	X	_	_	6	fixed	_	_
+9	không	_	X	_	_	10	advmod	_	_
+10	sống	_	X	_	_	0	root	_	_
+11	được?	_	X	_	_	10	advmod	_	_
+
+# sent_id = hc-011
+# text = Thịt rang tôm cho buổi tối ngon miệng
+# source_url = https://tinhte.vn/thread/thit-rang-tom-cho-buoi-toi-ngon-mieng.4184459/
+# source_name = Tinh tế
+# accessed = 2026-10-16
+# register = informal
+# synthetic = false
+# constructions =
+# uncertain = true
+# notes = Đọc như tiêu đề cụm danh từ, chọn Thịt làm root. Tôm được hiểu là nguyên liệu rang cùng thịt; rang → tôm tạm dùng obl, cần chốt thêm. Buổi → tối là compound.
+1	Thịt	_	X	_	_	0	root	_	_
+2	rang	_	X	_	_	1	acl	_	_
+3	tôm	_	X	_	_	2	obl	_	_
+4	cho	_	X	_	_	5	case	_	_
+5	buổi	_	X	_	_	1	nmod	_	_
+6	tối	_	X	_	_	5	compound	_	_
+7	ngon	_	X	_	_	5	amod	_	_
+8	miệng	_	X	_	_	7	dep	_	_
+
+# sent_id = hc-012
+# text = Tính từ lúc mở cửa phiên thứ Hai tại Hàn Quốc, cổ phiếu SK Hynix giảm 15%, còn Samsung giảm 13%.
+# source_url = https://tinhte.vn/thread/co-phieu-chip-toan-cau-lao-doc-sk-hynix-giam-15-samsung-giam-13-vi-dram-4f-cua-cxmt.4184224/
+# source_name = Tinh tế
+# accessed = 2026-10-16
+# register = formal
+# synthetic = false
+# constructions =
+# uncertain = false
+# notes = Giảm thứ nhất là root; giảm thứ hai là conj, còn là cc. Tính mở đầu phần thời gian. Không tính tag coord vì mục tiêu task ghi liên từ và/hoặc, không phải còn.
+1	Tính	_	X	_	_	16	advcl	_	_
+2	từ	_	X	_	_	3	case	_	_
+3	lúc	_	X	_	_	1	obl	_	_
+4	mở	_	X	_	_	3	acl	_	_
+5	cửa	_	X	_	_	4	dep	_	_
+6	phiên	_	X	_	_	4	obj	_	_
+7	thứ	_	X	_	_	6	nmod	_	_
+8	Hai	_	X	_	_	7	dep	_	_
+9	tại	_	X	_	_	10	case	_	_
+10	Hàn	_	X	_	_	4	obl	_	_
+11	Quốc,	_	X	_	_	10	dep	_	_
+12	cổ	_	X	_	_	16	nsubj	_	_
+13	phiếu	_	X	_	_	12	dep	_	_
+14	SK	_	X	_	_	12	nmod	_	_
+15	Hynix	_	X	_	_	14	dep	_	_
+16	giảm	_	X	_	_	0	root	_	_
+17	15%,	_	X	_	_	16	obl	_	_
+18	còn	_	X	_	_	20	cc	_	_
+19	Samsung	_	X	_	_	20	nsubj	_	_
+20	giảm	_	X	_	_	16	conj	_	_
+21	13%.	_	X	_	_	20	obl	_	_
+
+# sent_id = hc-013
+# text = TP HCM sẽ phát triển các khu công nghệ số chuyên biệt
+# source_url = https://vnexpress.net/tp-hcm-se-phat-trien-cac-khu-cong-nghe-so-chuyen-biet-5132955.html
+# source_name = VnExpress
+# accessed = 2026-10-16
+# register = formal
+# synthetic = false
+# constructions =
+# uncertain = false
+# notes = Phát triển là vị ngữ chính; TP → HCM là compound, không là cạnh nội bộ dep. Chuyên biệt bổ nghĩa cho khu; số bổ nghĩa cho công nghệ.
+1	TP	_	X	_	_	4	nsubj	_	_
+2	HCM	_	X	_	_	1	compound	_	_
+3	sẽ	_	X	_	_	4	advmod	_	_
+4	phát	_	X	_	_	0	root	_	_
+5	triển	_	X	_	_	4	dep	_	_
+6	các	_	X	_	_	7	det	_	_
+7	khu	_	X	_	_	4	obj	_	_
+8	công	_	X	_	_	7	nmod	_	_
+9	nghệ	_	X	_	_	8	dep	_	_
+10	số	_	X	_	_	8	amod	_	_
+11	chuyên	_	X	_	_	7	amod	_	_
+12	biệt	_	X	_	_	11	dep	_	_
+
+# sent_id = hc-014
+# text = Khai thác lợi thế, tạo sức hút riêng.
+# source_url = https://thanhnien.vn/dong-thap-lam-moi-san-pham-nang-tam-du-lich-dat-sen-hong-18526101316095127.htm
+# source_name = Báo Thanh Niên
+# accessed = 2026-10-16
+# register = formal
+# synthetic = false
+# constructions =
+# uncertain = false
+# notes = Hai vị ngữ khai thác và tạo nối bằng conj không có liên từ. Không tính tag coord của task vì không có và/hoặc. Không bổ sung chủ ngữ bị lược.
+1	Khai	_	X	_	_	0	root	_	_
+2	thác	_	X	_	_	1	dep	_	_
+3	lợi	_	X	_	_	1	obj	_	_
+4	thế,	_	X	_	_	3	dep	_	_
+5	tạo	_	X	_	_	1	conj	_	_
+6	sức	_	X	_	_	5	obj	_	_
+7	hút	_	X	_	_	6	dep	_	_
+8	riêng.	_	X	_	_	6	amod	_	_
+
+# sent_id = hc-015
+# text = Ba năm trước, gia đình chị mua một chiếc ô tô phổ thông để thuận tiện đưa đón con và về quê.
+# source_url = https://cafef.vn/hai-gia-dinh-cung-thu-nhap-30-trieu-thang-chi-khac-chuyen-co-o-to-hay-khong-cuoi-thang-so-tien-con-lai-chenh-nhau-bat-ngo-188261016094629762.chn
+# source_name = CafeF
+# accessed = 2026-10-17
+# register = formal
+# synthetic = false
+# constructions = clf_num, clf_noun, poss_bare, coord
+# uncertain = false
+# notes = Mua là root; gia đình chị là nsubj, chị biểu thị sở hữu không có của. Một → ô là nummod; chiếc → một là clf theo quy ước VTB. Ô tô, phổ thông, gia đình, thuận tiện và đưa đón dùng âm tiết đầu làm đại diện, cạnh nội bộ dep. Năm là obl thời gian của mua, trước là amod của năm. Đưa đón là advcl chỉ mục đích của mua, để là mark; thuận tiện là advmod bổ nghĩa cho hành động. Con là danh từ chỉ người con, làm obj của đưa, không là clf. Về là conj của đưa, và là cc; quê là obl của về. Không tính về quê vào dir vì không có động từ chuyển động đứng trước thành phần chỉ hướng.
+1	Ba	_	X	_	_	2	nummod	_	_
+2	năm	_	X	_	_	7	obl	_	_
+3	trước,	_	X	_	_	2	amod	_	_
+4	gia	_	X	_	_	7	nsubj	_	_
+5	đình	_	X	_	_	4	dep	_	_
+6	chị	_	X	_	_	4	nmod	_	_
+7	mua	_	X	_	_	0	root	_	_
+8	một	_	X	_	_	10	nummod	_	_
+9	chiếc	_	X	_	_	8	clf	_	_
+10	ô	_	X	_	_	7	obj	_	_
+11	tô	_	X	_	_	10	dep	_	_
+12	phổ	_	X	_	_	10	amod	_	_
+13	thông	_	X	_	_	12	dep	_	_
+14	để	_	X	_	_	17	mark	_	_
+15	thuận	_	X	_	_	17	advmod	_	_
+16	tiện	_	X	_	_	15	dep	_	_
+17	đưa	_	X	_	_	7	advcl	_	_
+18	đón	_	X	_	_	17	dep	_	_
+19	con	_	X	_	_	17	obj	_	_
+20	và	_	X	_	_	21	cc	_	_
+21	về	_	X	_	_	17	conj	_	_
+22	quê.	_	X	_	_	21	obl	_	_
+
+# sent_id = hc-016
+# text = hèn j máy tao bị lỗi quài =.=
+# source_url = http://kenhsinhvien.vn/t/nhung-thoi-quen-nen-tu-bo-khi-su-dung-may-tinh.82062/page-2
+# source_name = Diễn đàn Kênh Sinh Viên
+# accessed = 2026-10-16
+# register = teencode
+# synthetic = false
+# constructions = poss_bare, emoticon
+# uncertain = true
+# notes = Giữ j, quài và =.=; hiểu j là gì, quài là hoài. Máy → tao là nmod sở hữu không có của; emoticon là discourse. Cách dùng fixed cho hèn j chưa chốt.
+1	hèn	_	X	_	_	5	advmod	_	_
+2	j	_	X	_	_	1	fixed	_	_
+3	máy	_	X	_	_	5	nsubj	_	_
+4	tao	_	X	_	_	3	nmod	_	_
+5	bị	_	X	_	_	0	root	_	_
+6	lỗi	_	X	_	_	5	obj	_	_
+7	quài	_	X	_	_	5	advmod	_	_
+8	=.=	_	X	_	_	5	discourse	_	_
+
+# sent_id = hc-017
+# text = Thì chịu hôk nổi nên mún ăn ngay chứ sao :))
+# source_url = https://kenhsinhvien.vn/t/nhung-mon-an-chiu-hong-noi-cua-teen-sai-gon.95694/page-2
+# source_name = Diễn đàn Kênh Sinh Viên
+# accessed = 2026-10-16
+# register = teencode
+# synthetic = false
+# constructions = particle, emoticon
+# uncertain = true
+# notes = Giữ hôk, mún và :)); ăn là root, mún là aux, chịu là advcl chỉ nguyên nhân. Chứ và sao tạm gán discourse; cách xử lý cụm chứ sao cần thống nhất.
+1	Thì	_	X	_	_	2	discourse	_	_
+2	chịu	_	X	_	_	7	advcl	_	_
+3	hôk	_	X	_	_	2	advmod	_	_
+4	nổi	_	X	_	_	2	advmod	_	_
+5	nên	_	X	_	_	7	mark	_	_
+6	mún	_	X	_	_	7	aux	_	_
+7	ăn	_	X	_	_	0	root	_	_
+8	ngay	_	X	_	_	7	advmod	_	_
+9	chứ	_	X	_	_	7	discourse	_	_
+10	sao	_	X	_	_	7	discourse	_	_
+11	:))	_	X	_	_	7	discourse	_	_
+
+# sent_id = hc-018
+# text = Sao chưa có chàg nào gửi cho mìh tin như vậy nhỉ?
+# source_url = https://kenhsinhvien.vn/t/nhung-tin-nhan-doc-cho-nguoi-iu.9902/
+# source_name = Diễn đàn Kênh Sinh Viên
+# accessed = 2026-10-16
+# register = teencode
+# synthetic = false
+# constructions = particle
+# uncertain = false
+# notes = Giữ chàg và mìh; có là vị ngữ tồn tại, chàg là obj, gửi là acl bổ nghĩa cho chàg. Cho → mìh là case; nhỉ là tiểu từ discourse.
+1	Sao	_	X	_	_	3	obl	_	_
+2	chưa	_	X	_	_	3	advmod	_	_
+3	có	_	X	_	_	0	root	_	_
+4	chàg	_	X	_	_	3	obj	_	_
+5	nào	_	X	_	_	4	det	_	_
+6	gửi	_	X	_	_	4	acl	_	_
+7	cho	_	X	_	_	8	case	_	_
+8	mìh	_	X	_	_	6	obl	_	_
+9	tin	_	X	_	_	6	obj	_	_
+10	như	_	X	_	_	11	case	_	_
+11	vậy	_	X	_	_	9	nmod	_	_
+12	nhỉ?	_	X	_	_	3	discourse	_	_
+
+# sent_id = hc-019
+# text = Vẫn phải đi cày, cty ko có nghỉ t7
+# source_url = https://voz.vn/t/hom-nay-thu-bay-moi-nguoi-dang-lam-gi-the.984909/#post-32717377
+# source_name = Diễn đàn VOZ
+# accessed = 2026-10-16
+# register = teencode
+# synthetic = false
+# constructions = svc_di
+# uncertain = true
+# notes = Giữ cty, ko và t7. Đi → cày là compound của cấu trúc đi + động từ; nghỉ là parataxis của đi. Có trong ko có nghỉ tạm gán advmod, chưa chốt quy ước.
+1	Vẫn	_	X	_	_	3	advmod	_	_
+2	phải	_	X	_	_	3	aux	_	_
+3	đi	_	X	_	_	0	root	_	_
+4	cày,	_	X	_	_	3	compound	_	_
+5	cty	_	X	_	_	8	nsubj	_	_
+6	ko	_	X	_	_	8	advmod	_	_
+7	có	_	X	_	_	8	advmod	_	_
+8	nghỉ	_	X	_	_	3	parataxis	_	_
+9	t7	_	X	_	_	8	obl	_	_
+
+# sent_id = hc-020
+# text = Một điều thú vị trong công việc của Marulli là ông cũng chụp ảnh chim và động vật hoang dã.
+# source_url = https://tinhte.vn/thread/nhiep-anh-gia-khien-nhung-chiec-may-bay-nhu-dang-lao-ra-khoi-khung-hinh.4182379/
+# source_name = Tinh tế
+# accessed = 2026-10-16
+# register = formal
+# synthetic = false
+# constructions = poss_cua, coord
+# uncertain = false
+# notes = Là là root, chụp là ccomp theo cấu trúc tương tự train-s1122 của VTB. Chụp → ảnh là obj; ảnh → chim là nmod; động vật phối hợp với chim. Của → Marulli là case, công việc → Marulli là nmod.
+1	Một	_	X	_	_	2	nummod	_	_
+2	điều	_	X	_	_	10	nsubj	_	_
+3	thú	_	X	_	_	2	amod	_	_
+4	vị	_	X	_	_	3	dep	_	_
+5	trong	_	X	_	_	6	case	_	_
+6	công	_	X	_	_	2	nmod	_	_
+7	việc	_	X	_	_	6	dep	_	_
+8	của	_	X	_	_	9	case	_	_
+9	Marulli	_	X	_	_	6	nmod	_	_
+10	là	_	X	_	_	0	root	_	_
+11	ông	_	X	_	_	13	nsubj	_	_
+12	cũng	_	X	_	_	13	advmod	_	_
+13	chụp	_	X	_	_	10	ccomp	_	_
+14	ảnh	_	X	_	_	13	obj	_	_
+15	chim	_	X	_	_	14	nmod	_	_
+16	và	_	X	_	_	17	cc	_	_
+17	động	_	X	_	_	15	conj	_	_
+18	vật	_	X	_	_	17	dep	_	_
+19	hoang	_	X	_	_	17	amod	_	_
+20	dã.	_	X	_	_	19	dep	_	_
+

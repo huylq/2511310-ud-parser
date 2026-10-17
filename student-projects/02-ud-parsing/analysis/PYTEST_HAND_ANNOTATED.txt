@@ -1,0 +1,40 @@
+Source tree: origin/student/02-ud-parsing at db51772 plus Week 2 deliverables
+Environment: Python 3.11 project virtual environment; PYTHONPATH=<checkout>/src
+Command: python -m pytest tests -q -o "addopts="
+Local virtual-environment paths in the output are replaced with <project-venv>.
+
+............................ssssss....................sssss............. [ 31%]
+........................................................................ [ 63%]
+........................................................................ [ 95%]
+........ss                                                               [100%]
+============================== warnings summary ===============================
+<project-venv>\Lib\site-packages\pandera\_pandas_deprecated.py:144
+  <project-venv>\Lib\site-packages\pandera\_pandas_deprecated.py:144: FutureWarning: Importing pandas-specific classes and functions from the
+  top-level pandera module will be **removed in a future version of pandera**.
+  If you're using pandera to validate pandas objects, we highly recommend updating
+  your import:
+
+  ```
+  # old import
+  import pandera as pa
+
+  # new import
+  import pandera.pandas as pa
+  ```
+
+  If you're using pandera to validate objects from other compatible libraries
+  like pyspark or polars, see the supported libraries section of the documentation
+  for more information on how to import pandera:
+
+  https://pandera.readthedocs.io/en/stable/supported_libraries.html
+
+  To disable this warning, set the environment variable:
+
+  ```
+  export DISABLE_PANDERA_IMPORT_WARNING=True
+  ```
+
+    warnings.warn(_future_warning, FutureWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+213 passed, 14 skipped, 1 warning in 109.78s (0:01:49)
