@@ -1,0 +1,2418 @@
+{
+  "commit": "3c971fd1c5d03561e00b267d3d0057b81a9bea84",
+  "sha256": {
+    "vi_vtb-ud-dev.conllu": "0b779257b9225575b3b30e15d64cc4ef9945a77f8cceb9f92d794b483a2752dd",
+    "vi_vtb-ud-test.conllu": "abc1b0ea98661bbb494a8c0da123ba2fe1a3ef71322c380fe66468884d9b4285",
+    "vi_vtb-ud-train.conllu": "1df180722db99b724f7368aca50597133bee28606de3394cd8d12a57da89978d"
+  },
+  "source": "https://github.com/UniversalDependencies/UD_Vietnamese-VTB",
+  "splits": {
+    "dev": {
+      "classifier_upos_pairs": {
+        "clf:ADJ->NOUN": 1,
+        "clf:DET->NOUN": 49,
+        "clf:NUM->NOUN": 67,
+        "clf:PRON->NOUN": 1,
+        "clf:det:DET->NOUN": 1,
+        "clf:det:NOUN->NOUN": 194,
+        "clf:det:NUM->NOUN": 1,
+        "clf:det:PRON->NOUN": 1,
+        "clf:det:PROPN->NOUN": 139
+      },
+      "compound_head_order": {
+        "compound:dir:head_left": 144,
+        "compound:svc:head_left": 291,
+        "compound:svc:head_right": 1
+      },
+      "compound_reverse_ids": [
+        {
+          "dependent_id": 15,
+          "label": "compound:svc",
+          "sent_id": "dev-23"
+        }
+      ],
+      "deprels": {
+        "acl": 67,
+        "acl:relcl": 20,
+        "acl:subj": 853,
+        "acl:tmod": 122,
+        "acl:tonp": 51,
+        "advcl": 373,
+        "advcl:objective": 112,
+        "advmod": 1342,
+        "advmod:adj": 306,
+        "advmod:dir": 1,
+        "advmod:neg": 266,
+        "amod": 434,
+        "appos": 104,
+        "appos:nmod": 111,
+        "aux": 191,
+        "aux:pass": 182,
+        "case": 1460,
+        "cc": 407,
+        "ccomp": 250,
+        "clf": 118,
+        "clf:det": 336,
+        "compound": 1288,
+        "compound:adj": 20,
+        "compound:amod": 74,
+        "compound:atov": 10,
+        "compound:dir": 144,
+        "compound:pron": 23,
+        "compound:prt": 22,
+        "compound:svc": 292,
+        "compound:verbnoun": 31,
+        "compound:vmod": 298,
+        "compound:z": 5,
+        "conj": 1259,
+        "cop": 185,
+        "csubj": 48,
+        "csubj:asubj": 7,
+        "csubj:pass": 1,
+        "csubj:vsubj": 25,
+        "dep": 1,
+        "det": 543,
+        "det:pmod": 254,
+        "discourse": 150,
+        "dislocated": 18,
+        "expl": 4,
+        "fixed": 18,
+        "flat": 3,
+        "flat:date": 65,
+        "flat:foreign": 7,
+        "flat:number": 100,
+        "flat:time": 6,
+        "iobj": 6,
+        "list": 24,
+        "mark": 512,
+        "mark:pcomp": 106,
+        "nmod": 1304,
+        "nmod:poss": 253,
+        "nsubj": 1519,
+        "nsubj:nn": 104,
+        "nsubj:pass": 103,
+        "nummod": 636,
+        "nummod:det": 71,
+        "obj": 1835,
+        "obl": 460,
+        "obl:about": 27,
+        "obl:adj": 111,
+        "obl:adv": 3,
+        "obl:agent": 52,
+        "obl:comp": 555,
+        "obl:iobj": 52,
+        "obl:tmod": 552,
+        "obl:with": 72,
+        "parataxis": 182,
+        "punct": 3517,
+        "root": 1123,
+        "vocative": 6,
+        "xcomp": 917,
+        "xcomp:adj": 36,
+        "xcomp:dir": 17
+      },
+      "di_adjacent_verb_children": {
+        "compound:dir": 2,
+        "compound:svc": 19,
+        "obj": 1,
+        "xcomp": 27
+      },
+      "di_adjacent_verb_pair_direction": {
+        "di_is_head": 49,
+        "no_direct_arc": 3
+      },
+      "di_forward_verb_children": {
+        "advcl:objective": 3,
+        "compound:dir": 2,
+        "compound:svc": 19,
+        "conj": 15,
+        "obj": 1,
+        "parataxis": 1,
+        "xcomp": 38
+      },
+      "direction_forms_deprels": {
+        "acl": 2,
+        "acl:subj": 23,
+        "acl:tmod": 7,
+        "acl:tonp": 1,
+        "advcl": 13,
+        "advcl:objective": 6,
+        "case": 125,
+        "ccomp": 8,
+        "compound:atov": 3,
+        "compound:dir": 128,
+        "compound:prt": 3,
+        "compound:svc": 53,
+        "compound:vmod": 1,
+        "conj": 24,
+        "csubj": 1,
+        "mark": 1,
+        "mark:pcomp": 1,
+        "parataxis": 6,
+        "root": 14,
+        "xcomp": 52,
+        "xcomp:adj": 1,
+        "xcomp:dir": 15
+      },
+      "direction_verb_deprels": {
+        "acl": 2,
+        "acl:subj": 23,
+        "acl:tmod": 7,
+        "acl:tonp": 1,
+        "advcl": 13,
+        "advcl:objective": 6,
+        "case": 10,
+        "ccomp": 8,
+        "compound:atov": 3,
+        "compound:dir": 119,
+        "compound:prt": 2,
+        "compound:svc": 52,
+        "compound:vmod": 1,
+        "conj": 24,
+        "csubj": 1,
+        "parataxis": 6,
+        "root": 14,
+        "xcomp": 52,
+        "xcomp:adj": 1,
+        "xcomp:dir": 14
+      },
+      "focus_forms": {
+        "chiếc": {
+          "deprel": {
+            "clf": 12,
+            "clf:det": 15,
+            "dislocated": 2,
+            "nsubj": 2
+          },
+          "head_deprel": {
+            "ccomp": 1,
+            "conj": 3,
+            "det": 4,
+            "nsubj": 6,
+            "nummod": 8,
+            "obj": 4,
+            "obl": 3,
+            "obl:comp": 1,
+            "root": 1
+          },
+          "head_upos": {
+            "ADJ": 2,
+            "DET": 4,
+            "NOUN": 15,
+            "NUM": 8,
+            "VERB": 2
+          },
+          "upos": {
+            "NOUN": 31
+          }
+        },
+        "con": {
+          "deprel": {
+            "appos:nmod": 2,
+            "clf": 23,
+            "clf:det": 29,
+            "compound": 5,
+            "conj": 2,
+            "nmod": 4,
+            "nmod:poss": 1,
+            "nsubj": 11,
+            "nsubj:nn": 1,
+            "obj": 10,
+            "obl": 1,
+            "obl:comp": 2,
+            "obl:iobj": 2,
+            "obl:with": 2
+          },
+          "head_deprel": {
+            "acl:subj": 2,
+            "acl:tmod": 1,
+            "advcl": 1,
+            "appos": 1,
+            "appos:nmod": 1,
+            "ccomp": 4,
+            "conj": 6,
+            "det": 10,
+            "nmod": 7,
+            "nsubj": 8,
+            "nsubj:nn": 2,
+            "nsubj:pass": 6,
+            "nummod": 13,
+            "obj": 8,
+            "obl": 1,
+            "obl:adj": 1,
+            "obl:comp": 4,
+            "obl:iobj": 1,
+            "parataxis": 3,
+            "root": 12,
+            "xcomp": 3
+          },
+          "head_upos": {
+            "ADJ": 2,
+            "DET": 10,
+            "NOUN": 44,
+            "NUM": 13,
+            "VERB": 26
+          },
+          "upos": {
+            "NOUN": 95
+          }
+        },
+        "cuốn": {
+          "deprel": {
+            "clf:det": 3,
+            "conj": 2
+          },
+          "head_deprel": {
+            "obj": 1,
+            "obl": 1,
+            "obl:agent": 1,
+            "root": 2
+          },
+          "head_upos": {
+            "NOUN": 3,
+            "VERB": 2
+          },
+          "upos": {
+            "NOUN": 3,
+            "VERB": 2
+          }
+        },
+        "cái": {
+          "deprel": {
+            "appos:nmod": 1,
+            "clf": 5,
+            "clf:det": 20,
+            "conj": 3,
+            "nmod": 1,
+            "nsubj": 2,
+            "obj": 5,
+            "obl": 1,
+            "parataxis": 1
+          },
+          "head_deprel": {
+            "advcl:objective": 1,
+            "ccomp": 1,
+            "conj": 3,
+            "det": 1,
+            "dislocated": 1,
+            "nmod": 2,
+            "nmod:poss": 2,
+            "nsubj": 8,
+            "nummod": 3,
+            "nummod:det": 1,
+            "obj": 7,
+            "obl": 1,
+            "obl:comp": 1,
+            "parataxis": 2,
+            "root": 5
+          },
+          "head_upos": {
+            "ADJ": 2,
+            "DET": 1,
+            "NOUN": 25,
+            "NUM": 4,
+            "VERB": 7
+          },
+          "upos": {
+            "NOUN": 39
+          }
+        },
+        "của": {
+          "deprel": {
+            "case": 248,
+            "compound": 1,
+            "conj": 1
+          },
+          "head_deprel": {
+            "conj": 2,
+            "nmod:poss": 241,
+            "obj": 3,
+            "obl": 2,
+            "obl:adj": 1,
+            "root": 1
+          },
+          "head_upos": {
+            "ADJ": 1,
+            "NOUN": 188,
+            "PRON": 21,
+            "PROPN": 38,
+            "VERB": 2
+          },
+          "upos": {
+            "ADP": 248,
+            "NOUN": 2
+          }
+        },
+        "hay": {
+          "deprel": {
+            "advmod": 3,
+            "cc": 16
+          },
+          "head_deprel": {
+            "acl:subj": 1,
+            "advmod": 1,
+            "advmod:neg": 1,
+            "conj": 14,
+            "root": 2
+          },
+          "head_upos": {
+            "ADJ": 2,
+            "ADV": 3,
+            "NOUN": 9,
+            "VERB": 5
+          },
+          "upos": {
+            "ADV": 3,
+            "CCONJ": 14,
+            "SCONJ": 2
+          }
+        },
+        "hoặc": {
+          "deprel": {
+            "cc": 12
+          },
+          "head_deprel": {
+            "conj": 12
+          },
+          "head_upos": {
+            "ADV": 1,
+            "NOUN": 5,
+            "VERB": 6
+          },
+          "upos": {
+            "CCONJ": 12
+          }
+        },
+        "lên": {
+          "deprel": {
+            "acl:subj": 1,
+            "advcl": 3,
+            "advcl:objective": 2,
+            "case": 2,
+            "ccomp": 1,
+            "compound:atov": 2,
+            "compound:dir": 30,
+            "compound:prt": 1,
+            "compound:svc": 5,
+            "conj": 3,
+            "root": 1,
+            "xcomp": 10,
+            "xcomp:dir": 1
+          },
+          "head_deprel": {
+            "ROOT": 1,
+            "acl:relcl": 1,
+            "acl:subj": 5,
+            "advcl": 3,
+            "advcl:objective": 1,
+            "ccomp": 3,
+            "conj": 14,
+            "obj": 1,
+            "obl:comp": 2,
+            "root": 23,
+            "xcomp": 7,
+            "xcomp:adj": 1
+          },
+          "head_upos": {
+            "ADJ": 2,
+            "NOUN": 3,
+            "ROOT": 1,
+            "VERB": 56
+          },
+          "upos": {
+            "VERB": 62
+          }
+        },
+        "nha": {
+          "deprel": {},
+          "head_deprel": {},
+          "head_upos": {},
+          "upos": {}
+        },
+        "nhé": {
+          "deprel": {
+            "discourse": 2
+          },
+          "head_deprel": {
+            "ccomp": 1,
+            "parataxis": 1
+          },
+          "head_upos": {
+            "ADJ": 1,
+            "VERB": 1
+          },
+          "upos": {
+            "PART": 2
+          }
+        },
+        "ra": {
+          "deprel": {
+            "acl:subj": 7,
+            "acl:tmod": 1,
+            "acl:tonp": 1,
+            "advcl": 3,
+            "case": 3,
+            "ccomp": 3,
+            "compound:dir": 33,
+            "compound:prt": 1,
+            "compound:svc": 40,
+            "conj": 10,
+            "parataxis": 1,
+            "root": 7,
+            "xcomp": 13,
+            "xcomp:dir": 7
+          },
+          "head_deprel": {
+            "ROOT": 7,
+            "acl": 1,
+            "acl:subj": 12,
+            "acl:tmod": 2,
+            "advcl": 6,
+            "advcl:objective": 2,
+            "ccomp": 5,
+            "compound:svc": 1,
+            "conj": 18,
+            "csubj": 1,
+            "csubj:vsubj": 1,
+            "nmod": 3,
+            "nsubj": 1,
+            "obj": 4,
+            "obl": 2,
+            "obl:tmod": 1,
+            "parataxis": 2,
+            "root": 50,
+            "xcomp": 10,
+            "xcomp:adj": 1
+          },
+          "head_upos": {
+            "ADP": 1,
+            "NOUN": 10,
+            "PRON": 1,
+            "PROPN": 2,
+            "ROOT": 7,
+            "VERB": 109
+          },
+          "upos": {
+            "ADP": 3,
+            "VERB": 127
+          }
+        },
+        "và": {
+          "deprel": {
+            "case": 1,
+            "cc": 299,
+            "compound": 3
+          },
+          "head_deprel": {
+            "advcl": 3,
+            "conj": 285,
+            "nmod": 2,
+            "obl:comp": 1,
+            "parataxis": 1,
+            "root": 11
+          },
+          "head_upos": {
+            "ADJ": 24,
+            "NOUN": 111,
+            "NUM": 3,
+            "PROPN": 14,
+            "VERB": 151
+          },
+          "upos": {
+            "CCONJ": 290,
+            "SCONJ": 13
+          }
+        },
+        "vào": {
+          "deprel": {
+            "acl:subj": 8,
+            "acl:tmod": 2,
+            "advcl": 1,
+            "advcl:objective": 2,
+            "case": 71,
+            "ccomp": 1,
+            "compound:dir": 24,
+            "compound:prt": 1,
+            "compound:svc": 1,
+            "conj": 6,
+            "csubj": 1,
+            "mark:pcomp": 1,
+            "parataxis": 2,
+            "root": 2,
+            "xcomp": 9,
+            "xcomp:dir": 3
+          },
+          "head_deprel": {
+            "ROOT": 2,
+            "acl:subj": 7,
+            "acl:tmod": 2,
+            "advcl": 1,
+            "advcl:objective": 3,
+            "ccomp": 1,
+            "conj": 7,
+            "nmod": 4,
+            "nsubj": 2,
+            "obj": 5,
+            "obl:adj": 1,
+            "obl:comp": 58,
+            "obl:tmod": 10,
+            "root": 23,
+            "xcomp": 9
+          },
+          "head_upos": {
+            "NOUN": 74,
+            "NUM": 1,
+            "PRON": 3,
+            "PROPN": 4,
+            "ROOT": 2,
+            "VERB": 51
+          },
+          "upos": {
+            "ADP": 66,
+            "ADV": 11,
+            "VERB": 58
+          }
+        },
+        "về": {
+          "deprel": {
+            "acl": 2,
+            "acl:subj": 5,
+            "acl:tmod": 3,
+            "advcl": 5,
+            "advcl:objective": 1,
+            "case": 47,
+            "ccomp": 3,
+            "compound:dir": 27,
+            "compound:svc": 7,
+            "compound:vmod": 1,
+            "conj": 5,
+            "mark": 1,
+            "parataxis": 3,
+            "root": 4,
+            "xcomp": 16,
+            "xcomp:dir": 3
+          },
+          "head_deprel": {
+            "ROOT": 4,
+            "acl": 2,
+            "acl:subj": 6,
+            "acl:tmod": 1,
+            "advcl": 3,
+            "ccomp": 4,
+            "compound:vmod": 1,
+            "conj": 17,
+            "nmod": 14,
+            "nsubj": 2,
+            "obj": 2,
+            "obl:about": 27,
+            "obl:comp": 4,
+            "obl:tmod": 7,
+            "root": 26,
+            "xcomp": 11,
+            "xcomp:adj": 2
+          },
+          "head_upos": {
+            "NOUN": 52,
+            "PROPN": 2,
+            "ROOT": 4,
+            "VERB": 75
+          },
+          "upos": {
+            "ADP": 48,
+            "VERB": 85
+          }
+        },
+        "xuống": {
+          "deprel": {
+            "acl:subj": 2,
+            "acl:tmod": 1,
+            "advcl": 1,
+            "advcl:objective": 1,
+            "case": 2,
+            "compound:atov": 1,
+            "compound:dir": 14,
+            "xcomp": 4,
+            "xcomp:adj": 1,
+            "xcomp:dir": 1
+          },
+          "head_deprel": {
+            "acl": 1,
+            "acl:subj": 3,
+            "advcl:objective": 1,
+            "ccomp": 2,
+            "conj": 7,
+            "nmod": 1,
+            "obl:comp": 3,
+            "obl:tmod": 1,
+            "root": 5,
+            "xcomp": 4
+          },
+          "head_upos": {
+            "ADJ": 2,
+            "NOUN": 5,
+            "VERB": 21
+          },
+          "upos": {
+            "ADP": 1,
+            "VERB": 27
+          }
+        },
+        "à": {
+          "deprel": {
+            "discourse": 2
+          },
+          "head_deprel": {
+            "parataxis": 1,
+            "root": 1
+          },
+          "head_upos": {
+            "VERB": 2
+          },
+          "upos": {
+            "X": 2
+          }
+        },
+        "đi": {
+          "deprel": {
+            "acl:relcl": 1,
+            "acl:subj": 13,
+            "acl:tmod": 5,
+            "advcl": 5,
+            "advcl:objective": 1,
+            "advmod": 4,
+            "ccomp": 6,
+            "compound:atov": 1,
+            "compound:prt": 2,
+            "compound:svc": 4,
+            "compound:vmod": 1,
+            "conj": 16,
+            "csubj": 2,
+            "csubj:vsubj": 1,
+            "discourse": 1,
+            "parataxis": 4,
+            "root": 17,
+            "xcomp": 19
+          },
+          "head_deprel": {
+            "ROOT": 17,
+            "acl:subj": 6,
+            "acl:tonp": 1,
+            "advcl": 2,
+            "ccomp": 2,
+            "conj": 9,
+            "nmod": 3,
+            "nsubj": 3,
+            "obj": 6,
+            "obl:adj": 1,
+            "obl:agent": 2,
+            "obl:tmod": 3,
+            "obl:with": 1,
+            "parataxis": 9,
+            "root": 33,
+            "xcomp": 4,
+            "xcomp:adj": 1
+          },
+          "head_upos": {
+            "ADJ": 3,
+            "NOUN": 21,
+            "ROOT": 17,
+            "VERB": 62
+          },
+          "upos": {
+            "ADV": 9,
+            "PART": 1,
+            "VERB": 93
+          }
+        },
+        "đó": {
+          "deprel": {
+            "compound": 4,
+            "det:pmod": 67,
+            "discourse": 3,
+            "fixed": 2,
+            "nmod": 2,
+            "nsubj": 10,
+            "nsubj:nn": 9,
+            "obj": 6,
+            "obl": 15,
+            "obl:comp": 4,
+            "obl:tmod": 2
+          },
+          "head_deprel": {
+            "acl": 2,
+            "acl:subj": 3,
+            "advcl": 4,
+            "advcl:objective": 1,
+            "appos": 1,
+            "ccomp": 4,
+            "conj": 11,
+            "csubj": 1,
+            "csubj:vsubj": 1,
+            "det:pmod": 3,
+            "nmod": 11,
+            "nsubj": 10,
+            "obj": 8,
+            "obl": 3,
+            "obl:tmod": 40,
+            "parataxis": 3,
+            "root": 18
+          },
+          "head_upos": {
+            "ADJ": 2,
+            "NOUN": 84,
+            "NUM": 1,
+            "PRON": 10,
+            "PROPN": 1,
+            "VERB": 25,
+            "X": 1
+          },
+          "upos": {
+            "PART": 2,
+            "PRON": 122
+          }
+        },
+        "đấy": {
+          "deprel": {
+            "det:pmod": 2,
+            "discourse": 1,
+            "nsubj": 1
+          },
+          "head_deprel": {
+            "ccomp": 1,
+            "nsubj:nn": 1,
+            "obl": 1,
+            "parataxis": 1
+          },
+          "head_upos": {
+            "NOUN": 2,
+            "PRON": 1,
+            "PROPN": 1
+          },
+          "upos": {
+            "PART": 1,
+            "PRON": 3
+          }
+        }
+      },
+      "form_syllable_lengths": {
+        "1": 20665,
+        "2": 5266,
+        "3": 194,
+        "4": 37
+      },
+      "invalid_trees": [],
+      "nonprojective_ids": [
+        "dev-157",
+        "dev-242",
+        "dev-453",
+        "dev-561",
+        "dev-584",
+        "dev-615",
+        "dev-695",
+        "dev-892",
+        "dev-922"
+      ],
+      "object_position": {
+        "after_head": 1834,
+        "before_head": 1
+      },
+      "possessive_cua_marker": {
+        "with_cua_case": 241,
+        "without_cua_case": 12
+      },
+      "sentences": 1123,
+      "skipped_rows": {},
+      "task_emoticon_occurrences": 0,
+      "tokens": 26162,
+      "upos": {
+        "ADJ": 1564,
+        "ADP": 1540,
+        "ADV": 1643,
+        "AUX": 565,
+        "CCONJ": 330,
+        "DET": 508,
+        "INTJ": 2,
+        "NOUN": 7843,
+        "NUM": 937,
+        "PART": 120,
+        "PRON": 923,
+        "PROPN": 1060,
+        "PUNCT": 3517,
+        "SCONJ": 628,
+        "SYM": 60,
+        "VERB": 4913,
+        "X": 9
+      }
+    },
+    "test": {
+      "classifier_upos_pairs": {
+        "clf:DET->NOUN": 4,
+        "clf:NOUN->NOUN": 21,
+        "clf:NUM->NOUN": 22,
+        "clf:det:ADJ->NOUN": 1,
+        "clf:det:NOUN->NOUN": 85,
+        "clf:det:NUM->PART": 1,
+        "clf:det:PRON->PART": 1,
+        "clf:det:PROPN->NOUN": 115
+      },
+      "compound_head_order": {
+        "compound:dir:head_left": 35,
+        "compound:svc:head_left": 89,
+        "compound:svc:head_right": 1
+      },
+      "compound_reverse_ids": [
+        {
+          "dependent_id": 5,
+          "label": "compound:svc",
+          "sent_id": "text-s139"
+        }
+      ],
+      "deprels": {
+        "acl": 85,
+        "acl:relcl": 2,
+        "acl:subj": 142,
+        "acl:tmod": 51,
+        "acl:tonp": 15,
+        "advcl": 211,
+        "advcl:objective": 64,
+        "advmod": 752,
+        "advmod:adj": 153,
+        "advmod:dir": 9,
+        "advmod:neg": 182,
+        "amod": 235,
+        "appos": 27,
+        "appos:nmod": 26,
+        "aux": 86,
+        "aux:pass": 45,
+        "case": 565,
+        "cc": 224,
+        "ccomp": 107,
+        "clf": 47,
+        "clf:det": 203,
+        "compound": 154,
+        "compound:adj": 1,
+        "compound:amod": 17,
+        "compound:apr": 1,
+        "compound:atov": 4,
+        "compound:dir": 35,
+        "compound:pron": 18,
+        "compound:prt": 35,
+        "compound:redup": 1,
+        "compound:svc": 90,
+        "compound:verbnoun": 26,
+        "compound:vmod": 149,
+        "compound:z": 1,
+        "conj": 468,
+        "cop": 102,
+        "csubj": 20,
+        "csubj:asubj": 6,
+        "csubj:vsubj": 13,
+        "dep": 3,
+        "det": 189,
+        "det:pmod": 189,
+        "discourse": 134,
+        "dislocated": 9,
+        "fixed": 8,
+        "flat": 10,
+        "flat:date": 9,
+        "flat:name": 2,
+        "flat:number": 9,
+        "flat:time": 2,
+        "iobj": 11,
+        "mark": 294,
+        "mark:pcomp": 39,
+        "nmod": 461,
+        "nmod:poss": 101,
+        "nsubj": 958,
+        "nsubj:nn": 14,
+        "nsubj:pass": 32,
+        "nsubj:xsubj": 5,
+        "nummod": 238,
+        "obj": 867,
+        "obl": 259,
+        "obl:about": 15,
+        "obl:adj": 17,
+        "obl:adv": 1,
+        "obl:agent": 3,
+        "obl:comp": 163,
+        "obl:iobj": 27,
+        "obl:tmod": 207,
+        "obl:with": 49,
+        "parataxis": 128,
+        "punct": 1703,
+        "root": 800,
+        "vocative": 2,
+        "xcomp": 329,
+        "xcomp:adj": 31,
+        "xcomp:vcomp": 2
+      },
+      "di_adjacent_verb_children": {
+        "compound:dir": 1,
+        "compound:svc": 14,
+        "xcomp": 9
+      },
+      "di_adjacent_verb_pair_direction": {
+        "di_is_head": 24,
+        "no_direct_arc": 1
+      },
+      "di_forward_verb_children": {
+        "advcl": 1,
+        "ccomp": 1,
+        "compound:dir": 1,
+        "compound:svc": 14,
+        "conj": 8,
+        "xcomp": 9
+      },
+      "direction_forms_deprels": {
+        "acl": 2,
+        "acl:subj": 3,
+        "acl:tmod": 4,
+        "advcl": 4,
+        "advmod": 12,
+        "advmod:dir": 7,
+        "case": 55,
+        "ccomp": 2,
+        "compound:dir": 28,
+        "compound:prt": 18,
+        "compound:svc": 15,
+        "conj": 4,
+        "csubj": 1,
+        "fixed": 1,
+        "nsubj:xsubj": 1,
+        "parataxis": 2,
+        "root": 19,
+        "xcomp": 8,
+        "xcomp:adj": 2
+      },
+      "direction_verb_deprels": {
+        "acl": 2,
+        "acl:subj": 3,
+        "acl:tmod": 4,
+        "advcl": 4,
+        "case": 1,
+        "ccomp": 2,
+        "compound:dir": 7,
+        "compound:svc": 1,
+        "conj": 4,
+        "csubj": 1,
+        "fixed": 1,
+        "nsubj:xsubj": 1,
+        "parataxis": 2,
+        "root": 17,
+        "xcomp": 7,
+        "xcomp:adj": 2
+      },
+      "focus_forms": {
+        "chiếc": {
+          "deprel": {
+            "clf": 4,
+            "clf:det": 3,
+            "nmod": 1,
+            "obj": 1
+          },
+          "head_deprel": {
+            "acl:subj": 1,
+            "det": 1,
+            "nmod:poss": 1,
+            "nsubj": 1,
+            "nummod": 2,
+            "obj": 2,
+            "obl": 1
+          },
+          "head_upos": {
+            "DET": 1,
+            "NOUN": 5,
+            "NUM": 2,
+            "VERB": 1
+          },
+          "upos": {
+            "NOUN": 9
+          }
+        },
+        "con": {
+          "deprel": {
+            "ccomp": 1,
+            "clf": 2,
+            "clf:det": 3,
+            "compound": 2,
+            "conj": 5,
+            "nmod": 1,
+            "nsubj": 8,
+            "obj": 6,
+            "obl": 1
+          },
+          "head_deprel": {
+            "advcl": 3,
+            "conj": 2,
+            "csubj:vsubj": 1,
+            "dep": 1,
+            "nsubj": 4,
+            "obj": 6,
+            "obl": 1,
+            "parataxis": 2,
+            "root": 8,
+            "xcomp": 1
+          },
+          "head_upos": {
+            "ADJ": 1,
+            "NOUN": 13,
+            "VERB": 15
+          },
+          "upos": {
+            "NOUN": 29
+          }
+        },
+        "cuốn": {
+          "deprel": {},
+          "head_deprel": {},
+          "head_upos": {},
+          "upos": {}
+        },
+        "cái": {
+          "deprel": {
+            "appos:nmod": 1,
+            "clf": 2,
+            "clf:det": 19,
+            "discourse": 2,
+            "nsubj": 1,
+            "obj": 1,
+            "obl": 1
+          },
+          "head_deprel": {
+            "advcl": 1,
+            "conj": 3,
+            "nmod": 1,
+            "nsubj": 5,
+            "nummod": 3,
+            "obj": 8,
+            "obl": 1,
+            "obl:about": 1,
+            "obl:comp": 1,
+            "root": 3
+          },
+          "head_upos": {
+            "ADJ": 1,
+            "NOUN": 19,
+            "NUM": 3,
+            "PRON": 1,
+            "PROPN": 1,
+            "VERB": 2
+          },
+          "upos": {
+            "NOUN": 23,
+            "PART": 4
+          }
+        },
+        "của": {
+          "deprel": {
+            "case": 91,
+            "obl": 1
+          },
+          "head_deprel": {
+            "appos:nmod": 1,
+            "conj": 3,
+            "nmod:poss": 86,
+            "obl": 1,
+            "obl:comp": 1
+          },
+          "head_upos": {
+            "NOUN": 48,
+            "PRON": 15,
+            "PROPN": 29
+          },
+          "upos": {
+            "ADP": 92
+          }
+        },
+        "hay": {
+          "deprel": {
+            "advmod": 2,
+            "amod": 1,
+            "cc": 13
+          },
+          "head_deprel": {
+            "acl:subj": 1,
+            "advmod": 1,
+            "advmod:adj": 1,
+            "advmod:neg": 1,
+            "conj": 9,
+            "obj": 1,
+            "root": 2
+          },
+          "head_upos": {
+            "ADJ": 3,
+            "ADV": 2,
+            "NOUN": 5,
+            "VERB": 6
+          },
+          "upos": {
+            "ADJ": 1,
+            "ADV": 2,
+            "CCONJ": 12,
+            "SCONJ": 1
+          }
+        },
+        "hoặc": {
+          "deprel": {
+            "cc": 7
+          },
+          "head_deprel": {
+            "conj": 6,
+            "root": 1
+          },
+          "head_upos": {
+            "NOUN": 3,
+            "VERB": 4
+          },
+          "upos": {
+            "CCONJ": 6,
+            "SCONJ": 1
+          }
+        },
+        "lên": {
+          "deprel": {
+            "acl": 1,
+            "acl:subj": 2,
+            "acl:tmod": 1,
+            "advmod": 2,
+            "advmod:dir": 1,
+            "case": 2,
+            "compound:dir": 7,
+            "compound:prt": 5,
+            "compound:svc": 2,
+            "root": 1,
+            "xcomp": 2,
+            "xcomp:adj": 1
+          },
+          "head_deprel": {
+            "ROOT": 1,
+            "acl:subj": 1,
+            "acl:tmod": 2,
+            "advmod:adj": 1,
+            "ccomp": 1,
+            "conj": 2,
+            "nmod": 2,
+            "obj": 2,
+            "obl:comp": 1,
+            "obl:tmod": 1,
+            "parataxis": 1,
+            "root": 10,
+            "xcomp": 2
+          },
+          "head_upos": {
+            "ADJ": 1,
+            "NOUN": 4,
+            "PROPN": 2,
+            "ROOT": 1,
+            "VERB": 19
+          },
+          "upos": {
+            "ADP": 3,
+            "ADV": 16,
+            "VERB": 8
+          }
+        },
+        "nha": {
+          "deprel": {},
+          "head_deprel": {},
+          "head_upos": {},
+          "upos": {}
+        },
+        "nhé": {
+          "deprel": {
+            "discourse": 1
+          },
+          "head_deprel": {
+            "root": 1
+          },
+          "head_upos": {
+            "VERB": 1
+          },
+          "upos": {
+            "PART": 1
+          }
+        },
+        "ra": {
+          "deprel": {
+            "acl": 1,
+            "acl:tmod": 1,
+            "advcl": 1,
+            "advmod": 5,
+            "advmod:dir": 3,
+            "case": 3,
+            "ccomp": 1,
+            "compound:dir": 6,
+            "compound:prt": 8,
+            "compound:svc": 10,
+            "conj": 1,
+            "csubj": 1,
+            "fixed": 1,
+            "root": 5,
+            "xcomp": 1,
+            "xcomp:adj": 1
+          },
+          "head_deprel": {
+            "ROOT": 5,
+            "acl": 3,
+            "acl:subj": 1,
+            "acl:tmod": 1,
+            "advcl": 2,
+            "advmod:adj": 1,
+            "ccomp": 1,
+            "conj": 6,
+            "csubj:vsubj": 1,
+            "obl": 1,
+            "obl:comp": 2,
+            "obl:tmod": 2,
+            "parataxis": 1,
+            "root": 16,
+            "xcomp": 5,
+            "xcomp:adj": 1
+          },
+          "head_upos": {
+            "ADJ": 3,
+            "NOUN": 5,
+            "ROOT": 5,
+            "VERB": 36
+          },
+          "upos": {
+            "ADP": 4,
+            "ADV": 30,
+            "VERB": 15
+          }
+        },
+        "và": {
+          "deprel": {
+            "cc": 138,
+            "mark": 2
+          },
+          "head_deprel": {
+            "advcl": 1,
+            "appos": 1,
+            "conj": 122,
+            "obl": 1,
+            "root": 14,
+            "xcomp": 1
+          },
+          "head_upos": {
+            "ADJ": 12,
+            "ADP": 1,
+            "NOUN": 39,
+            "PROPN": 8,
+            "SCONJ": 1,
+            "VERB": 79
+          },
+          "upos": {
+            "CCONJ": 126,
+            "SCONJ": 14
+          }
+        },
+        "vào": {
+          "deprel": {
+            "acl:subj": 1,
+            "advcl": 1,
+            "advmod": 2,
+            "case": 25,
+            "compound:dir": 3,
+            "compound:prt": 4,
+            "compound:svc": 1,
+            "conj": 1,
+            "root": 3,
+            "xcomp": 1
+          },
+          "head_deprel": {
+            "ROOT": 3,
+            "acl:tmod": 1,
+            "conj": 2,
+            "obj": 2,
+            "obl": 3,
+            "obl:comp": 21,
+            "parataxis": 1,
+            "root": 6,
+            "xcomp": 3
+          },
+          "head_upos": {
+            "NOUN": 25,
+            "PRON": 1,
+            "ROOT": 3,
+            "VERB": 13
+          },
+          "upos": {
+            "ADP": 27,
+            "ADV": 6,
+            "VERB": 9
+          }
+        },
+        "về": {
+          "deprel": {
+            "acl:tmod": 2,
+            "advcl": 2,
+            "advmod": 2,
+            "advmod:dir": 1,
+            "case": 23,
+            "ccomp": 1,
+            "compound:dir": 9,
+            "compound:prt": 1,
+            "compound:svc": 2,
+            "conj": 2,
+            "nsubj:xsubj": 1,
+            "parataxis": 2,
+            "root": 8,
+            "xcomp": 4
+          },
+          "head_deprel": {
+            "ROOT": 8,
+            "acl": 1,
+            "acl:subj": 3,
+            "acl:tmod": 1,
+            "advcl": 2,
+            "advcl:objective": 2,
+            "ccomp": 1,
+            "obj": 1,
+            "obl": 6,
+            "obl:about": 11,
+            "obl:comp": 6,
+            "obl:tmod": 1,
+            "parataxis": 2,
+            "root": 11,
+            "xcomp": 4
+          },
+          "head_upos": {
+            "NOUN": 26,
+            "PRON": 1,
+            "ROOT": 8,
+            "VERB": 25
+          },
+          "upos": {
+            "ADP": 27,
+            "ADV": 9,
+            "VERB": 24
+          }
+        },
+        "xuống": {
+          "deprel": {
+            "advmod": 1,
+            "advmod:dir": 2,
+            "case": 2,
+            "compound:dir": 3,
+            "root": 2
+          },
+          "head_deprel": {
+            "ROOT": 2,
+            "acl": 1,
+            "advcl": 1,
+            "conj": 1,
+            "obl": 1,
+            "obl:comp": 1,
+            "parataxis": 1,
+            "xcomp": 1,
+            "xcomp:adj": 1
+          },
+          "head_upos": {
+            "ADJ": 1,
+            "NOUN": 2,
+            "ROOT": 2,
+            "VERB": 5
+          },
+          "upos": {
+            "ADP": 2,
+            "ADV": 5,
+            "VERB": 3
+          }
+        },
+        "à": {
+          "deprel": {
+            "discourse": 5
+          },
+          "head_deprel": {
+            "parataxis": 2,
+            "root": 3
+          },
+          "head_upos": {
+            "PROPN": 1,
+            "VERB": 4
+          },
+          "upos": {
+            "INTJ": 5
+          }
+        },
+        "đi": {
+          "deprel": {
+            "acl": 1,
+            "acl:subj": 5,
+            "acl:tmod": 5,
+            "advcl": 2,
+            "advcl:objective": 1,
+            "advmod": 1,
+            "ccomp": 3,
+            "compound:svc": 3,
+            "conj": 4,
+            "csubj": 1,
+            "csubj:vsubj": 2,
+            "fixed": 1,
+            "parataxis": 2,
+            "root": 8,
+            "xcomp": 15
+          },
+          "head_deprel": {
+            "ROOT": 8,
+            "acl": 2,
+            "acl:subj": 1,
+            "advcl:objective": 1,
+            "ccomp": 3,
+            "conj": 6,
+            "nmod": 1,
+            "nsubj": 2,
+            "nsubj:pass": 1,
+            "obj": 3,
+            "obl:tmod": 5,
+            "parataxis": 4,
+            "root": 11,
+            "xcomp": 5,
+            "xcomp:adj": 1
+          },
+          "head_upos": {
+            "NOUN": 12,
+            "ROOT": 8,
+            "VERB": 34
+          },
+          "upos": {
+            "ADV": 4,
+            "VERB": 50
+          }
+        },
+        "đó": {
+          "deprel": {
+            "compound": 2,
+            "det:pmod": 40,
+            "discourse": 2,
+            "fixed": 1,
+            "nsubj": 14,
+            "obj": 5,
+            "obl": 1,
+            "obl:comp": 3,
+            "obl:tmod": 3
+          },
+          "head_deprel": {
+            "acl:tmod": 2,
+            "advcl": 2,
+            "amod": 1,
+            "appos": 1,
+            "ccomp": 4,
+            "conj": 2,
+            "csubj": 1,
+            "csubj:vsubj": 1,
+            "det:pmod": 2,
+            "dislocated": 1,
+            "nmod": 3,
+            "nsubj": 10,
+            "nsubj:pass": 1,
+            "obj": 6,
+            "obl": 5,
+            "obl:comp": 2,
+            "obl:tmod": 14,
+            "parataxis": 1,
+            "root": 12
+          },
+          "head_upos": {
+            "ADJ": 2,
+            "ADP": 5,
+            "NOUN": 49,
+            "PRON": 3,
+            "VERB": 12
+          },
+          "upos": {
+            "NOUN": 1,
+            "PART": 2,
+            "PRON": 68
+          }
+        },
+        "đấy": {
+          "deprel": {
+            "discourse": 2
+          },
+          "head_deprel": {
+            "obj": 1,
+            "root": 1
+          },
+          "head_upos": {
+            "NOUN": 1,
+            "PROPN": 1
+          },
+          "upos": {
+            "PART": 2
+          }
+        }
+      },
+      "form_syllable_lengths": {
+        "1": 9613,
+        "2": 2010,
+        "3": 52,
+        "4": 17
+      },
+      "invalid_trees": [],
+      "nonprojective_ids": [
+        "test-s1626"
+      ],
+      "object_position": {
+        "after_head": 862,
+        "before_head": 5
+      },
+      "possessive_cua_marker": {
+        "with_cua_case": 85,
+        "without_cua_case": 16
+      },
+      "sentences": 800,
+      "skipped_rows": {},
+      "task_emoticon_occurrences": 0,
+      "tokens": 11692,
+      "upos": {
+        "ADJ": 719,
+        "ADP": 645,
+        "ADV": 1020,
+        "AUX": 242,
+        "CCONJ": 144,
+        "DET": 161,
+        "INTJ": 17,
+        "NOUN": 3029,
+        "NUM": 269,
+        "PART": 89,
+        "PRON": 531,
+        "PROPN": 560,
+        "PUNCT": 1703,
+        "SCONJ": 382,
+        "SYM": 7,
+        "VERB": 2134,
+        "X": 40
+      }
+    },
+    "train": {
+      "classifier_upos_pairs": {
+        "clf:ADV->NOUN": 1,
+        "clf:DET->NOUN": 15,
+        "clf:NOUN->NOUN": 23,
+        "clf:NOUN->NUM": 1,
+        "clf:NUM->NOUN": 44,
+        "clf:VERB->NOUN": 1,
+        "clf:det:ADJ->NOUN": 2,
+        "clf:det:ADJ->NUM": 1,
+        "clf:det:DET->NOUN": 2,
+        "clf:det:NOUN->DET": 1,
+        "clf:det:NOUN->NOUN": 205,
+        "clf:det:NOUN->NUM": 1,
+        "clf:det:PRON->NOUN": 1,
+        "clf:det:PROPN->NOUN": 133,
+        "clf:det:VERB->NOUN": 2
+      },
+      "compound_head_order": {
+        "compound:dir:head_left": 98,
+        "compound:svc:head_left": 129
+      },
+      "compound_reverse_ids": [],
+      "deprels": {
+        "acl": 94,
+        "acl:relcl": 1,
+        "acl:subj": 344,
+        "acl:tmod": 63,
+        "acl:tonp": 31,
+        "advcl": 282,
+        "advcl:objective": 130,
+        "advmod": 1094,
+        "advmod:adj": 127,
+        "advmod:dir": 8,
+        "advmod:neg": 243,
+        "amod": 457,
+        "appos": 59,
+        "appos:nmod": 36,
+        "aux": 136,
+        "aux:pass": 139,
+        "case": 1121,
+        "cc": 407,
+        "ccomp": 201,
+        "clf": 85,
+        "clf:det": 348,
+        "compound": 520,
+        "compound:adj": 2,
+        "compound:amod": 7,
+        "compound:apr": 1,
+        "compound:atov": 14,
+        "compound:dir": 98,
+        "compound:pron": 5,
+        "compound:prt": 32,
+        "compound:redup": 3,
+        "compound:svc": 129,
+        "compound:verbnoun": 7,
+        "compound:vmod": 274,
+        "compound:z": 11,
+        "conj": 745,
+        "cop": 194,
+        "csubj": 42,
+        "csubj:asubj": 7,
+        "csubj:pass": 9,
+        "csubj:vsubj": 18,
+        "dep": 3,
+        "det": 320,
+        "det:pmod": 316,
+        "discourse": 145,
+        "dislocated": 10,
+        "fixed": 6,
+        "flat": 3,
+        "flat:date": 48,
+        "flat:name": 6,
+        "flat:number": 23,
+        "flat:redup": 3,
+        "flat:time": 13,
+        "iobj": 17,
+        "list": 21,
+        "mark": 299,
+        "mark:pcomp": 76,
+        "nmod": 740,
+        "nmod:poss": 233,
+        "nsubj": 1577,
+        "nsubj:nn": 4,
+        "nsubj:pass": 93,
+        "nsubj:xsubj": 5,
+        "nummod": 533,
+        "obj": 1660,
+        "obl": 501,
+        "obl:about": 33,
+        "obl:adj": 8,
+        "obl:agent": 21,
+        "obl:comp": 146,
+        "obl:iobj": 48,
+        "obl:tmod": 379,
+        "obl:with": 69,
+        "parataxis": 220,
+        "punct": 2931,
+        "root": 1400,
+        "vocative": 6,
+        "xcomp": 710,
+        "xcomp:adj": 64,
+        "xcomp:vcomp": 1
+      },
+      "di_adjacent_verb_children": {
+        "compound:dir": 7,
+        "compound:svc": 14,
+        "compound:vmod": 1,
+        "obj": 1,
+        "xcomp": 19
+      },
+      "di_adjacent_verb_pair_direction": {
+        "di_is_head": 42,
+        "no_direct_arc": 2
+      },
+      "di_forward_verb_children": {
+        "advcl:objective": 1,
+        "ccomp": 1,
+        "compound:dir": 7,
+        "compound:svc": 15,
+        "compound:vmod": 1,
+        "conj": 13,
+        "obj": 1,
+        "parataxis": 3,
+        "xcomp": 22
+      },
+      "direction_forms_deprels": {
+        "acl": 2,
+        "acl:subj": 12,
+        "acl:tmod": 1,
+        "advcl": 6,
+        "advcl:objective": 5,
+        "advmod": 19,
+        "advmod:dir": 8,
+        "case": 103,
+        "ccomp": 4,
+        "compound": 1,
+        "compound:apr": 1,
+        "compound:atov": 2,
+        "compound:dir": 74,
+        "compound:prt": 20,
+        "compound:svc": 17,
+        "compound:vmod": 3,
+        "conj": 6,
+        "parataxis": 5,
+        "root": 27,
+        "xcomp": 30,
+        "xcomp:adj": 2
+      },
+      "direction_verb_deprels": {
+        "acl": 2,
+        "acl:subj": 12,
+        "acl:tmod": 1,
+        "advcl": 6,
+        "advcl:objective": 5,
+        "case": 2,
+        "ccomp": 4,
+        "compound:atov": 1,
+        "compound:dir": 29,
+        "compound:prt": 1,
+        "compound:svc": 11,
+        "compound:vmod": 3,
+        "conj": 5,
+        "parataxis": 5,
+        "root": 27,
+        "xcomp": 27,
+        "xcomp:adj": 2
+      },
+      "focus_forms": {
+        "chiếc": {
+          "deprel": {
+            "clf": 10,
+            "clf:det": 13,
+            "obj": 1
+          },
+          "head_deprel": {
+            "advcl": 1,
+            "appos": 1,
+            "nsubj": 9,
+            "nsubj:pass": 1,
+            "nummod": 9,
+            "obj": 2,
+            "obl": 1
+          },
+          "head_upos": {
+            "NOUN": 14,
+            "NUM": 9,
+            "VERB": 1
+          },
+          "upos": {
+            "NOUN": 24
+          }
+        },
+        "con": {
+          "deprel": {
+            "acl:subj": 1,
+            "amod": 2,
+            "clf": 4,
+            "clf:det": 13,
+            "compound": 2,
+            "conj": 7,
+            "iobj": 1,
+            "nmod": 3,
+            "nmod:poss": 2,
+            "nsubj": 15,
+            "nsubj:pass": 1,
+            "obj": 17,
+            "obl": 1,
+            "obl:comp": 1,
+            "obl:iobj": 3,
+            "obl:with": 3,
+            "root": 5
+          },
+          "head_deprel": {
+            "ROOT": 5,
+            "acl": 2,
+            "acl:subj": 1,
+            "advcl": 4,
+            "advcl:objective": 1,
+            "amod": 1,
+            "ccomp": 5,
+            "compound:vmod": 1,
+            "conj": 8,
+            "det": 2,
+            "nmod": 1,
+            "nmod:poss": 2,
+            "nsubj": 8,
+            "obj": 11,
+            "obl": 3,
+            "obl:comp": 1,
+            "obl:with": 1,
+            "parataxis": 7,
+            "root": 14,
+            "xcomp": 3
+          },
+          "head_upos": {
+            "ADJ": 3,
+            "DET": 2,
+            "NOUN": 32,
+            "PROPN": 1,
+            "ROOT": 5,
+            "VERB": 38
+          },
+          "upos": {
+            "ADJ": 3,
+            "NOUN": 78
+          }
+        },
+        "cuốn": {
+          "deprel": {
+            "root": 2
+          },
+          "head_deprel": {
+            "ROOT": 2
+          },
+          "head_upos": {
+            "ROOT": 2
+          },
+          "upos": {
+            "VERB": 2
+          }
+        },
+        "cái": {
+          "deprel": {
+            "clf": 4,
+            "clf:det": 13,
+            "nsubj": 4,
+            "obj": 3,
+            "root": 1
+          },
+          "head_deprel": {
+            "ROOT": 1,
+            "acl:subj": 1,
+            "advcl:objective": 1,
+            "conj": 1,
+            "det": 1,
+            "nmod": 1,
+            "nsubj": 3,
+            "nummod": 1,
+            "obj": 7,
+            "obl": 3,
+            "root": 4,
+            "xcomp": 1
+          },
+          "head_upos": {
+            "ADJ": 1,
+            "DET": 1,
+            "NOUN": 13,
+            "NUM": 1,
+            "ROOT": 1,
+            "VERB": 8
+          },
+          "upos": {
+            "NOUN": 25
+          }
+        },
+        "của": {
+          "deprel": {
+            "case": 222,
+            "dep": 1,
+            "obj": 1,
+            "obl": 5,
+            "parataxis": 1
+          },
+          "head_deprel": {
+            "conj": 5,
+            "nmod": 6,
+            "nmod:poss": 210,
+            "obj": 2,
+            "obl": 5,
+            "root": 2
+          },
+          "head_upos": {
+            "ADJ": 1,
+            "NOUN": 159,
+            "PRON": 25,
+            "PROPN": 42,
+            "VERB": 3
+          },
+          "upos": {
+            "ADP": 229,
+            "NOUN": 1
+          }
+        },
+        "hay": {
+          "deprel": {
+            "advcl": 1,
+            "advmod": 1,
+            "cc": 14
+          },
+          "head_deprel": {
+            "advmod:neg": 2,
+            "conj": 10,
+            "root": 4
+          },
+          "head_upos": {
+            "ADJ": 3,
+            "ADV": 2,
+            "NOUN": 3,
+            "VERB": 8
+          },
+          "upos": {
+            "ADV": 1,
+            "CCONJ": 13,
+            "SCONJ": 1,
+            "VERB": 1
+          }
+        },
+        "hoặc": {
+          "deprel": {
+            "cc": 4
+          },
+          "head_deprel": {
+            "conj": 3,
+            "root": 1
+          },
+          "head_upos": {
+            "NOUN": 2,
+            "VERB": 2
+          },
+          "upos": {
+            "CCONJ": 3,
+            "SCONJ": 1
+          }
+        },
+        "lên": {
+          "deprel": {
+            "acl": 1,
+            "acl:subj": 3,
+            "advcl": 2,
+            "advmod": 3,
+            "advmod:dir": 1,
+            "case": 5,
+            "ccomp": 1,
+            "compound": 1,
+            "compound:atov": 1,
+            "compound:dir": 14,
+            "compound:prt": 4,
+            "compound:svc": 4,
+            "root": 3,
+            "xcomp": 5
+          },
+          "head_deprel": {
+            "ROOT": 3,
+            "acl": 2,
+            "acl:subj": 3,
+            "advcl:objective": 1,
+            "advmod": 1,
+            "ccomp": 1,
+            "conj": 8,
+            "csubj": 1,
+            "obj": 3,
+            "obl": 3,
+            "obl:comp": 3,
+            "root": 16,
+            "xcomp": 3
+          },
+          "head_upos": {
+            "ADJ": 3,
+            "ADV": 1,
+            "NOUN": 9,
+            "PROPN": 1,
+            "ROOT": 3,
+            "VERB": 31
+          },
+          "upos": {
+            "ADP": 6,
+            "ADV": 20,
+            "VERB": 22
+          }
+        },
+        "nha": {
+          "deprel": {},
+          "head_deprel": {},
+          "head_upos": {},
+          "upos": {}
+        },
+        "nhé": {
+          "deprel": {
+            "discourse": 2
+          },
+          "head_deprel": {
+            "acl:subj": 1,
+            "xcomp": 1
+          },
+          "head_upos": {
+            "VERB": 2
+          },
+          "upos": {
+            "PART": 2
+          }
+        },
+        "ra": {
+          "deprel": {
+            "acl:subj": 3,
+            "advcl": 1,
+            "advcl:objective": 1,
+            "advmod": 9,
+            "advmod:dir": 5,
+            "case": 2,
+            "compound:dir": 20,
+            "compound:prt": 12,
+            "compound:svc": 5,
+            "conj": 1,
+            "parataxis": 3,
+            "root": 7,
+            "xcomp": 3
+          },
+          "head_deprel": {
+            "ROOT": 7,
+            "acl:subj": 2,
+            "acl:tmod": 4,
+            "advcl": 1,
+            "advcl:objective": 1,
+            "ccomp": 1,
+            "conj": 6,
+            "csubj": 1,
+            "csubj:vsubj": 1,
+            "nsubj": 1,
+            "obj": 2,
+            "obl": 1,
+            "obl:comp": 1,
+            "parataxis": 1,
+            "root": 34,
+            "xcomp": 6,
+            "xcomp:adj": 1,
+            "xcomp:vcomp": 1
+          },
+          "head_upos": {
+            "ADJ": 1,
+            "NOUN": 4,
+            "PROPN": 1,
+            "ROOT": 7,
+            "VERB": 59
+          },
+          "upos": {
+            "ADP": 2,
+            "ADV": 40,
+            "VERB": 30
+          }
+        },
+        "và": {
+          "deprel": {
+            "cc": 249,
+            "mark": 4
+          },
+          "head_deprel": {
+            "conj": 238,
+            "list": 1,
+            "obl:tmod": 1,
+            "root": 13
+          },
+          "head_upos": {
+            "ADJ": 23,
+            "ADP": 1,
+            "ADV": 1,
+            "NOUN": 67,
+            "PRON": 1,
+            "PROPN": 14,
+            "VERB": 146
+          },
+          "upos": {
+            "CCONJ": 240,
+            "SCONJ": 13
+          }
+        },
+        "vào": {
+          "deprel": {
+            "acl": 1,
+            "acl:subj": 1,
+            "advcl": 2,
+            "advcl:objective": 2,
+            "advmod": 5,
+            "advmod:dir": 1,
+            "case": 47,
+            "ccomp": 1,
+            "compound:atov": 1,
+            "compound:dir": 19,
+            "compound:prt": 2,
+            "compound:svc": 2,
+            "conj": 3,
+            "root": 10,
+            "xcomp": 3,
+            "xcomp:adj": 1
+          },
+          "head_deprel": {
+            "ROOT": 10,
+            "acl": 1,
+            "acl:subj": 3,
+            "acl:tmod": 2,
+            "advcl": 2,
+            "advcl:objective": 1,
+            "advmod:adj": 1,
+            "conj": 9,
+            "obj": 3,
+            "obl": 24,
+            "obl:comp": 19,
+            "obl:tmod": 3,
+            "parataxis": 1,
+            "root": 13,
+            "xcomp": 8,
+            "xcomp:adj": 1
+          },
+          "head_upos": {
+            "ADJ": 2,
+            "ADP": 1,
+            "NOUN": 48,
+            "PROPN": 1,
+            "ROOT": 10,
+            "VERB": 39
+          },
+          "upos": {
+            "ADP": 52,
+            "ADV": 18,
+            "VERB": 31
+          }
+        },
+        "về": {
+          "deprel": {
+            "acl:subj": 5,
+            "acl:tmod": 1,
+            "advcl": 1,
+            "advcl:objective": 2,
+            "case": 46,
+            "ccomp": 1,
+            "compound:dir": 12,
+            "compound:prt": 1,
+            "compound:svc": 4,
+            "compound:vmod": 3,
+            "conj": 2,
+            "parataxis": 2,
+            "root": 6,
+            "xcomp": 16,
+            "xcomp:adj": 1
+          },
+          "head_deprel": {
+            "ROOT": 6,
+            "acl:tmod": 1,
+            "advcl": 5,
+            "advcl:objective": 2,
+            "amod": 1,
+            "ccomp": 1,
+            "conj": 6,
+            "csubj": 1,
+            "obj": 6,
+            "obl": 6,
+            "obl:about": 29,
+            "obl:comp": 6,
+            "obl:tmod": 1,
+            "parataxis": 2,
+            "root": 22,
+            "xcomp": 7,
+            "xcomp:adj": 1
+          },
+          "head_upos": {
+            "ADJ": 3,
+            "NOUN": 45,
+            "PROPN": 2,
+            "ROOT": 6,
+            "VERB": 47
+          },
+          "upos": {
+            "ADP": 46,
+            "ADV": 7,
+            "VERB": 50
+          }
+        },
+        "xuống": {
+          "deprel": {
+            "advmod": 2,
+            "advmod:dir": 1,
+            "case": 3,
+            "ccomp": 1,
+            "compound:apr": 1,
+            "compound:dir": 9,
+            "compound:prt": 1,
+            "compound:svc": 2,
+            "root": 1,
+            "xcomp": 3
+          },
+          "head_deprel": {
+            "ROOT": 1,
+            "acl": 1,
+            "acl:subj": 1,
+            "ccomp": 2,
+            "conj": 3,
+            "obl": 2,
+            "obl:comp": 1,
+            "root": 10,
+            "xcomp": 2,
+            "xcomp:adj": 1
+          },
+          "head_upos": {
+            "ADJ": 2,
+            "NOUN": 3,
+            "ROOT": 1,
+            "VERB": 18
+          },
+          "upos": {
+            "ADP": 6,
+            "ADV": 8,
+            "VERB": 10
+          }
+        },
+        "à": {
+          "deprel": {
+            "discourse": 3
+          },
+          "head_deprel": {
+            "advcl": 1,
+            "parataxis": 1,
+            "root": 1
+          },
+          "head_upos": {
+            "ADJ": 1,
+            "PRON": 1,
+            "PROPN": 1
+          },
+          "upos": {
+            "INTJ": 1,
+            "PART": 2
+          }
+        },
+        "đi": {
+          "deprel": {
+            "acl": 4,
+            "acl:subj": 7,
+            "acl:tmod": 1,
+            "advcl": 3,
+            "advmod": 3,
+            "ccomp": 4,
+            "compound:atov": 1,
+            "compound:prt": 1,
+            "compound:redup": 1,
+            "compound:svc": 4,
+            "compound:vmod": 1,
+            "conj": 7,
+            "csubj": 1,
+            "discourse": 2,
+            "flat:redup": 1,
+            "parataxis": 5,
+            "root": 22,
+            "xcomp": 17,
+            "xcomp:adj": 3
+          },
+          "head_deprel": {
+            "ROOT": 22,
+            "acl": 2,
+            "acl:subj": 2,
+            "ccomp": 2,
+            "conj": 3,
+            "csubj:vsubj": 1,
+            "nmod": 1,
+            "nsubj": 2,
+            "obj": 5,
+            "obl:about": 1,
+            "obl:comp": 2,
+            "obl:tmod": 2,
+            "parataxis": 4,
+            "root": 31,
+            "xcomp": 7,
+            "xcomp:adj": 1
+          },
+          "head_upos": {
+            "ADJ": 5,
+            "NOUN": 13,
+            "ROOT": 22,
+            "VERB": 48
+          },
+          "upos": {
+            "ADV": 7,
+            "PART": 2,
+            "VERB": 79
+          }
+        },
+        "đó": {
+          "deprel": {
+            "advcl": 2,
+            "compound": 4,
+            "det": 1,
+            "det:pmod": 64,
+            "nsubj": 21,
+            "obj": 2,
+            "obl": 8,
+            "obl:comp": 3,
+            "obl:tmod": 4
+          },
+          "head_deprel": {
+            "acl": 1,
+            "advcl": 1,
+            "ccomp": 5,
+            "conj": 1,
+            "csubj:asubj": 1,
+            "det:pmod": 3,
+            "nmod": 3,
+            "nsubj": 10,
+            "obj": 16,
+            "obl": 5,
+            "obl:comp": 6,
+            "obl:tmod": 26,
+            "parataxis": 5,
+            "root": 24,
+            "xcomp": 2
+          },
+          "head_upos": {
+            "ADJ": 2,
+            "ADP": 10,
+            "NOUN": 69,
+            "PRON": 6,
+            "PROPN": 2,
+            "VERB": 20
+          },
+          "upos": {
+            "PRON": 109
+          }
+        },
+        "đấy": {
+          "deprel": {
+            "discourse": 7,
+            "nsubj": 2,
+            "obj": 1,
+            "obl:tmod": 1
+          },
+          "head_deprel": {
+            "nsubj": 1,
+            "parataxis": 2,
+            "root": 8
+          },
+          "head_upos": {
+            "NOUN": 2,
+            "PRON": 1,
+            "PROPN": 2,
+            "VERB": 6
+          },
+          "upos": {
+            "PART": 4,
+            "PRON": 7
+          }
+        }
+      },
+      "form_syllable_lengths": {
+        "1": 15680,
+        "2": 4358,
+        "3": 136,
+        "4": 38,
+        "5": 2,
+        "7": 1
+      },
+      "invalid_trees": [],
+      "nonprojective_ids": [
+        "train-s414",
+        "train-s435",
+        "train-s498",
+        "train-s518",
+        "train-s955"
+      ],
+      "object_position": {
+        "after_head": 1651,
+        "before_head": 9
+      },
+      "possessive_cua_marker": {
+        "with_cua_case": 207,
+        "without_cua_case": 26
+      },
+      "sentences": 1400,
+      "skipped_rows": {},
+      "task_emoticon_occurrences": 0,
+      "tokens": 20215,
+      "upos": {
+        "ADJ": 1097,
+        "ADP": 1207,
+        "ADV": 1481,
+        "AUX": 475,
+        "CCONJ": 256,
+        "DET": 300,
+        "INTJ": 3,
+        "NOUN": 5617,
+        "NUM": 622,
+        "PART": 106,
+        "PRON": 803,
+        "PROPN": 895,
+        "PUNCT": 2931,
+        "SCONJ": 501,
+        "SYM": 33,
+        "VERB": 3821,
+        "X": 67
+      }
+    }
+  }
+}
