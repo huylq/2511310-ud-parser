@@ -4,6 +4,63 @@
 `8fd3528` and `f717d44`, `WEEK2_REPORT.md`) is below, followed by this
 week's tasks. A Vietnamese summary is at the end of this file.**
 
+> **Updated 19 October: reply to your portal report ("Tuần 3").** See the
+> next section. The tasks are unchanged.
+
+## Reply to your portal report (19 October)
+
+**Your plan for the next two weeks matches these tasks, so go ahead.**
+Your portal "Tuần 3" is this file's Week 3, and your "Tuần 4" is the
+Week 4 in "Looking ahead".
+
+- **Week 3:**
+  - the VTB reader;
+  - the projection;
+  - the arc-standard state and actions;
+  - the static oracle.
+
+  Your targets are the right ones: every projected tree valid, and the
+  oracle reproducing every projective gold tree. Two additions from §1-§6
+  below:
+  - **The label mapping** (§2) gets its own tests.
+  - **The VTB measurement script** (§6) reports how many trees are
+    non-projective *after* projection, and how many oracle failures
+    there are on train. That number should be 0.
+- **Week 4:**
+  - features;
+  - the averaged perceptron;
+  - a small training run;
+  - weights saved and loaded;
+  - `parse()` on all 151 fixture sentences, preserving input tokens.
+
+  Also include:
+  - the `:))` override;
+  - weights loaded once per process;
+  - the gate's schema and tree checks passing. Run
+    `student-projects/_gate/run_gate.sh 02-ud-parsing` and paste its
+    output into `WEEK4_REPORT.md`.
+
+**Still outstanding from 17 October:** as of `70dbf96`, `WEEK2_REPORT.md`
+still has neither the data statement nor the AI-use disclosure table.
+Your portal report doesn't mention AI use either. Add both in one commit
+**before** any Week 3 code (see "Required fixes" below). If you used no
+AI tool, the table is one line: "AI used: none".
+
+**Working style for Week 3:** commit each test red before its code, and
+push as you go. A single end-of-week commit can't show the red → green
+order that §1-§5 ask for.
+
+**Tóm tắt:**
+- Kế hoạch Tuần 3 và Tuần 4 của em khớp với file này, em cứ làm theo.
+- Bổ sung:
+  - test riêng cho ánh xạ nhãn (§2);
+  - script đo VTB *sau projection* (§6), với số lỗi oracle trên train
+    bằng 0;
+  - ở Tuần 4, chạy gate và dán kết quả vào báo cáo.
+- **Việc còn nợ:** `WEEK2_REPORT.md` vẫn chưa có câu cam kết dữ liệu và
+  bảng khai báo AI. Hãy thêm cả hai trong một commit *trước* khi viết code
+  Tuần 3. Nếu không dùng AI, ghi "AI used: none".
+
 ## Week 2 evaluation: PASS on the work; two required report items are missing
 
 ### What I checked
