@@ -405,3 +405,19 @@ runs when those components are implemented.
 - [VTB analysis script](scripts/analyze_vtb.py), [statistics](analysis/VTB_COUNTS.md), [JSON inventory](analysis/VTB_COUNTS.json) and [label mapping](analysis/LABEL_MAPPING.md).
 - [Annotation set](data/hand_annotated.conllu), [validation/coverage report](analysis/hand_annotated_check.json), [contract test](../../tests/test_linguistics_ud_parser_hand_annotated.py) and [pytest log](analysis/PYTEST_HAND_ANNOTATED.txt).
 - [CoNLL-U](https://universaldependencies.org/format.html), [UD clf](https://universaldependencies.org/u/dep/clf.html) and [UD discourse](https://universaldependencies.org/u/dep/discourse.html).
+
+## 11. Data provenance statement
+
+The 20 submitted sentences were selected and processed by the student. The AI-assisted linguistic analyses focused on experimental examples for learning the annotation and design procedure.
+
+AI assistance also covered deterministic conversion of the student's Word
+annotation table to CoNLL-U, format and structural validation, and coverage
+reporting. The submitted set contains 20 source-based sentences and no synthetic sentences;
+the per-tag counts are reported in Section 7.2.
+
+
+## 12. AI-use disclosure
+
+| Tool | Version/model | Prompts, summarized by purpose | What the AI produced | What the student changed or decided |
+|---|---|---|---|---|
+| Codex in ChatGPT | Exact Week 2 model/version not recorded | Explain the Week 2 requirements and dependency parsing; compare parser, projection, oracle, feature and training designs; explain linguistic analysis using experimental examples; draft, consolidate, translate and review documents; implement VTB statistics, annotation conversion and contract checks | Design proposals and explanations; experimental linguistic analyses for learning; document and report drafts/translations; VTB analysis code and measured summaries; Word-to-CoNLL-U conversion; annotation format, tree-structure and coverage checks. Earlier records also describe suggestions for annotations in the submitted set; this discrepancy is pending resolution as stated in Section 11 | Selected the architecture and design settings; required preservation of input UPOS and consistent terminology; retained five uncertain cases; reviewed document scope and requested removal of drafts and local-only links |
