@@ -1,4 +1,4 @@
-"""Input processing and arc-standard transitions for dependency parsing."""
+"""Input processing, arc-standard transitions and a static training oracle."""
 
 from __future__ import annotations
 
@@ -173,6 +173,88 @@ class ParserState:
             del self.stack[-2]
         else:
             self.stack.pop()
+
+
+class StaticOracle:
+    """Choose gold arc-standard actions for a projected projective tree."""
+
+    def __init__(self, gold: ProjectedSentence) -> None:
+        self.sent_id = gold.metadata.get("sent_id", "<unknown>")
+        self.tokens = tuple(token.form for token in gold.tokens)
+        try:
+            if not gold.tokens:
+                raise ValueError("empty gold sentence")
+            for expected_id, token in enumerate(gold.tokens, start=1):
+                if token.id != expected_id:
+                    raise ValueError("gold IDs must be consecutive from 1")
+                if not token.form or any(char.isspace() for char in token.form):
+                    raise ValueError("gold tokens must be nonempty syllables")
+                if token.deprel not in UD_DEPREL:
+                    raise ValueError(f"invalid gold label: {token.deprel!r}")
+            _validate_conllu_tree(list(gold.tokens))
+            if not _is_projective_tree(gold.tokens):
+                raise ValueError("non-projective gold tree")
+        except ValueError as exc:
+            raise ValueError(f"Static oracle {self.sent_id}: {exc}") from exc
+
+        self.gold_heads = (None,) + tuple(token.head for token in gold.tokens)
+        self.gold_labels = (None,) + tuple(token.deprel for token in gold.tokens)
+        children: list[list[int]] = [[] for _ in range(len(gold.tokens) + 1)]
+        for token in gold.tokens:
+            children[token.head].append(token.id)
+        self.gold_children = tuple(tuple(group) for group in children)
+
+    def _check_state(self, state: ParserState) -> None:
+        """Check token alignment and state indices before accessing gold arrays."""
+        n = len(self.tokens)
+        if (
+            state.tokens != self.tokens
+            or len(state.heads) != n + 1
+            or len(state.labels) != n + 1
+            or type(state.buffer_pos) is not int
+            or not 1 <= state.buffer_pos <= n + 1
+            or not state.stack
+            or state.stack[0] != 0
+            or any(type(index) is not int or not 0 <= index <= n for index in state.stack)
+        ):
+            raise ValueError(f"Static oracle {self.sent_id}: state does not match gold")
+
+    def is_ready(self, state: ParserState, dependent_id: int) -> bool:
+        """Require every direct gold child to have its gold head and label."""
+        self._check_state(state)
+        if type(dependent_id) is not int or not 1 <= dependent_id <= len(self.tokens):
+            raise ValueError(f"Static oracle {self.sent_id}: invalid dependent ID")
+        return all(
+            state.heads[child] == dependent_id
+            and state.labels[child] == self.gold_labels[child]
+            for child in self.gold_children[dependent_id]
+        )
+
+    def next_action(self, state: ParserState) -> Action:
+        """Select LEFT_ARC, RIGHT_ARC or SHIFT without changing the state."""
+        self._check_state(state)
+        if state.is_terminal:
+            raise ValueError(f"Static oracle {self.sent_id}: terminal state has no action")
+
+        if len(state.stack) >= 2:
+            left, right = state.stack[-2:]
+            for kind, head, dependent in (
+                ("LEFT_ARC", right, left), ("RIGHT_ARC", left, right),
+            ):
+                if dependent == 0 or self.gold_heads[dependent] != head:
+                    continue
+                action = Action(kind, self.gold_labels[dependent])
+                if self.is_ready(state, dependent) and state._is_legal(action):
+                    return action
+
+        shift = Action("SHIFT")
+        if state._is_legal(shift):
+            return shift
+        raise ValueError(
+            f"Static oracle {self.sent_id}: no gold action; "
+            f"stack={state.stack}, buffer_pos={state.buffer_pos}, "
+            f"heads={state.heads}, labels={state.labels}"
+        )
 
 
 def _validate_conllu_tree(tokens: list[ConlluToken]) -> None:
