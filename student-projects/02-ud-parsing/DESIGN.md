@@ -137,7 +137,9 @@ nested marks preserve their original order.
 source word ID maps to the tuple of its projected syllable IDs; a deleted
 punctuation ID maps to an empty tuple. Each projected syllable maps back to its
 retained source word ID. Preserve the source sentence ID and do not mutate the
-source tree.
+source tree. The result includes `is_projective`, computed from crossing arcs
+including the artificial ROOT arc. Return valid non-projective trees for
+measurement and later split-specific filtering.
 
 The anchor choice is a reproducible representation, not a claim that the first
 syllable is always a linguistic head. Do not use `goeswith`: Vietnamese syllable

@@ -221,6 +221,51 @@ def test_project_sentence_resets_straight_quote_state():
         _assert_valid_projection(projected)
 
 
+def test_project_sentence_reports_projective_tree():
+    """A projected star tree is projective."""
+    source = ud_parser.read_conllu(PROJECTION_CASES[1].values[0])[0]
+
+    projected = ud_parser.project_sentence(source)
+
+    assert projected.is_projective is True
+    _assert_valid_projection(projected)
+
+
+@pytest.mark.parametrize(
+    "conllu, expected_heads",
+    [
+        # Non-ROOT arcs cross while the dependency tree remains valid.
+        pytest.param(
+            """# sent_id = crossing-nonroot-arcs
+1	A	_	X	_	_	0	root	_	_
+2	B	_	X	_	_	1	dep	_	_
+3	C	_	X	_	_	1	dep	_	_
+4	D	_	X	_	_	2	dep	_	_""",
+            (0, 1, 1, 2),
+            id="crossing_nonroot_arcs",
+        ),
+        # The ROOT arc is the only arc crossing the spanning dependency.
+        pytest.param(
+            """# sent_id = crossing-root-arc
+1	A	_	X	_	_	3	dep	_	_
+2	B	_	X	_	_	0	root	_	_
+3	C	_	X	_	_	2	dep	_	_""",
+            (3, 0, 2),
+            id="crossing_root_arc",
+        ),
+    ],
+)
+def test_project_sentence_retains_nonprojective_trees(conllu, expected_heads):
+    """Report non-projectivity without dropping the tree or changing its arcs."""
+    source = ud_parser.read_conllu(conllu)[0]
+
+    projected = ud_parser.project_sentence(source)
+
+    assert projected.is_projective is False
+    assert tuple(token.head for token in projected.tokens) == expected_heads
+    _assert_valid_projection(projected)
+
+
 ANNOTATION_PATH = (
     Path(__file__).resolve().parents[1]
     / "student-projects/02-ud-parsing/data/hand_annotated.conllu"
