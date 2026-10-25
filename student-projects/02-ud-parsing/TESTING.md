@@ -2,7 +2,7 @@
 
 **Student:** Lê Quốc Huy — **Student ID:** 2511310
 
-**Updated:** 17 October 2026
+**Updated:** 25 October 2026
 
 ## 1. Objectives and scope
 
@@ -97,7 +97,7 @@ annotation set for linguistic comparisons.
 | Component | Test situation | Required result |
 |---|---|---|
 | VTB reader | Comments, blank lines, integer IDs, multiword rows, empty nodes | Read the basic tree; do not create nodes for range/decimal IDs; identify malformed rows |
-| Projection | Single/multisyllabic words, repeated/leading punctuation, children of removed punct nodes | First-syllable anchor, dep internal arcs, correct original-chain reattachment, consecutive IDs and valid trees |
+| Projection | Single/multisyllabic words; opening/closing marks, alternating straight quotes, repeated/leading punctuation, punctuation root and missing gluing targets; children of removed punct nodes | First-syllable anchor, dep internal arcs, directional gluing with source order preserved and quote state reset per sentence, root preservation, correct original-chain reattachment, consecutive IDs and valid trees |
 | Label mapping | Labels with/without subtypes and invalid interface labels | Match the complete mapping; never emit a label outside UD_DEPREL |
 | Arc-standard | SHIFT/LEFT_ARC/RIGHT_ARC, short stack, exhausted buffer, assigned dependent | Correct state updates; reject invalid actions before mutation |
 | Guard | Self-loop, out-of-range head, repeated head assignment, controlled cycle-closing arc | Reject without writing an invalid arc or partially changing state |

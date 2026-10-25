@@ -4,7 +4,7 @@
 
 **Project:** 02 — Vietnamese UD Dependency Parsing
 
-**Updated:** 17 October 2026
+**Updated:** 25 October 2026
 
 ## 1. Architecture and scope
 
@@ -95,10 +95,12 @@ base-label prediction.
 Apply the following order to the basic source tree:
 
 1. Validate the source tree and retain its metadata and original head chains.
-2. Process tokens in text order. Glue each token with base label `punct` to the
-   immediately preceding retained token without inserting a space. Keep a
-   leading punctuation token if no preceding token exists. Always retain a
-   source root, even if it is punctuation. Consecutive glued marks keep order.
+2. Determine the gluing direction of each token with base label `punct` using
+   the rules below. Select the nearest source non-`punct` token or source root
+   in that direction as its target. Always retain the source root, including
+   a punctuation root. Retain punctuation with no target on its chosen side.
+   Concatenate each target and its assigned punctuation fragments in source
+   order, without inserting spaces. Never choose a deleted node as a target.
 3. Remove the incoming arc of each deleted punctuation node. For any retained
    dependent whose head is deleted, follow the **original** head chain through
    deleted nodes to the first retained ancestor and preserve its relation.
@@ -110,16 +112,43 @@ Apply the following order to the basic source tree:
 6. Prepare model input with UPOS `X`. Validate the projected tree, root/label
    equivalence, heads, cycles and projectivity.
 
-Maintain both word-to-syllable and syllable-to-word mappings for data conversion.
+| Punctuation | Gluing direction |
+|---|---|
+| Opening brackets and typographic opening quotation marks | Forward, onto the following target |
+| Closing brackets, typographic closing quotation marks and other punctuation | Backward, onto the preceding target |
+| Standalone straight double quote (`"`) | Alternate opening/forward and closing/backward in source order; reset to opening for each sentence |
+
+Identify opening marks using Unicode general categories `Ps` and `Pi`, and
+closing marks using `Pe` and `Pf`, as defined in the
+[Unicode Character Database](https://www.unicode.org/reports/tr44/#General_Category_Values).
+For a punctuation FORM containing several characters, treat it as opening only
+when every character belongs to `Ps` or `Pi`; otherwise use the backward rule.
+The standalone straight-double-quote rule takes precedence. Quote alternation
+is positional and does not attempt to repair unbalanced or nested quotations.
+
+A leading opening mark can glue forward. A leading backward mark without a
+preceding target remains a token; an opening mark without a following target
+also remains a token. Root preservation takes precedence over all gluing rules.
+Assign all targets before changing FORMs or deleting nodes so consecutive and
+nested marks preserve their original order.
+
+`project_sentence(source)` returns projected `metadata` and `tokens`, plus
+`word_to_syllables` and `syllable_to_word` mappings using one-based IDs. Each
+source word ID maps to the tuple of its projected syllable IDs; a deleted
+punctuation ID maps to an empty tuple. Each projected syllable maps back to its
+retained source word ID. Preserve the source sentence ID and do not mutate the
+source tree.
+
 The anchor choice is a reproducible representation, not a claim that the first
 syllable is always a linguistic head. Do not use `goeswith`: Vietnamese syllable
 spacing is normal orthography, not incorrectly separated text.
 
+Use `projection_version="v2-first-dep-directional-glue"` for this convention.
 Gluing punctuation is a project choice to approximate stub input, not a general
-UD rule. Compare glued and separate punctuation on dev in Weeks 3–4 and report
-the scoring/tokenization differences. Post-projection failure and projectivity
-counts have not yet been measured. Never replace training gold with fallback
-trees.
+UD rule. Compare glued and separate punctuation on dev in Weeks 3–4, including
+opening punctuation, and report the scoring/tokenization differences.
+Post-projection failure and projectivity counts have not yet been measured.
+Never replace training gold with fallback trees.
 
 ### 4.2. Runtime tokenization
 
@@ -356,7 +385,7 @@ Store the model under `src/vietnlp/linguistics/ud_model/`:
 | ATTRIBUTION.md | VTB name, commit, CC BY-SA 4.0 and the fact that weights derive from VTB |
 
 Use format_version=1, feature_version="v1-54",
-projection_version="v1-first-dep-glue" and transition_version="arc-standard-v1".
+projection_version="v2-first-dep-directional-glue" and transition_version="arc-standard-v1".
 Store keys as typed JSON arrays and weights as `[feature_id,action_id,value]`
 triples. Assign feature IDs by canonical compact JSON key order; sort triples
 by both IDs. Reject duplicate keys/triples and nonfinite values. Keep Python's
