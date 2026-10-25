@@ -180,6 +180,14 @@ Index 0 of heads/labels is unused and stays `None`. `None` means unassigned;
 `heads[i] = 0` means the root has been assigned. The two arrays represent arcs;
 do not maintain a second, potentially inconsistent arc list.
 
+`Action(kind, label=None)` stores an action kind and its optional base label;
+`SHIFT` has no label. `ParserState(tokens)` initializes the fields above and
+rejects empty input. `state.legal_actions()` returns a tuple of legal actions
+without mutation. `state.apply(action)` updates the state or raises `ValueError`
+without partial changes. `state.is_terminal` reports whether the buffer is
+exhausted and the stack is `[0]`; validate the completed heads and labels before
+accepting a decoded tree.
+
 For stack suffix `[..., i, j]`, with `j` on top:
 
 | Action | Effect | Additional legality conditions |
