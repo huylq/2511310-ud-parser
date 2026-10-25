@@ -216,6 +216,13 @@ guard prevent multiple heads, self-loops and cycles.
 
 ## 6. Static training oracle
 
+`StaticOracle(gold: ProjectedSentence)` stores the projected gold heads, labels
+and direct children. Reject empty or non-projective gold input with `ValueError`
+naming the sentence ID. `oracle.is_ready(state, dependent_id)` checks the gold
+children below. `oracle.next_action(state)` returns an `Action` without mutating
+the state; the caller applies it through `state.apply(action)`. Reject terminal
+states and states whose token forms differ from gold, naming the sentence ID.
+
 Gold heads and labels come from the projected VTB tree. Derive direct
 `gold_children` from gold heads. A dependent d is ready only when, for every
 gold child c, the current state has `heads[c]=d` and
