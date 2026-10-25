@@ -1,5 +1,11 @@
 """Week 3 CoNLL-U reader tests."""
 
+from pathlib import Path
+
+import pytest
+
+from vietnlp.linguistics.ud_parser import read_conllu
+
 # Check metadata and tokens for two sentences, including the final sentence at EOF.
 TWO_SENTENCE_CONLLU = """# sent_id = hc-021
 # text = Trưa nay chúng tôi đi ăn trưa ở nhà hàng mới
@@ -84,8 +90,6 @@ EXPECTED_TOKENS = (
 
 def test_read_conllu_two_sentences_preserves_metadata_and_basic_nodes():
     """Read two sentences, including the last one at end of input."""
-    from vietnlp.linguistics.ud_parser import read_conllu
-
     sentences = read_conllu(TWO_SENTENCE_CONLLU)
 
     assert isinstance(sentences, list)
@@ -108,3 +112,106 @@ def test_read_conllu_two_sentences_preserves_metadata_and_basic_nodes():
         assert actual == expected, sentence.metadata["sent_id"]
         assert all(type(token.id) is int for token in sentence.tokens)
         assert all(type(token.head) is int for token in sentence.tokens)
+
+
+@pytest.mark.parametrize("sentence_index", [0, 1], ids=["first_sentence", "second_sentence"])
+@pytest.mark.parametrize(
+    "case, reason",
+    [
+        ("missing_column", "expected 10 TAB-separated columns"),
+        ("extra_column", "expected 10 TAB-separated columns"),
+        ("noninteger_head", "HEAD must be an integer"),
+        ("nonconsecutive_id", "IDs must be consecutive from 1"),
+        ("head_outside_sentence", "HEAD is outside the sentence"),
+    ],
+)
+def test_read_conllu_malformed_input_reports_line(sentence_index, case, reason):
+    """Change one row and check the error reason and absolute source line."""
+    lines = TWO_SENTENCE_CONLLU.splitlines()
+    starts = [index for index, line in enumerate(lines) if line.startswith("1\t")]
+    row_index = starts[sentence_index] + 1
+    fields = lines[row_index].split("\t")
+
+    if case == "missing_column":
+        fields.pop()
+    elif case == "extra_column":
+        fields.append("_")
+    elif case == "noninteger_head":
+        fields[6] = "not-an-integer"
+    elif case == "nonconsecutive_id":
+        fields[0] = str(int(fields[0]) + 1)
+    elif case == "head_outside_sentence":
+        fields[6] = str(len(EXPECTED_TOKENS[sentence_index]) + 1)
+
+    lines[row_index] = "\t".join(fields)
+
+    with pytest.raises(ValueError, match=rf"\bline {row_index + 1}\b") as error:
+        read_conllu("\n".join(lines))
+    assert reason in str(error.value)
+
+
+@pytest.mark.parametrize(
+    "special_id, token_id, insert_before",
+    [("3-4", 3, True), ("5.1", 5, False)],
+    ids=["multiword_range", "empty_node"],
+)
+def test_read_conllu_skips_nonbasic_rows(special_id, token_id, insert_before):
+    """Skip range/decimal rows without changing metadata or basic nodes."""
+    lines = TWO_SENTENCE_CONLLU.splitlines()
+    row_index = next(
+        index for index, line in enumerate(lines) if line.startswith(f"{token_id}\t")
+    )
+    fields = lines[row_index].split("\t")
+    fields[0] = special_id
+    fields[2:] = ["_"] * 8
+    insert_at = row_index if insert_before else row_index + 1
+    lines.insert(insert_at, "\t".join(fields))
+
+    sentences = read_conllu("\n".join(lines))
+
+    assert len(sentences) == 2
+    assert [sentence.metadata["sent_id"] for sentence in sentences] == [
+        "hc-021", "hc-022",
+    ]
+    for sentence, expected in zip(sentences, EXPECTED_TOKENS, strict=True):
+        actual = tuple(
+            (token.id, token.form, token.upos, token.head, token.deprel)
+            for token in sentence.tokens
+        )
+        assert actual == expected, sentence.metadata["sent_id"]
+
+
+def test_read_conllu_hand_annotated_set_has_twenty_valid_trees():
+    """Read all annotated sentences and validate their dependency trees."""
+    from vietnlp.interfaces.ud import (
+        DependencyParse,
+        UDToken,
+        is_single_rooted_tree,
+        validate_dependency_parse,
+    )
+
+    data = (
+        Path(__file__).resolve().parents[1]
+        / "student-projects/02-ud-parsing/data/hand_annotated.conllu"
+    )
+    sentences = read_conllu(data.read_text(encoding="utf-8"))
+
+    assert len(sentences) == 20
+    assert sum(len(sentence.tokens) for sentence in sentences) == 254
+    for sentence in sentences:
+        tree = DependencyParse(
+            sent_id=sentence.metadata["sent_id"],
+            tokens=tuple(
+                UDToken(
+                    idx=token.id - 1,
+                    form=token.form,
+                    upos=token.upos,
+                    head=token.head,
+                    deprel=token.deprel,
+                )
+                for token in sentence.tokens
+            ),
+            source="real",
+        )
+        validate_dependency_parse(tree)
+        assert is_single_rooted_tree(tree), tree.sent_id
