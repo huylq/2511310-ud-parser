@@ -15,11 +15,13 @@ with one head per token, exactly one root, valid head references and no cycles.
 Linguistic quality is assessed separately with UAS/LAS and errors on the six
 construction groups required by the task.
 
-| Scope | Status on 17 October 2026 |
+| Scope | Status on 25 October 2026 |
 |---|---|
 | Annotation contract | Implemented; 24 cases pass |
-| Full submission-tree suite | 213 passed, 14 skipped, 1 warning |
-| Parser/oracle/features/trainer/loader unit tests | Implement alongside the components in Weeks 3–4 |
+| Reader, labels, projection, transitions, oracle and annotation contracts | 275 cases pass |
+| Full submission-tree suite | 464 passed, 14 skipped, 1 warning |
+| VTB projection and oracle measurement | All splits valid; 1,395 train oracle replays pass, 0 failures |
+| Features/trainer/loader unit tests | Implement alongside the components in Week 4 |
 | Parser integration over 151 fixture sentences | Run once the parse pipeline and model files exist |
 | Dev and annotation-set UAS/LAS | Measure once a trained model exists |
 
@@ -36,7 +38,7 @@ calls or changes to fixtures, interfaces or gate code.
 From the repository root, run all tests:
 
 ```powershell
-.venv\Scripts\python.exe -m pytest tests -q -o "addopts="
+.venv\Scripts\python.exe -m pytest tests -q -o "addopts=" --disable-warnings
 ```
 
 Run the annotation contract alone:
@@ -49,16 +51,27 @@ The addopts override removes the configured extra quiet option so the summary
 remains visible. The recorded full-suite summary is:
 
 ```text
-213 passed, 14 skipped, 1 warning in 109.78s (0:01:49)
+464 passed, 14 skipped, 1 warning in 125.58s (0:02:05)
 ```
 
-This was run in a worktree based on origin/student/02-ud-parsing with the Week 2
-files added, reusing the project virtual environment and pointing PYTHONPATH
-at the submission tree's src directory. The passing cases include 189 inherited
-tests and 24 annotation-contract cases. Eleven live-Postgres tests, two
-live-MinIO tests and the unimplemented Project 1 golden-test module are skipped.
-The warning is Pandera's import-related FutureWarning. The full log is saved in
-[PYTEST_HAND_ANNOTATED.txt](analysis/PYTEST_HAND_ANNOTATED.txt).
+The passing cases include 275 Project 2 cases and 189 inherited tests. Eleven
+live-Postgres tests, two live-MinIO tests and the unimplemented Project 1
+golden-test module are skipped. The warning is Pandera's import-related
+FutureWarning.
+
+VTB measurement is a separate script, not an offline unit test. With `src` on
+`PYTHONPATH`, run:
+
+```text
+python student-projects/02-ud-parsing/scripts/project_vtb.py --data-dir <VTB_DIR> --output-dir student-projects/02-ud-parsing/analysis
+```
+
+It verifies pinned file hashes, validates all projected trees against the
+frozen schema/tree checks and replays the oracle only on valid projective train
+trees. It writes [PROJECTION_COUNTS.md](analysis/PROJECTION_COUNTS.md) and
+[PROJECTION_COUNTS.json](analysis/PROJECTION_COUNTS.json), including excluded
+train IDs and reasons. Any invalid projected tree or oracle failure produces
+a nonzero exit status; an oracle failure is never a train exclusion.
 
 ## 3. Annotation contract
 

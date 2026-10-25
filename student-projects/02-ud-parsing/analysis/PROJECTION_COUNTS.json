@@ -1,0 +1,116 @@
+{
+  "commit": "3c971fd1c5d03561e00b267d3d0057b81a9bea84",
+  "projection_version": "v2-first-dep-directional-glue",
+  "sha256": {
+    "vi_vtb-ud-dev.conllu": "0b779257b9225575b3b30e15d64cc4ef9945a77f8cceb9f92d794b483a2752dd",
+    "vi_vtb-ud-test.conllu": "abc1b0ea98661bbb494a8c0da123ba2fe1a3ef71322c380fe66468884d9b4285",
+    "vi_vtb-ud-train.conllu": "1df180722db99b724f7368aca50597133bee28606de3394cd8d12a57da89978d"
+  },
+  "source": "https://github.com/UniversalDependencies/UD_Vietnamese-VTB",
+  "splits": {
+    "dev": {
+      "internal_dep_arcs": 5765,
+      "invalid_projected_trees": [],
+      "nonprojective_ids": [
+        "dev-157",
+        "dev-242",
+        "dev-453",
+        "dev-561",
+        "dev-584",
+        "dev-615",
+        "dev-695",
+        "dev-892",
+        "dev-922"
+      ],
+      "projected_sentences": 1123,
+      "punctuation_glued": {
+        "opening": 216,
+        "trailing": 3279
+      },
+      "punctuation_retained": 22,
+      "sentences": 1123,
+      "source_nonprojective_trees": 9,
+      "source_punct_forms": {
+        "\"": 399,
+        "(": 9
+      },
+      "source_word_tokens": 26162,
+      "syllable_tokens": 28432
+    },
+    "test": {
+      "internal_dep_arcs": 2165,
+      "invalid_projected_trees": [],
+      "nonprojective_ids": [
+        "test-s1626"
+      ],
+      "projected_sentences": 800,
+      "punctuation_glued": {
+        "opening": 133,
+        "trailing": 1533
+      },
+      "punctuation_retained": 37,
+      "sentences": 800,
+      "source_nonprojective_trees": 1,
+      "source_punct_forms": {
+        "\"": 240,
+        "(": 15
+      },
+      "source_word_tokens": 11692,
+      "syllable_tokens": 12191
+    },
+    "train": {
+      "internal_dep_arcs": 4758,
+      "invalid_projected_trees": [],
+      "nonprojective_ids": [
+        "train-s414",
+        "train-s435",
+        "train-s498",
+        "train-s518",
+        "train-s955"
+      ],
+      "oracle": {
+        "actions": 44000,
+        "attempted": 1395,
+        "failures": [],
+        "passed": 1395
+      },
+      "projected_sentences": 1400,
+      "punctuation_glued": {
+        "opening": 230,
+        "trailing": 2644
+      },
+      "punctuation_retained": 57,
+      "sentences": 1400,
+      "source_nonprojective_trees": 5,
+      "source_punct_forms": {
+        "\"": 408,
+        "(": 27
+      },
+      "source_word_tokens": 20215,
+      "syllable_tokens": 22099,
+      "train_excluded": [
+        {
+          "reason": "nonprojective_after_projection",
+          "sent_id": "train-s414"
+        },
+        {
+          "reason": "nonprojective_after_projection",
+          "sent_id": "train-s435"
+        },
+        {
+          "reason": "nonprojective_after_projection",
+          "sent_id": "train-s498"
+        },
+        {
+          "reason": "nonprojective_after_projection",
+          "sent_id": "train-s518"
+        },
+        {
+          "reason": "nonprojective_after_projection",
+          "sent_id": "train-s955"
+        }
+      ]
+    }
+  },
+  "transition_version": "arc-standard-v1"
+}

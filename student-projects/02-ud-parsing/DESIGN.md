@@ -20,8 +20,9 @@ not the main parsing method.
 
 Arc-standard makes the state, actions and structural constraints explicit and
 fits the implementation budget. Its basic form produces projective trees.
-Accuracy remains to be measured; this document specifies the implementation
-planned for Weeks 3–4, not an implemented or trained parser.
+The reader, label mapping, projection, transitions and static oracle are
+implemented. Features, training and the public `parse()` entry point remain
+Week 4 work. Accuracy remains to be measured.
 
 The public entry point is:
 
@@ -57,6 +58,21 @@ training sentence and its reason. Do not infer the post-projection exclusion
 count from the five nonprojective source trees. Keep all dev/test sentences,
 including nonprojective ones, for evaluation. Repair invalid data preparation
 before an experiment rather than silently dropping evaluation sentences.
+
+Measured with [project_vtb.py](scripts/project_vtb.py), after projection:
+
+| Split | Syllable tokens | Invalid projected trees | Nonprojective projected trees |
+|---|---:|---:|---:|
+| Train | 22,099 | 0 | 5 |
+| Dev | 28,432 | 0 | 9 |
+| Test | 12,191 | 0 | 1 |
+
+Exclude train-s414, train-s435, train-s498, train-s518 and train-s955 for
+non-projectivity after projection. The remaining 1,395 train sentences contain
+22,000 syllable tokens. Static-oracle replay reconstructs every gold head and
+label in 44,000 legal actions, with **0 failures**. Counts and exclusion reasons
+are recorded in [PROJECTION_COUNTS.md](analysis/PROJECTION_COUNTS.md) and
+[PROJECTION_COUNTS.json](analysis/PROJECTION_COUNTS.json).
 
 Tune on dev only. Evaluate the trained model on VTB test once, after fixing the
 model and pipeline. Source-corpus inventory counts are not model test scores.
@@ -149,7 +165,20 @@ Use `projection_version="v2-first-dep-directional-glue"` for this convention.
 Gluing punctuation is a project choice to approximate stub input, not a general
 UD rule. Compare glued and separate punctuation on dev in Weeks 3–4, including
 opening punctuation, and report the scoring/tokenization differences.
-Post-projection failure and projectivity counts have not yet been measured.
+The measured effects of this projection are:
+
+| Split | Internal dep arcs added | Punctuation glued backward | Punctuation glued forward | Punctuation retained |
+|---|---:|---:|---:|---:|
+| Train | 4,758 | 2,644 | 230 | 57 |
+| Dev | 5,765 | 3,279 | 216 | 22 |
+| Test | 2,165 | 1,533 | 133 | 37 |
+
+Internal arcs exclude source `dep` relations. Gluing counts include alternating
+straight quotes; retained punctuation includes roots and marks without a target
+on their chosen side. Exact source punctuation FORMs on train include 408
+straight double quotes and 27 opening parentheses, reproducing the task's
+inventory. All projected trees pass the frozen schema and single-rooted-tree
+checks. See [PROJECTION_COUNTS.md](analysis/PROJECTION_COUNTS.md) for reproduction.
 Never replace training gold with fallback trees.
 
 ### 4.2. Runtime tokenization
@@ -534,9 +563,10 @@ single root, oracle replay, projection, features, averaging, loader, grouping,
 fallback, adversarial constructions and the full fixture. The existing
 [annotation contract test](../../tests/test_linguistics_ud_parser_hand_annotated.py)
 checks format, metadata, token alignment, label/tree validity and coverage.
-The latest suite result is 53 passed, 1 warning; parser/trainer tests and model
-scores remain implementation work. No post-projection corpus counts or loading
-benchmarks are claimed.
+The Week 3 full-suite result is 464 passed, 14 skipped, 1 warning; 275 passing
+cases cover Project 2. Projection measurements and oracle replay are recorded
+in [PROJECTION_COUNTS.md](analysis/PROJECTION_COUNTS.md). Model scores and
+loading benchmarks remain unmeasured.
 
 Primary references:
 
