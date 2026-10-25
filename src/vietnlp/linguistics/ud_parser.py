@@ -1,9 +1,38 @@
-"""CoNLL-U input for the Vietnamese dependency parser."""
+"""CoNLL-U input and label mapping for Vietnamese dependency parsing."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 import re
+
+from vietnlp.interfaces._common import UD_DEPREL
+
+
+VTB_LABEL_MAPPING = {
+    label: label.partition(":")[0]
+    for label in """
+    acl acl:relcl acl:subj acl:tmod acl:tonp advcl advcl:objective advmod advmod:adj
+    advmod:dir advmod:neg amod appos appos:nmod aux aux:pass case cc ccomp clf clf:det
+    compound compound:adj compound:amod compound:apr compound:atov compound:dir
+    compound:pron compound:prt compound:redup compound:svc compound:verbnoun
+    compound:vmod compound:z conj cop csubj csubj:asubj csubj:pass csubj:vsubj dep det
+    det:pmod discourse dislocated expl fixed flat flat:date flat:foreign flat:name
+    flat:number flat:redup flat:time iobj list mark mark:pcomp nmod nmod:poss nsubj
+    nsubj:nn nsubj:pass nsubj:xsubj nummod nummod:det obj obl obl:about obl:adj obl:adv
+    obl:agent obl:comp obl:iobj obl:tmod obl:with parataxis punct root vocative xcomp
+    xcomp:adj xcomp:dir xcomp:vcomp
+    """.split()
+}
+
+
+def map_deprel(label: str) -> str:
+    """Map known VTB labels to base labels; reject unknown labels."""
+    if label in UD_DEPREL:
+        return label
+    try:
+        return VTB_LABEL_MAPPING[label]
+    except KeyError as exc:
+        raise ValueError(f"Unknown dependency label: {label!r}") from exc
 
 
 @dataclass(frozen=True)
