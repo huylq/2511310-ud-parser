@@ -1,4 +1,4 @@
-"""CoNLL-U input, label mapping and projection for dependency parsing."""
+"""Input processing and arc-standard transitions for dependency parsing."""
 
 from __future__ import annotations
 
@@ -10,6 +10,7 @@ from vietnlp.interfaces._common import UD_DEPREL
 
 
 PROJECTION_VERSION = "v2-first-dep-directional-glue"
+TRANSITION_VERSION = "arc-standard-v1"
 
 
 VTB_LABEL_MAPPING = {
@@ -62,6 +63,116 @@ class ProjectedSentence:
     word_to_syllables: dict[int, tuple[int, ...]]
     syllable_to_word: dict[int, int]
     is_projective: bool
+
+
+@dataclass(frozen=True)
+class Action:
+    kind: str
+    label: str | None = None
+
+
+class ParserState:
+    """Arc-standard state with final-only attachment to ROOT."""
+
+    def __init__(self, tokens: tuple[str, ...]) -> None:
+        self.tokens = tuple(tokens)
+        if not self.tokens:
+            raise ValueError("Cannot initialize a parser state with empty input")
+        if any(
+            not isinstance(form, str) or not form or any(char.isspace() for char in form)
+            for form in self.tokens
+        ):
+            raise ValueError("Parser tokens must be nonempty syllables without whitespace")
+        self.stack: list[int] = [0]
+        self.buffer_pos = 1
+        self.heads: list[int | None] = [None] * (len(self.tokens) + 1)
+        self.labels: list[str | None] = [None] * (len(self.tokens) + 1)
+
+    @property
+    def is_terminal(self) -> bool:
+        return self.buffer_pos == len(self.tokens) + 1 and self.stack == [0]
+
+    def _can_attach(self, head: int, dependent: int, label: str | None) -> bool:
+        n = len(self.tokens)
+        if type(head) is not int or type(dependent) is not int:
+            return False
+        if not 0 <= head <= n or not 1 <= dependent <= n or head == dependent:
+            return False
+        if len(self.heads) != n + 1 or len(self.labels) != n + 1:
+            return False
+        if self.heads[dependent] is not None or self.labels[dependent] is not None:
+            return False
+        if not isinstance(label, str) or label not in UD_DEPREL:
+            return False
+        if (head == 0) != (label == "root"):
+            return False
+        if head == 0 and any(parent == 0 for parent in self.heads[1:]):
+            return False
+
+        seen: set[int] = set()
+        current = head
+        while current != 0:
+            if type(current) is not int or not 1 <= current <= n:
+                return False
+            if current == dependent or current in seen:
+                return False
+            seen.add(current)
+            parent = self.heads[current]
+            if parent is None:
+                return True
+            current = parent
+        return True
+
+    def _is_legal(self, action: Action) -> bool:
+        if not isinstance(action, Action):
+            return False
+        if action.kind == "SHIFT":
+            return (
+                action.label is None
+                and type(self.buffer_pos) is int
+                and 1 <= self.buffer_pos <= len(self.tokens)
+            )
+        if action.kind not in {"LEFT_ARC", "RIGHT_ARC"} or len(self.stack) < 2:
+            return False
+
+        left, right = self.stack[-2:]
+        head, dependent = (right, left) if action.kind == "LEFT_ARC" else (left, right)
+        if not self._can_attach(head, dependent, action.label):
+            return False
+        if head == 0:
+            return (
+                action.kind == "RIGHT_ARC"
+                and self.buffer_pos == len(self.tokens) + 1
+                and self.stack == [0, dependent]
+            )
+        return True
+
+    def legal_actions(self) -> tuple[Action, ...]:
+        """List legal actions in SHIFT, LEFT_ARC, RIGHT_ARC order."""
+        candidates = [Action("SHIFT")]
+        for kind in ("LEFT_ARC", "RIGHT_ARC"):
+            for label in sorted(UD_DEPREL):
+                if kind != "LEFT_ARC" or label != "root":
+                    candidates.append(Action(kind, label))
+        return tuple(action for action in candidates if self._is_legal(action))
+
+    def apply(self, action: Action) -> None:
+        """Validate an action before updating any state field."""
+        if not self._is_legal(action):
+            raise ValueError(f"Illegal parser action: {action!r}")
+        if action.kind == "SHIFT":
+            self.stack.append(self.buffer_pos)
+            self.buffer_pos += 1
+            return
+
+        left, right = self.stack[-2:]
+        head, dependent = (right, left) if action.kind == "LEFT_ARC" else (left, right)
+        self.heads[dependent] = head
+        self.labels[dependent] = action.label
+        if action.kind == "LEFT_ARC":
+            del self.stack[-2]
+        else:
+            self.stack.pop()
 
 
 def _validate_conllu_tree(tokens: list[ConlluToken]) -> None:
