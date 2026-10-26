@@ -4,82 +4,79 @@
 
 **Project:** 02 — Vietnamese UD Dependency Parsing
 
-**Updated:** 25 October 2026
+## 1. Work completed this week
 
-## 1. Week 3 outcomes
+This week, I completed the core data-preparation and transition components
+for the parser and tested them using TDD. For each component, I committed
+failing tests before implementing the code that made them pass.
 
-Implemented the CoNLL-U reader, dependency-label mapping, word-to-syllable
-projection, arc-standard transitions with structural guards, and static oracle
-in [ud_parser.py](../../src/vietnlp/linguistics/ud_parser.py), following
-[week3_tasks.md](week3_tasks.md). Each component has a failing-test commit before
-its implementation commit.
+The implementation is in
+[ud_parser.py](../../src/vietnlp/linguistics/ud_parser.py), following
+[week3_tasks.md](week3_tasks.md). It covers the CoNLL-U reader, label mapping,
+sentence projection, arc-standard transitions and guards, and static oracle.
+The commit pairs are listed in Section 3.
 
-All **275 Project 2 tests pass**. The full repository suite reports **464 passed,
-14 skipped, 1 warning**. Oracle replay reconstructs every gold head and label in
-all 20 projected annotation sentences and in **1,395 retained VTB train
-sentences, with 0 failures**.
-
-Corpus-wide projection measurements are committed in
+I also ran projection on all VTB splits and checked oracle replay on the
+retained projective train trees. The measured results are in
 [PROJECTION_COUNTS.md](analysis/PROJECTION_COUNTS.md) and
-[PROJECTION_COUNTS.json](analysis/PROJECTION_COUNTS.json). Features, the
-perceptron, training, model files and the public `parse()` function remain
-Week 4 work. No model UAS/LAS or inference-speed results are reported.
+[PROJECTION_COUNTS.json](analysis/PROJECTION_COUNTS.json).
 
-## 2. Implemented behavior and component tests
+## 2. Implemented components
 
-| Component | Verified behavior | Passing cases |
-|---|---|---:|
-| [CoNLL-U reader](../../tests/test_linguistics_ud_parser_conllu.py) | Metadata and exact token fields for two supplied sentences; final sentence at EOF; skip range/decimal IDs; malformed columns, HEAD and IDs raise with source line numbers; load all 20 annotations | 14 |
-| [Label mapping](../../tests/test_linguistics_ud_parser_labels.py) | All 84 source labels match the documented mapping to 34 observed base labels; valid interface labels are preserved; unknown labels raise | 125 |
-| [Projection](../../tests/test_linguistics_ud_parser_projection.py) | First-syllable anchors, internal dep stars, directional punctuation gluing, original-head-chain reattachment, root preservation, ID mappings and projectivity including ROOT | 38 |
-| [Transitions and guards](../../tests/test_linguistics_ud_parser_transitions.py) | State updates, exact legal-action sets, atomic refusal of illegal actions, cycle prevention, final-only ROOT and exactly 2n actions | 34 |
-| [Static oracle](../../tests/test_linguistics_ud_parser_oracle.py) | Exact gold replay; both child heads and labels required before reduction; chains, branching, clf, empty/single-token cases, non-projective rejection and all 20 annotations | 40 |
-| [Annotation contract](../../tests/test_linguistics_ud_parser_hand_annotated.py) | Existing format, metadata, alignment, label, tree and coverage checks | 24 |
-| **Total** | | **275** |
+### 2.1. CoNLL-U reader
 
-The reader raises `ValueError` and stops on malformed input rather than
-returning a partial result. Projection preserves source trees, resets projected
-UPOS to `X`, and reports non-projectivity without dropping valid trees.
+- I implemented `read_conllu()` to convert CoNLL-U text into sentences and tokens, preserving metadata, FORM, UPOS, HEAD and DEPREL.
+- The reader checks formatting and tree structure, reports invalid input with its source line number, and skips range and decimal IDs.
+- I tested the two supplied examples containing 28 tokens, malformed-input cases and the annotation set of 20 sentences and 254 tokens. All [14 reader tests](../../tests/test_linguistics_ud_parser_conllu.py) pass.
 
-Opening brackets and typographic opening quotes glue forward; closing marks
-and other punctuation glue backward. Standalone straight double quotes
-alternate opening/closing within each sentence. A punctuation root is retained,
-as is a mark without a target on its selected side. The projection version is
-`v2-first-dep-directional-glue`.
+### 2.2. Dependency-label mapping
 
-`ParserState` starts with stack `[0]`, buffer position 1 and unassigned heads
-and labels. An invalid action leaves the state unchanged. ROOT attachment is
-legal only as the final `RIGHT_ARC(root)` with an exhausted buffer and stack
-`[0, j]`.
+- I defined `VTB_LABEL_MAPPING` and `map_deprel()` to map the 84 source labels in UD_Vietnamese-VTB to 34 observed base labels.
+- Valid base labels are preserved, including interface labels absent from the corpus. Invalid labels raise an error.
+- All [125 label-mapping tests](../../tests/test_linguistics_ud_parser_labels.py) pass.
 
-`StaticOracle` chooses LEFT_ARC, then RIGHT_ARC, then SHIFT when the preceding
-gold reduction conditions do not hold. A dependent is ready only when every
-direct gold child has both the correct head and label; leaves are immediately
-ready. The oracle rejects empty or non-projective gold input and reports
-sentence IDs on errors. It supplies training targets; new-sentence prediction
-will use the trained model.
+### 2.3. Word-to-syllable projection
+
+- I implemented `project_sentence()` according to `DESIGN.md` and `TESTING.md`, using version `v2-first-dep-directional-glue`.
+- Opening punctuation glues onto the following token; closing punctuation glues onto the preceding token. Straight double quotes alternate opening/closing within each sentence.
+- The function splits words into syllables, updates heads and labels, and returns mappings in both directions together with `is_projective`, without changing the source tree. Later syllables attach to the first-syllable anchor with `dep`.
+- All [38 projection tests](../../tests/test_linguistics_ud_parser_projection.py) pass, including 35 initial cases and three projectivity checks that include the ROOT arc.
+
+### 2.4. Transition system and guards
+
+- I implemented `Action` and `ParserState` for arc-standard, with SHIFT, LEFT_ARC and RIGHT_ARC.
+- Guards reject illegal actions before changing the state, including repeated head assignment, self-loops and cycle-closing arcs. ROOT attachment is allowed only at the final step.
+- All [34 transition and guard tests](../../tests/test_linguistics_ud_parser_transitions.py) pass.
+
+### 2.5. Static oracle
+
+- I implemented `StaticOracle` to select the correct actions from a gold tree.
+- It checks that all gold children have been attached with the correct heads and labels, rejects non-projective gold trees and reports errors with the sentence ID.
+- All [40 oracle tests](../../tests/test_linguistics_ud_parser_oracle.py) pass, including exact reconstruction of the 20 projected annotation trees and the boundary cases.
+
+Together with the existing [24 annotation-contract tests](../../tests/test_linguistics_ud_parser_hand_annotated.py), the five components give **275 passing Project 2 cases**.
 
 ## 3. Test-first commit evidence
 
 | Component | Test commit | Implementation commit |
 |---|---|---|
-| CoNLL-U reader | [1e609a7](https://github.com/phunghx/VietnamesModel/commit/1e609a76b46848d7ae181dd4473c0310802a3c90) | [c2504fb](https://github.com/phunghx/VietnamesModel/commit/c2504fb237c64d5548d43fa2b69bc137827fb956) |
-| Label mapping | [6fb79f1](https://github.com/phunghx/VietnamesModel/commit/6fb79f1816c58404fdd971cf99d0a228cf2d9e78) | [efb184f](https://github.com/phunghx/VietnamesModel/commit/efb184f1d5abe9c3389fa8854f214597a7794956) |
-| Projection | [cf2677c](https://github.com/phunghx/VietnamesModel/commit/cf2677c92ae288b98e28abc06ee31762f7a8f810) | [227aee9](https://github.com/phunghx/VietnamesModel/commit/227aee97dc7bc8cfbd867c8911276e5d89fa326c) |
-| Transitions and guards | [2cb8b63](https://github.com/phunghx/VietnamesModel/commit/2cb8b63bd5610fc320392ac405e76b5e6bea0637) | [8342d4b](https://github.com/phunghx/VietnamesModel/commit/8342d4be2278260bca16b7de3f1d72e5c34d3b70) |
-| Static oracle | [2a04c83](https://github.com/phunghx/VietnamesModel/commit/2a04c8346dc017c366fe4fdce50c7542d66ad8de) | [9fb9ed0](https://github.com/phunghx/VietnamesModel/commit/9fb9ed06f460cf242082ef5a3e2bfd357ffd8c91) |
+| CoNLL-U reader | [2159d1e](https://github.com/huylq/2511310-ud-parser/commit/2159d1e95df80c8201341b5f216211c2dc13bfa1) | [4cf2f64](https://github.com/huylq/2511310-ud-parser/commit/4cf2f641ffba6a3d5d7a7e20fc0c3e91d84c5a39) |
+| Label mapping | [0d8a623](https://github.com/huylq/2511310-ud-parser/commit/0d8a623804c228e127b548a3a7e019b6fd7837bc) | [7da8525](https://github.com/huylq/2511310-ud-parser/commit/7da85259fef3676abb1aaa6c5fd5f47df4f5c85a) |
+| Projection | [c319d6c](https://github.com/huylq/2511310-ud-parser/commit/c319d6c66b7c43ba461866fba80b36fc70784ccf) | [3949108](https://github.com/huylq/2511310-ud-parser/commit/394910830dbfbfd22db73933dc9408548c9d9b6e) |
+| Transitions and guards | [ff82e7e](https://github.com/huylq/2511310-ud-parser/commit/ff82e7e19f1d2d73a6e745bd44ff7270d080b1f0) | [b66170a](https://github.com/huylq/2511310-ud-parser/commit/b66170a2c2214211ba1322d0b5bf1afc1d98d699) |
+| Static oracle | [a42ee32](https://github.com/huylq/2511310-ud-parser/commit/a42ee323cdf852885ba1a3f035164183181bc492) | [8bebf73](https://github.com/huylq/2511310-ud-parser/commit/8bebf73bb8ee2882a7fb0c6efd8c50bb44260caa) |
 
 Additional reader validation tests were committed in
-[90310a5](https://github.com/phunghx/VietnamesModel/commit/90310a506461e907b18e94f3358d9465d4f079ab).
+[583cb8d](https://github.com/huylq/2511310-ud-parser/commit/583cb8d0c3f0725e89f266516daa7e4034651282).
 The VTB measurement script, outputs and updated design/testing documents were
 committed in
-[ba5ef2c](https://github.com/phunghx/VietnamesModel/commit/ba5ef2c78625892d0b67ae5e3e57f67d68884115).
+[dd4b6d3](https://github.com/huylq/2511310-ud-parser/commit/dd4b6d391261d1ca6c27c98822e80744d1055316).
 These commits are pushed to
-[student/02-ud-parsing](https://github.com/phunghx/VietnamesModel/tree/student/02-ud-parsing).
+[student/02-ud-parsing](https://github.com/huylq/2511310-ud-parser/tree/student/02-ud-parsing).
 
 ## 4. VTB projection measurements
 
-The corpus is UD_Vietnamese-VTB at commit
+I ran the reader, label mapping and projection on UD_Vietnamese-VTB at commit
 `3c971fd1c5d03561e00b267d3d0057b81a9bea84`, as pinned in
 [VTB_COUNTS.json](analysis/VTB_COUNTS.json). The script verifies the SHA-256
 of each input split before processing it.
@@ -100,38 +97,48 @@ inventory.
 Every projected tree passes the frozen schema and single-rooted-tree checks.
 Projectivity is measured after projection and includes the artificial ROOT arc.
 
-The following train sentences are excluded because their projected trees are
+I excluded the following train sentences because their projected trees are
 non-projective: `train-s414`, `train-s435`, `train-s498`, `train-s518` and
 `train-s955`. The remaining **1,395 sentences contain 22,000 syllable tokens**.
 Oracle replay passes on all of them, reproducing every head and label in
 **44,000 legal actions**, exactly n SHIFTs and n ARCs per sentence. There are
 **0 oracle failures**. Oracle failures would be bugs to fix, not exclusions.
 
-All dev/test sentences are retained for later evaluation, including
-non-projective trees. These measurements do not train, tune or evaluate a
-prediction model.
+I retained all dev/test sentences for later evaluation, including
+non-projective trees. These measurements cover data preparation and oracle
+replay. I have not trained a model or measured UAS/LAS yet.
 
 ## 5. Reproduction and full-suite results
 
-From the repository root, with dependencies installed and `src` on
-`PYTHONPATH`, run:
+I ran the full test suite from the repository root, with dependencies
+installed and `src` on `PYTHONPATH`:
 
 ```powershell
 $env:PYTHONPATH = Join-Path (Get-Location) "src"
 python -m pytest tests -q -o "addopts=" --disable-warnings
 ```
 
-Literal summary of the recorded full-suite run:
+Literal summary of the recorded full-suite run in the course repository:
 
 ```text
 464 passed, 14 skipped, 1 warning in 125.58s (0:02:05)
 ```
 
-This comprises 275 Project 2 cases and 189 inherited tests. The 14 skips cover
-11 live-Postgres tests, two live-MinIO tests and the unimplemented Project 1
-golden-test module. The warning is Pandera's import-related `FutureWarning`.
-The suite runs offline; its unit tests do not read VTB. Test names include
-`cycle`, `clf`, `adversarial` and `degenerate`.
+The course suite comprises 275 Project 2 cases and 189 inherited tests. Its
+14 skips cover 11 live-Postgres tests, two live-MinIO tests and the unimplemented
+Project 1 golden-test module.
+
+The public project repository contains the same 275 Project 2 cases and 29
+inherited tests for the retained dependencies and fixtures. Running the same
+pytest command there gives:
+
+```text
+304 passed, 1 warning in 3.95s
+```
+
+The warning is Pandera's import-related `FutureWarning`. Both suites run
+offline; their unit tests do not read VTB. Test names include `cycle`, `clf`,
+`adversarial` and `degenerate`.
 
 Run the corpus measurement separately:
 
@@ -139,7 +146,7 @@ Run the corpus measurement separately:
 python student-projects/02-ud-parsing/scripts/project_vtb.py --data-dir <VTB_DIR> --output-dir student-projects/02-ud-parsing/analysis
 ```
 
-The script exits successfully for the recorded measurements. It returns a
+The measurement script completed successfully. It returns a
 nonzero status if any projected tree is invalid or any retained train tree
 fails oracle replay. Token/punctuation totals reconcile with the source
 inventory, and report regeneration produces identical bytes.
@@ -151,10 +158,12 @@ inventory, and report regeneration produces identical bytes.
 - Updated [DESIGN.md](DESIGN.md) and [TESTING.md](TESTING.md).
 - Reused [20-sentence annotation set](data/hand_annotated.conllu).
 
-Week 4 will implement the 54 feature slots, averaged perceptron, a small
-training run, weight saving/loading and `parse()` while preserving input
-tokens. It also includes the `:))` override, loading weights once per process,
-fixture integration and the required gate run. No Week 4 gate PASS is claimed.
+Next week, I plan to:
+
+- Implement the 54 feature slots and averaged perceptron, run a small training experiment, and save and reload the weights.
+- Implement `parse()` on all 151 fixture sentences while preserving the input tokens, add the `:))` override, and load weights once per process.
+- Run the required gate and include its output in `WEEK4_REPORT.md`.
+- Evaluate UAS and LAS on dev while developing the model. Keep test for one final evaluation after the model and pipeline are fixed.
 
 ## 7. Data provenance statement
 
@@ -171,4 +180,4 @@ results, as disclosed below.
 
 | Tool | Version/model | Prompts, summarized by purpose | What the AI produced | What the student changed or decided |
 |---|---|---|---|---|
-| Codex in ChatGPT (OpenAI) | Exact model/version not recorded | Explain component behavior and the task requirements; implement reader, label mapping, projection, transitions and static oracle; write tests and VTB measurements; draft and update documentation and this report | Implementation and test code, including malformed-input variants, additional CoNLL-U test snippets, structural trees and expected results; measurement script and generated statistics; document/report drafts and explanations | Supplied the two reader examples; specified forward gluing for opening punctuation, backward gluing for closing punctuation and alternating straight quotes; selected incremental implementation and test-first commits |
+| Codex in ChatGPT (OpenAI) | Exact model/version not recorded | Implement the CoNLL-U reader, label mapping, projection, transitions and static oracle; write unit tests and a VTB measurement script | Implementation and test code, including malformed-input variants, additional CoNLL-U test snippets, structural trees and expected results; measurement script and generated statistics | Supplied the two reader examples; specified forward gluing for opening punctuation, backward gluing for closing punctuation and alternating straight quotes; selected incremental implementation and test-first commits |
